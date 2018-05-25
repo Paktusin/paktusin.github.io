@@ -1,0 +1,13 @@
+$primary: #665049;
+$secondary: #e1ff8d;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body{
+  height: 100%;
+
+  .page{
+    display: none;
+    flex: 1 auto;
+  }
+}
