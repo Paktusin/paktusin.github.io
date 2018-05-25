@@ -1,13 +1,71 @@
-$primary: #665049;
+$primary: #008b88;
 $secondary: #e1ff8d;
+$font-family-base: 'SF';
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-body{
-  height: 100%;
+@mixin background {
+  background: no-repeat center center fixed;
+  background-size: cover;
+}
 
-  .page{
-    display: none;
+@font-face {
+  font-family: 'SF';
+  src: url('./fonts/SFUIDisplay-Light.woff') format('woff');
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include background;
+  -webkit-filter: grayscale(30%);
+  -moz-filter: grayscale(30%);
+  filter: grayscale(30%);
+  z-index: -1;
+}
+
+.page {
+  padding-top: 1rem;
+  display: flex;
+  flex: 1 auto;
+  padding-bottom: 50px;
+  .content {
+    position: relative;
     flex: 1 auto;
+    overflow: hidden;
+    $glass-color: rgb(218, 245, 255);
+    border: 1px rgba($glass-color, 0.3) solid;
+    border-radius: 1rem 1rem 0 0;
+    background: linear-gradient(rgba($glass-color, 0.3), rgba($glass-color, 0.5));
+    $shadow: 0 5px 20px -4px black;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+    .bg {
+      @include background;
+      $glass-blur: 5px;
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      -webkit-filter: blur($glass-blur);
+      -moz-filter: blur($glass-blur);
+      filter: blur($glass-blur);
+    }
   }
+}
+
+.template {
+  display: none;
 }
