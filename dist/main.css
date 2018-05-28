@@ -6303,7 +6303,7 @@ body {
   -webkit-filter: grayscale(30%);
   -moz-filter: grayscale(30%);
   filter: grayscale(30%);
-  z-index: -1; }
+  z-index: -2; }
 
 .page {
   padding-top: 1rem;
@@ -6316,7 +6316,7 @@ body {
     overflow: hidden;
     border: 1px rgba(218, 245, 255, 0.3) solid;
     border-radius: 1rem 1rem 0 0;
-    background: linear-gradient(rgba(218, 245, 255, 0.3), rgba(218, 245, 255, 0.5));
+    background: linear-gradient(rgba(218, 245, 255, 0.5), rgba(218, 245, 255, 0.7));
     -webkit-box-shadow: 0 5px 20px -4px black;
     -moz-box-shadow: 0 5px 20px -4px black;
     box-shadow: 0 5px 20px -4px black; }

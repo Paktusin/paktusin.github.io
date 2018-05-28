@@ -3760,6 +3760,18 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 
 /***/ }),
 
+/***/ "./src/base.js":
+/*!*********************!*\
+  !*** ./src/base.js ***!
+  \*********************/
+/*! exports provided: elements */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"elements\", function() { return elements; });\nconst elements = {\n    content: document.getElementById('content')\n};\n\n//# sourceURL=webpack:///./src/base.js?");
+
+/***/ }),
+
 /***/ "./src/config.js":
 /*!***********************!*\
   !*** ./src/config.js ***!
@@ -3803,7 +3815,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Bg; });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"./src/config.js\");\n\n\nclass Bg {\n    constructor(bgEl = null) {\n        this.bgEl = [];\n        if (bgEl) this.bgEl.push(bgEl);\n        this.images = _config__WEBPACK_IMPORTED_MODULE_0__[\"images\"];\n        this.init();\n    }\n\n    init() {\n        let bgEl = document.createElement('div');\n        this.bgEl.push(bgEl);\n        bgEl.setAttribute('id', 'bg');\n        document.body.appendChild(bgEl);\n    }\n\n    change(index) {\n        this.bgEl.forEach(el => {\n            el.style.backgroundImage = `url(${this.images[index]})`;\n        });\n    }\n}\n\n//# sourceURL=webpack:///./src/modules/bg.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Bg; });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"./src/config.js\");\n/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../base */ \"./src/base.js\");\n\n\n\nclass Bg {\n    constructor(bgEl = null) {\n        this.bgEl = [];\n        if (bgEl) this.bgEl.push(bgEl);\n        this.images = _config__WEBPACK_IMPORTED_MODULE_0__[\"images\"];\n        this.init();\n    }\n\n    init() {\n        let bgEl = document.createElement('div');\n        this.bgEl.push(bgEl);\n        bgEl.setAttribute('id', 'bg');\n        document.body.appendChild(bgEl);\n    }\n\n    async change(index) {\n        this.bgEl.forEach(el => {\n            el.style.backgroundImage = `url(${this.images[index]})`;\n        });\n    }\n}\n\n//# sourceURL=webpack:///./src/modules/bg.js?");
 
 /***/ }),
 

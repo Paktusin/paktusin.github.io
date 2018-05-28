@@ -1,4 +1,5 @@
 import * as config from '../config';
+import {elements} from "../base";
 
 export default class Bg {
     constructor(bgEl = null) {
@@ -15,7 +16,7 @@ export default class Bg {
         document.body.appendChild(bgEl);
     }
 
-    change(index) {
+    async change(index) {
         this.bgEl.forEach((el) => {
             el.style.backgroundImage = `url(${this.images[index]})`;
         });
