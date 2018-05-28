@@ -458,10 +458,10 @@ pre {
       max-width: 720px; } }
   @media (min-width: 992px) {
     .container {
-      max-width: 960px; } }
+      max-width: 720px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1140px; } }
+      max-width: 720px; } }
 
 .container-fluid {
   width: 100%;
@@ -6306,17 +6306,17 @@ body {
   z-index: -2; }
 
 .page {
-  padding-top: 1rem;
+  padding-top: .5rem;
   display: flex;
   flex: 1 auto;
-  padding-bottom: 50px; }
+  padding-bottom: 65px; }
   .page .content {
     position: relative;
     flex: 1 auto;
     overflow: hidden;
     border: 1px rgba(218, 245, 255, 0.3) solid;
-    border-radius: 1rem 1rem 0 0;
-    background: linear-gradient(rgba(218, 245, 255, 0.5), rgba(218, 245, 255, 0.7));
+    border-radius: .5rem;
+    background: rgba(218, 245, 255, 0.3);
     -webkit-box-shadow: 0 5px 20px -4px black;
     -moz-box-shadow: 0 5px 20px -4px black;
     box-shadow: 0 5px 20px -4px black; }
@@ -6328,10 +6328,17 @@ body {
       content: '';
       position: absolute;
       z-index: -1;
-      -webkit-filter: blur(5px);
-      -moz-filter: blur(5px);
-      filter: blur(5px); }
+      -webkit-filter: blur(7px);
+      -moz-filter: blur(7px);
+      filter: blur(7px); }
 
 .template {
   display: none; }
+
+.image {
+  border: .5rem solid white;
+  transform: rotate(-2deg);
+  -webkit-box-shadow: 0 5px 20px -4px black;
+  -moz-box-shadow: 0 5px 20px -4px black;
+  box-shadow: 0 5px 20px -4px black; }
 

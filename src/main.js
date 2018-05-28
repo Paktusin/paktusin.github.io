@@ -1,5 +1,6 @@
 import './main.scss';
 import Bg from "./modules/bg";
+import {elements} from './base';
 
 const hashChange = () => {
     const hash = location.hash.replace('#', '');
@@ -12,10 +13,16 @@ const hashChange = () => {
 
 const aboutCtrl = () => {
     bg.change(0);
+    updateContent('about');
 };
 
 const educationCtrl = () => {
     bg.change(1);
+    updateContent('education');
+};
+
+const updateContent = (id) => {
+    elements.content.innerHTML = document.querySelector('#'+id).innerHTML;
 };
 
 
@@ -27,4 +34,4 @@ const routes = {
 };
 
 ['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));
-const bg = new Bg(document.querySelector('#content .bg'));
+const bg = new Bg(document.querySelector('.content .bg'));
