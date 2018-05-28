@@ -3760,15 +3760,15 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 
 /***/ }),
 
-/***/ "./src/base.js":
-/*!*********************!*\
-  !*** ./src/base.js ***!
-  \*********************/
-/*! exports provided: elements */
+/***/ "./src/config.js":
+/*!***********************!*\
+  !*** ./src/config.js ***!
+  \***********************/
+/*! exports provided: images */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"elements\", function() { return elements; });\nconst elements = {\n    content: document.getElementById('content'),\n    contentBg: document.querySelector('#content .bg'),\n    bg: document.getElementById('bg')\n};\n\n//# sourceURL=webpack:///./src/base.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"images\", function() { return images; });\nconst images = ['https://i.imgur.com/one8RoO.jpg', 'https://i.imgur.com/PdNpmEA.jpg'];\n\n//# sourceURL=webpack:///./src/config.js?");
 
 /***/ }),
 
@@ -3780,7 +3780,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./base */ \"./src/base.js\");\n\n\n\nconst hashChange = () => {\n    const hash = location.hash.replace('#', '');\n    if (hash.length > 0 && routes[hash] instanceof Function) {\n        routes[hash]();\n    } else {\n        location.hash = 'about';\n    }\n};\n\nconst aboutCtrl = () => {\n    console.log('about ctrl');\n    _base__WEBPACK_IMPORTED_MODULE_1__[\"elements\"].contentBg.style.backgroundImage = _base__WEBPACK_IMPORTED_MODULE_1__[\"elements\"].bg.style.backgroundImage = 'url(https://imgur.com/GBjDN9H.jpg)';\n};\n\nconst routes = {\n    about: aboutCtrl\n    // education: educationCtrl,\n    // projects: projectsCtrl,\n    // skills: skillsCtrl,\n};\n\n['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _modules_bg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/bg */ \"./src/modules/bg.js\");\n\n\n\nconst hashChange = () => {\n    const hash = location.hash.replace('#', '');\n    if (hash.length > 0 && routes[hash] instanceof Function) {\n        routes[hash]();\n    } else {\n        location.hash = 'about';\n    }\n};\n\nconst aboutCtrl = () => {\n    bg.change(0);\n};\n\nconst educationCtrl = () => {\n    bg.change(1);\n};\n\nconst routes = {\n    about: aboutCtrl,\n    education: educationCtrl\n    // projects: projectsCtrl,\n    // skills: skillsCtrl,\n};\n\n['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));\nconst bg = new _modules_bg__WEBPACK_IMPORTED_MODULE_1__[\"default\"](document.querySelector('#content .bg'));\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 
@@ -3792,6 +3792,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mai
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/main.scss?");
+
+/***/ }),
+
+/***/ "./src/modules/bg.js":
+/*!***************************!*\
+  !*** ./src/modules/bg.js ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Bg; });\n/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../config */ \"./src/config.js\");\n\n\nclass Bg {\n    constructor(bgEl = null) {\n        this.bgEl = [];\n        if (bgEl) this.bgEl.push(bgEl);\n        this.images = _config__WEBPACK_IMPORTED_MODULE_0__[\"images\"];\n        this.init();\n    }\n\n    init() {\n        let bgEl = document.createElement('div');\n        this.bgEl.push(bgEl);\n        bgEl.setAttribute('id', 'bg');\n        document.body.appendChild(bgEl);\n    }\n\n    change(index) {\n        this.bgEl.forEach(el => {\n            el.style.backgroundImage = `url(${this.images[index]})`;\n        });\n    }\n}\n\n//# sourceURL=webpack:///./src/modules/bg.js?");
 
 /***/ }),
 

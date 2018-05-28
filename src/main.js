@@ -1,5 +1,5 @@
 import './main.scss';
-import {elements} from "./base";
+import Bg from "./modules/bg";
 
 const hashChange = () => {
     const hash = location.hash.replace('#', '');
@@ -11,15 +11,20 @@ const hashChange = () => {
 };
 
 const aboutCtrl = () => {
-    console.log('about ctrl');
-    elements.contentBg.style.backgroundImage = elements.bg.style.backgroundImage = 'url(https://imgur.com/GBjDN9H.jpg)';
+    bg.change(0);
 };
+
+const educationCtrl = () => {
+    bg.change(1);
+};
+
 
 const routes = {
     about: aboutCtrl,
-    // education: educationCtrl,
+    education: educationCtrl,
     // projects: projectsCtrl,
     // skills: skillsCtrl,
 };
 
 ['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));
+const bg = new Bg(document.querySelector('#content .bg'));
