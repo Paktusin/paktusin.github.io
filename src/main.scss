@@ -1,6 +1,8 @@
-$primary: #008b88;
-$secondary: #e1ff8d;
+$primary: rgb(0, 122, 255);
+$secondary: rgb(90, 200, 250);
 $font-family-base: 'SF';
+$navbar-light-active-color: $primary;
+$navbar-light-hover-color: $primary;
 
 $container-max-widths: (
         sm: 540px,
@@ -84,4 +86,7 @@ body {
   -webkit-box-shadow: $shadow;
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
+}
+
+#mainNav {
 }

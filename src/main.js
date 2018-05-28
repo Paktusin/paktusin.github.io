@@ -5,24 +5,29 @@ import {elements} from './base';
 const hashChange = () => {
     const hash = location.hash.replace('#', '');
     if (hash.length > 0 && routes[hash] instanceof Function) {
-        routes[hash]();
+        routes[hash](hash);
     } else {
         location.hash = 'about';
     }
+    elements.navLinks.forEach(el => {
+        el.classList.remove('active');
+        const isActive = el.getAttribute('href').indexOf(hash) !== -1;
+        if (isActive) el.classList.add('active');
+    })
 };
 
-const aboutCtrl = () => {
+const aboutCtrl = (name) => {
     bg.change(0);
-    updateContent('about');
+    updateContent(name);
 };
 
-const educationCtrl = () => {
+const educationCtrl = (name) => {
     bg.change(1);
-    updateContent('education');
+    updateContent(name);
 };
 
 const updateContent = (id) => {
-    elements.content.innerHTML = document.querySelector('#'+id).innerHTML;
+    elements.content.innerHTML = document.querySelector('#' + id).innerHTML;
 };
 
 

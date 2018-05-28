@@ -1,11 +1,10 @@
-import * as config from '../config';
-import {elements} from "../base";
+import {images} from "../base";
 
 export default class Bg {
     constructor(bgEl = null) {
         this.bgEl = [];
         if (bgEl) this.bgEl.push(bgEl);
-        this.images = config.images;
+        this.images = images;
         this.init()
     }
 
