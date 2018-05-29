@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -9,18 +10,19 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "[name].js"
+        filename: "[name].[hash].js"
     },
     devServer: {
         contentBase: path.join(__dirname, './'),
         open:true
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new htmlWebpackPlugin({
             filename: '../index.html',
             template: './src/index.html'
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin({ filename: "[name].[hash].css",})
     ],
     module: {
         rules: [

@@ -22,6 +22,7 @@ const aboutCtrl = (name) => {
 };
 
 const educationCtrl = (name) => {
+
     bg.change(1);
     updateContent(name);
 };
