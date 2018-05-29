@@ -46,11 +46,9 @@ body {
 }
 
 .page {
-  padding: 0;
+  padding: .5rem;
   display: flex;
   flex: 1 auto;
-  margin-top: .5rem;
-  margin-bottom: 65px;
   .content {
     overflow-y: auto;
     overflow-x: unset;
