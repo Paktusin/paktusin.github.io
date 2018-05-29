@@ -6290,7 +6290,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #333; }
+  background-color: #333;
+  max-height: 100vh; }
 
 #bg {
   position: fixed;
@@ -6306,14 +6307,16 @@ body {
   z-index: -2; }
 
 .page {
-  padding-top: .5rem;
+  padding: 0;
   display: flex;
   flex: 1 auto;
-  padding-bottom: 65px; }
+  margin-top: .5rem;
+  margin-bottom: 65px; }
   .page .content {
+    overflow-y: auto;
+    overflow-x: unset;
     position: relative;
     flex: 1 auto;
-    overflow: hidden;
     border: 1px rgba(218, 245, 255, 0.3) solid;
     border-radius: .5rem;
     background: rgba(218, 245, 255, 0.3);
@@ -6341,4 +6344,15 @@ body {
   -webkit-box-shadow: 0 5px 20px -4px black;
   -moz-box-shadow: 0 5px 20px -4px black;
   box-shadow: 0 5px 20px -4px black; }
+
+::-webkit-scrollbar {
+  width: 5px; }
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px; }
+
+::-webkit-scrollbar-thumb {
+  background: #007aff;
+  border-radius: 10px; }
 

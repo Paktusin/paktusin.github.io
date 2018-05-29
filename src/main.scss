@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #333;
+  max-height: 100vh;
 }
 
 #bg {
@@ -44,14 +45,16 @@ body {
 }
 
 .page {
-  padding-top: .5rem;
+  padding: 0;
   display: flex;
   flex: 1 auto;
-  padding-bottom: 65px;
+  margin-top: .5rem;
+  margin-bottom: 65px;
   .content {
+    overflow-y: auto;
+    overflow-x: unset;
     position: relative;
     flex: 1 auto;
-    overflow: hidden;
     $glass-color: rgb(218, 245, 255);
     border: 1px rgba($glass-color, 0.3) solid;
     border-radius: .5rem;
@@ -89,4 +92,16 @@ body {
 }
 
 #mainNav {
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: $primary;
+  border-radius: 10px;
 }
