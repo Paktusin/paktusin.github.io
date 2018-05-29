@@ -26,10 +26,12 @@ $container-max-widths: (
 }
 
 body {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #333;
   > .bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -46,7 +48,6 @@ body {
   padding: 65px .5rem .5rem .5rem;
   display: flex;
   flex: 1 auto;
-  min-height: 100vh;
   .content {
     position: relative;
     flex: 1 auto;
