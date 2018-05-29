@@ -6290,9 +6290,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #333;
-  max-height: 100vh;
-  overflow: hidden; }
+  background-color: #333; }
 
 #bg {
   position: fixed;
@@ -6308,12 +6306,10 @@ body {
   z-index: -2; }
 
 .page {
-  padding: .5rem;
+  padding: 65px .5rem .5rem .5rem;
   display: flex;
   flex: 1 auto; }
   .page .content {
-    overflow-y: auto;
-    overflow-x: unset;
     position: relative;
     flex: 1 auto;
     border: 1px rgba(218, 245, 255, 0.3) solid;
@@ -6342,7 +6338,10 @@ body {
   transform: rotate(-2deg);
   -webkit-box-shadow: 0 5px 20px -4px black;
   -moz-box-shadow: 0 5px 20px -4px black;
-  box-shadow: 0 5px 20px -4px black; }
+  box-shadow: 0 5px 20px -4px black;
+  -webkit-filter: blur(7px);
+  -moz-filter: blur(7px);
+  filter: blur(7px); }
 
 ::-webkit-scrollbar {
   width: 5px; }
