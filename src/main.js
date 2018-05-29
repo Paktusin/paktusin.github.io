@@ -16,27 +16,31 @@ const hashChange = () => {
     })
 };
 
-const aboutCtrl = (name) => {
+const aboutCtrl = () => {
     bg.change(0);
-    updateContent(name);
+    elements.content.innerHTML = require('./views/about.html');
 };
 
-const educationCtrl = (name) => {
-
+const educationCtrl = () => {
     bg.change(1);
-    updateContent(name);
+    elements.content.innerHTML = require('./views/education.html');
 };
 
-const updateContent = (id) => {
-    elements.content.innerHTML = document.querySelector('#' + id).innerHTML;
+const skillsCtrl = () => {
+    bg.change(3);
+    elements.content.innerHTML = require('./views/skills.html');
 };
 
+const projectsCtrl = () => {
+    bg.change(2);
+    elements.content.innerHTML = require('./views/projects.html');
+};
 
 const routes = {
     about: aboutCtrl,
     education: educationCtrl,
-    // projects: projectsCtrl,
-    // skills: skillsCtrl,
+    projects: projectsCtrl,
+    skills: skillsCtrl,
 };
 
 ['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));

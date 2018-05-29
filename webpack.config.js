@@ -45,6 +45,10 @@ module.exports = {
                         options: {}
                     }
                 ]
+            },
+            {
+                test:/\.html/,
+                use:'raw-loader'
             }
         ]
     }

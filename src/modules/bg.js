@@ -1,23 +1,19 @@
 import {images} from "../base";
+import $ from 'jquery'
 
 export default class Bg {
-    constructor(bgEl = null) {
-        this.bgEl = [];
-        if (bgEl) this.bgEl.push(bgEl);
-        this.images = images;
-        this.init()
-    }
+    constructor() {
 
-    init() {
-        let bgEl = document.createElement('div');
-        this.bgEl.push(bgEl);
-        bgEl.setAttribute('id', 'bg');
-        document.body.appendChild(bgEl);
     }
 
     async change(index) {
-        this.bgEl.forEach((el) => {
-            el.style.backgroundImage = `url(${this.images[index]})`;
+        $('.bg').each((key, el) => {
+            let newBg = $(el).clone();
+            newBg.css({backgroundImage: `url(${images[index]})`});
+            newBg.insertBefore($(el));
+            $(el).animate({opacity: 0}, 300, 'swing', () => {
+                $(el).remove();
+            })
         });
     }
 }

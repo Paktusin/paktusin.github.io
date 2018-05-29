@@ -3,6 +3,8 @@ $secondary: rgb(90, 200, 250);
 $font-family-base: 'SF';
 $navbar-light-active-color: $primary;
 $navbar-light-hover-color: $primary;
+$glass-color: rgb(218, 245, 255);
+$border-color: rgba($glass-color, 0.3);
 
 $container-max-widths: (
         sm: 540px,
@@ -28,19 +30,18 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #333;
-}
-
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  @include background;
-  -webkit-filter: grayscale(30%);
-  -moz-filter: grayscale(30%);
-  filter: grayscale(30%);
-  z-index: -2;
+  >.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include background;
+    -webkit-filter: grayscale(30%);
+    -moz-filter: grayscale(30%);
+    filter: grayscale(30%);
+    z-index: -2;
+  }
 }
 
 .page {
@@ -50,21 +51,21 @@ body {
   .content {
     position: relative;
     flex: 1 auto;
-    $glass-color: rgb(218, 245, 255);
-    border: 1px rgba($glass-color, 0.3) solid;
+    border: 1px $border-color solid;
     border-radius: .5rem;
-    //background: rgba($glass-color, 0.3);
+    background: $border-color;
     $shadow: 0 5px 20px -4px black;
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow;
-    .bg {
+    >.bg {
       @include background;
       $glass-blur: 7px;
       width: 100%;
       height: 100%;
       content: '';
       position: absolute;
+      z-index: -1;
       -webkit-filter: blur($glass-blur);
       -moz-filter: blur($glass-blur);
       filter: blur($glass-blur);
@@ -83,6 +84,7 @@ body {
   -webkit-box-shadow: $shadow;
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
+  transition: all ease-out .5s;
 }
 
 #mainNav {
@@ -100,4 +102,15 @@ body {
 ::-webkit-scrollbar-thumb {
   background: $primary;
   border-radius: 10px;
+}
+
+.icon {
+  height: 64px;
+  margin: .5rem;
+}
+
+a:hover{
+  .image{
+    transform: rotate(2deg);
+  }
 }

@@ -4318,19 +4318,19 @@ button.bg-dark:focus {
   background-color: transparent !important; }
 
 .border {
-  border: 1px solid #dee2e6 !important; }
+  border: 1px solid rgba(218, 245, 255, 0.3) !important; }
 
 .border-top {
-  border-top: 1px solid #dee2e6 !important; }
+  border-top: 1px solid rgba(218, 245, 255, 0.3) !important; }
 
 .border-right {
-  border-right: 1px solid #dee2e6 !important; }
+  border-right: 1px solid rgba(218, 245, 255, 0.3) !important; }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6 !important; }
+  border-bottom: 1px solid rgba(218, 245, 255, 0.3) !important; }
 
 .border-left {
-  border-left: 1px solid #dee2e6 !important; }
+  border-left: 1px solid rgba(218, 245, 255, 0.3) !important; }
 
 .border-0 {
   border: 0 !important; }
@@ -6291,19 +6291,18 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #333; }
-
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: no-repeat center center fixed;
-  background-size: cover;
-  -webkit-filter: grayscale(30%);
-  -moz-filter: grayscale(30%);
-  filter: grayscale(30%);
-  z-index: -2; }
+  body > .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center fixed;
+    background-size: cover;
+    -webkit-filter: grayscale(30%);
+    -moz-filter: grayscale(30%);
+    filter: grayscale(30%);
+    z-index: -2; }
 
 .page {
   padding: 65px .5rem .5rem .5rem;
@@ -6314,16 +6313,18 @@ body {
     flex: 1 auto;
     border: 1px rgba(218, 245, 255, 0.3) solid;
     border-radius: .5rem;
+    background: rgba(218, 245, 255, 0.3);
     -webkit-box-shadow: 0 5px 20px -4px black;
     -moz-box-shadow: 0 5px 20px -4px black;
     box-shadow: 0 5px 20px -4px black; }
-    .page .content .bg {
+    .page .content > .bg {
       background: no-repeat center center fixed;
       background-size: cover;
       width: 100%;
       height: 100%;
       content: '';
       position: absolute;
+      z-index: -1;
       -webkit-filter: blur(7px);
       -moz-filter: blur(7px);
       filter: blur(7px); }
@@ -6336,7 +6337,8 @@ body {
   transform: rotate(-2deg);
   -webkit-box-shadow: 0 5px 20px -4px black;
   -moz-box-shadow: 0 5px 20px -4px black;
-  box-shadow: 0 5px 20px -4px black; }
+  box-shadow: 0 5px 20px -4px black;
+  transition: all ease-out .5s; }
 
 ::-webkit-scrollbar {
   width: 5px; }
@@ -6348,4 +6350,11 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #007aff;
   border-radius: 10px; }
+
+.icon {
+  height: 64px;
+  margin: .5rem; }
+
+a:hover .image {
+  transform: rotate(2deg); }
 
