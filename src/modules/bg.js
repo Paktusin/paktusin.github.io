@@ -5,7 +5,6 @@ export default class Bg {
     constructor() {
 
     }
-
     async change(index) {
         $('.bg').each((key, el) => {
             let newBg = $(el).clone();

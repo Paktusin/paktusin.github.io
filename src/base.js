@@ -1,5 +1,4 @@
 export const elements = {
-    content: document.getElementById('content'),
     navLinks: document.querySelectorAll('#mainNav a')
 };
 

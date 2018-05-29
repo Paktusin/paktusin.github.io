@@ -1,6 +1,9 @@
 import './main.scss';
 import Bg from "./modules/bg";
 import {elements} from './base';
+import $ from 'jquery';
+
+window.$ = global.$ = $;
 
 const hashChange = () => {
     const hash = location.hash.replace('#', '');
@@ -16,24 +19,53 @@ const hashChange = () => {
     })
 };
 
-const aboutCtrl = () => {
+const aboutCtrl = (name) => {
     bg.change(0);
-    elements.content.innerHTML = require('./views/about.html');
+    changeContent(name, require('./views/about.html'));
 };
 
-const educationCtrl = () => {
+const educationCtrl = (name) => {
     bg.change(1);
-    elements.content.innerHTML = require('./views/education.html');
+    changeContent(name, require('./views/education.html'));
 };
 
-const skillsCtrl = () => {
+const skillsCtrl = (name) => {
     bg.change(3);
-    elements.content.innerHTML = require('./views/skills.html');
+    changeContent(name, require('./views/skills.html'));
 };
 
-const projectsCtrl = () => {
+const projectsCtrl = (name) => {
     bg.change(2);
-    elements.content.innerHTML = require('./views/projects.html');
+    changeContent(name, require('./views/projects.html'));
+};
+
+const changeContent = (name, content) => {
+    let linkEl = $(`a[href="#${name}"]`);
+    console.log(linkEl, name);
+    let contentEl = $('.content');
+    contentEl.animate({opacity: 0}, 200, () => {
+        contentEl.css({height: 'auto', width: '100%'});
+        let oldContent = contentEl.find('.body');
+        let newContent = oldContent.clone();
+        newContent.html(content);
+        newContent.insertBefore(oldContent);
+        oldContent.remove();
+        const size = {height: contentEl.height(), width: contentEl.width()};
+        const pos = contentEl.offset();
+        newContent.fadeOut(0);
+        contentEl.css({
+            height: 0,
+            width: 0,
+            opacity: 1,
+            position: 'absolute',
+            left: $(window).width / 2,
+            top: $(window).height() / 2
+        });
+        contentEl.animate({height: size.height, width: size.width, left: pos.left, top: pos.top}, 200, () => {
+            newContent.fadeIn(200);
+            contentEl.css({height: 'auto', width: '100%', top: 0, left: 0, position: 'relative'});
+        })
+    });
 };
 
 const routes = {
