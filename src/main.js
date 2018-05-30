@@ -2,10 +2,15 @@ import './main.scss';
 import Bg from "./modules/bg";
 import {elements} from './base';
 import $ from 'jquery';
+import moment from 'moment';
+import countdown from 'countdown';
 
 window.$ = global.$ = $;
 
+let expTimer;
+
 const hashChange = () => {
+    clearInterval(expTimer);
     const hash = location.hash.replace('#', '');
     if (hash.length > 0 && routes[hash] instanceof Function) {
         routes[hash](hash);
@@ -22,6 +27,16 @@ const hashChange = () => {
 const aboutCtrl = (name) => {
     bg.change(0);
     changeContent(name, require('./views/about.html'));
+    expTimer = setInterval(updateExpTime, 1000);
+};
+
+const updateExpTime = () => {
+    $('#devExp').html(getExpString(moment('2015-09-01')));
+    $('#allExp').html(getExpString(moment('2012-01-01')));
+};
+
+const getExpString = (from) => {
+    return countdown(from.toDate()).toString();
 };
 
 const educationCtrl = (name) => {
