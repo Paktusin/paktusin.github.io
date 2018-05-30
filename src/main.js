@@ -8,20 +8,26 @@ import countdown from 'countdown';
 window.$ = global.$ = $;
 
 let expTimer;
+const state = {
+    pageLoading: false
+};
 
 const hashChange = () => {
-    clearInterval(expTimer);
-    const hash = location.hash.replace('#', '');
-    if (hash.length > 0 && routes[hash] instanceof Function) {
-        routes[hash](hash);
-    } else {
-        location.hash = 'about';
+    if (!state.pageLoading) {
+        console.log(state.pageLoading);
+        clearInterval(expTimer);
+        const hash = location.hash.replace('#', '');
+        if (hash.length > 0 && routes[hash] instanceof Function) {
+            routes[hash](hash);
+        } else {
+            location.hash = 'about';
+        }
+        elements.navLinks.forEach(el => {
+            el.classList.remove('active');
+            const isActive = el.getAttribute('href').indexOf(hash) !== -1;
+            if (isActive) el.classList.add('active');
+        })
     }
-    elements.navLinks.forEach(el => {
-        el.classList.remove('active');
-        const isActive = el.getAttribute('href').indexOf(hash) !== -1;
-        if (isActive) el.classList.add('active');
-    })
 };
 
 const aboutCtrl = (name) => {
@@ -55,6 +61,7 @@ const projectsCtrl = (name) => {
 };
 
 const changeContent = (name, content) => {
+    state.pageLoading = true;
     let contentEl = $('.content');
     contentEl.animate({opacity: 0}, 100, () => {
         contentEl.css({height: 'auto', width: '100%'});
@@ -77,6 +84,7 @@ const changeContent = (name, content) => {
         contentEl.animate({height: size.height, width: size.width, left: pos.left, top: pos.top}, 200, () => {
             newContent.fadeIn(200);
             contentEl.css({height: 'auto', width: '100%', top: 0, left: 0, position: 'relative'});
+            state.pageLoading = false;
         })
     });
 };
