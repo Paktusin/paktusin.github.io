@@ -1,5 +1,8 @@
+import $ from 'jquery'
+
 export const elements = {
-    navLinks: document.querySelectorAll('#mainNav a')
+    navLinks: document.querySelectorAll('#mainNav a'),
+    contentBox: $('.content')
 };
 
 export const images = [

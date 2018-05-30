@@ -14,7 +14,6 @@ const state = {
 
 const hashChange = () => {
     if (!state.pageLoading) {
-        console.log(state.pageLoading);
         clearInterval(expTimer);
         const hash = location.hash.replace('#', '');
         if (hash.length > 0 && routes[hash] instanceof Function) {
@@ -31,8 +30,7 @@ const hashChange = () => {
 };
 
 const aboutCtrl = (name) => {
-    bg.change(0);
-    changeContent(name, require('./views/about.html'));
+    changeContent(name, require('./views/about.html'),0);
     expTimer = setInterval(updateExpTime, 1000);
 };
 
@@ -46,47 +44,48 @@ const getExpString = (from) => {
 };
 
 const educationCtrl = (name) => {
-    bg.change(1);
-    changeContent(name, require('./views/education.html'));
+    changeContent(name, require('./views/education.html'),1);
 };
 
 const skillsCtrl = (name) => {
-    bg.change(3);
-    changeContent(name, require('./views/skills.html'));
+    changeContent(name, require('./views/skills.html'),3);
 };
 
 const projectsCtrl = (name) => {
-    bg.change(2);
-    changeContent(name, require('./views/projects.html'));
+    changeContent(name, require('./views/projects.html'),2);
 };
 
-const changeContent = (name, content) => {
+const changeContent = (name, content, bgkey) => {
     state.pageLoading = true;
-    let contentEl = $('.content');
-    contentEl.animate({opacity: 0}, 100, () => {
-        contentEl.css({height: 'auto', width: '100%'});
-        let oldContent = contentEl.find('.body');
-        let newContent = oldContent.clone();
-        newContent.html(content);
-        newContent.insertBefore(oldContent);
-        oldContent.remove();
-        const size = {height: contentEl.height(), width: contentEl.width()};
-        const pos = contentEl.offset();
-        newContent.fadeOut(0);
-        contentEl.css({
-            height: 0,
-            width: 0,
-            opacity: 1,
-            position: 'absolute',
-            left: $(window).width() / 2,
-            top: $(window).height() / 2
-        });
-        contentEl.animate({height: size.height, width: size.width, left: pos.left, top: pos.top}, 200, () => {
-            newContent.fadeIn(200);
-            contentEl.css({height: 'auto', width: '100%', top: 0, left: 0, position: 'relative'});
-            state.pageLoading = false;
-        })
+    const contentEl = elements.contentBox;
+    contentEl.css({opacity:0});
+    const contentBody = contentEl.find('.body');
+    const contentBg = contentEl.find('.bg');
+    contentBody.html(content);
+    const size = {height: contentEl.height(), width: contentEl.width()};
+    const pos = contentEl.offset();
+    contentBody.hide();
+    contentBg.hide();
+    contentEl.css({
+        height: 0,
+        width: 0,
+        opacity: 1,
+        position: 'absolute',
+        left: $(window).width() / 2,
+        top: $(window).height() / 2
     });
+    contentEl.animate({height: size.height, width: size.width, left: pos.left, top: pos.top}, 200, () => {
+        contentEl.css({height: 'auto', width: '100%', top: 0, left: 0, position: 'relative'});
+        contentBody.show();
+        contentBg.show();
+        resizeGlass();
+        bg.change(bgkey);
+        state.pageLoading = false;
+    });
+};
+
+const resizeGlass = () => {
+    elements.contentBox.find('.bg').css({width: elements.contentBox.width(), height: elements.contentBox.height()})
 };
 
 const routes = {
@@ -97,4 +96,10 @@ const routes = {
 };
 
 ['hashchange', 'load'].forEach(el => window.addEventListener(el, hashChange));
-const bg = new Bg(document.querySelector('.content .bg'));
+window.addEventListener('resize', resizeGlass);
+const bg = new Bg();
+
+window.fadeIn = (e) => {
+    console.log(e);
+    $(e.target).fadeIn(200);
+};
