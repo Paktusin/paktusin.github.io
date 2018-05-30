@@ -40,10 +40,8 @@ const projectsCtrl = (name) => {
 };
 
 const changeContent = (name, content) => {
-    let linkEl = $(`a[href="#${name}"]`);
-    console.log(linkEl, name);
     let contentEl = $('.content');
-    contentEl.animate({opacity: 0}, 200, () => {
+    contentEl.animate({opacity: 0}, 100, () => {
         contentEl.css({height: 'auto', width: '100%'});
         let oldContent = contentEl.find('.body');
         let newContent = oldContent.clone();
@@ -58,7 +56,7 @@ const changeContent = (name, content) => {
             width: 0,
             opacity: 1,
             position: 'absolute',
-            left: $(window).width / 2,
+            left: $(window).width() / 2,
             top: $(window).height() / 2
         });
         contentEl.animate({height: size.height, width: size.width, left: pos.left, top: pos.top}, 200, () => {

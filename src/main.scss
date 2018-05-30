@@ -1,5 +1,5 @@
 $primary: rgb(0, 122, 255);
-$secondary: rgb(90, 200, 250);
+$secondary: rgb(88, 86, 214);
 $font-family-base: 'SF';
 $navbar-light-active-color: $primary;
 $navbar-light-hover-color: $primary;
@@ -109,6 +109,7 @@ body {
 .icon {
   height: 64px;
   margin: .5rem;
+  max-width: 100%;
 }
 
 a:hover {
@@ -116,3 +117,34 @@ a:hover {
     transform: rotate(2deg);
   }
 }
+
+@include media-breakpoint-down(sm) {
+  .bg {
+    display: none !important;
+  }
+  body {
+    $first: rgb(172, 159, 255);
+    $second: rgb(125, 185, 232);
+    background: $first;
+    background: -moz-linear-gradient(top, $first 0%, $second 100%);
+    background: -webkit-linear-gradient(top, $first 0%, $second 100%);
+    background: linear-gradient(to bottom, $first 0%, $second 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc99ff', endColorstr='#7db9e8',GradientType=0 );
+  }
+}
+
+.social {
+  .link {
+    &:hover {
+      text-decoration: none;
+      img{
+        transform: scale(1.1);
+      }
+    }
+    img.icon {
+      transition: all ease .2s;
+      width: 64px;
+    }
+  }
+}
+
