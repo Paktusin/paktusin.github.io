@@ -64,7 +64,7 @@ body {
       @include background;
       $glass-blur: 7px;
       content: '';
-      position: fixed;
+      position: absolute;
       z-index: -1;
       -webkit-filter: blur($glass-blur);
       -moz-filter: blur($glass-blur);
