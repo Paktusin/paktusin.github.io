@@ -1,63 +1,53 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = (app, env) => {
-    console.log(env.mode);
-    const config = {
-        entry: [
-            "babel-polyfill",
-            "./src/main"
-        ],
-        output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: "[name].[hash].js"
-        },
-        devServer: {
-            contentBase: path.join(__dirname, './'),
-            open: true
-        },
-        plugins: [
-            new CleanWebpackPlugin(['dist']),
-            new htmlWebpackPlugin({
-                filename: '../index.html',
-                template: './src/index.html'
-            }),
-            new MiniCssExtractPlugin({filename: "[name].[hash].css",})
-        ],
-        module: {
-            rules: [
-                {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: {
-                        loader: 'babel-loader'
-                    }
-                },
-                {
-                    test: /\.scss$/,
-                    use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-                },
-                {
-                    test: /\.(png|jpg|gif|woff|svg)$/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {}
-                        }
-                    ]
-                },
-                {
-                    test: /\.html/,
-                    use: 'raw-loader'
+module.exports = {
+    entry: {
+        app: './src/index.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: "[name].[chunkhash].js",
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: '/node_modules/',
+                use: {
+                    loader: 'babel-loader'
                 }
-            ]
-        }
-    };
-    if (env.mode === 'production') {
-        config.plugins.push(new OptimizeCssAssetsPlugin({}));
+            },
+            {
+                test: /\.(s)css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            inject: 'head',
+            template: path.join(__dirname, 'src/index.html')
+        }),
+        new CleanWebpackPlugin(['dist']),
+        new MiniCssExtractPlugin({
+            filename: "[name].[hash].css",
+        }),
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 3000
     }
-    return config;
 };
