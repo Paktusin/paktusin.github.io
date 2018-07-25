@@ -1,4 +1,4 @@
-import './main.scss';
+import '../../src/css/main.scss';
 import Bg from "./modules/bg";
 import {elements} from './base';
 import $ from 'jquery';

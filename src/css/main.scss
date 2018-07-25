@@ -13,7 +13,7 @@ $container-max-widths: (
         xl: 720px
 );
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @mixin background {
   background: no-repeat top center fixed;
@@ -22,7 +22,7 @@ $container-max-widths: (
 
 @font-face {
   font-family: 'SF';
-  src: url('fonts/SFUIDisplay-Light.woff') format('woff');
+  src: url('../../old/src/fonts/SFUIDisplay-Light.woff') format('woff');
 }
 
 body {
