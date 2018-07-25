@@ -4,10 +4,6 @@ class controller {
     constructor() {
 
     }
-
-    $onInit() {
-        console.log('mainNav init')
-    }
 }
 
 const mainNav = angular
