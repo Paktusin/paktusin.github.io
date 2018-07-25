@@ -6,14 +6,16 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
+import bgs from "./bgs";
+import bG from "./components/bG/bG";
 
-const app = angular.module('app', [uiRouter, mainNav.name])
-    .config(($stateProvider, $urlRouterProvider,$transitions) => {
-        console.log($transitions)
+
+const app = angular.module('app', [uiRouter, mainNav.name, bG.name])
+    .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('about', {
                 url: '/about',
-                template: aboutTemplate
+                template: aboutTemplate,
             })
             .state('education', {
                 url: '/education',
@@ -29,9 +31,7 @@ const app = angular.module('app', [uiRouter, mainNav.name])
             });
         $urlRouterProvider.otherwise('about');
     })
-    .controller('mainCtrl', ['$rootScope', ($rootScope) => {
-        $rootScope.$on('$stateChangeSuccess', (...props) => {
-            console.log('some')
-        });
-    }])
+    .controller('mainCtrl', ($rootScope, $scope) => {
+        $scope.getBgs = () => Object.keys(bgs).map(key => bgs[key]);
+    })
 ;

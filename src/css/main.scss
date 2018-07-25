@@ -30,7 +30,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #EEE;
-  > .bg {
+  .bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -48,9 +48,8 @@ body {
   padding: 65px .5rem .5rem .5rem;
   display: flex;
   flex: 1 auto;
-  .content {
+  #content {
     position: relative;
-    //flex: 1 auto;
     width: 100%;
     border: 1px $border-color solid;
     border-radius: .5rem;
@@ -59,11 +58,11 @@ body {
     -webkit-box-shadow: $shadow;
     -moz-box-shadow: $shadow;
     box-shadow: $shadow;
-    > .bg {
+    .bg {
       @include background;
       $glass-blur: 7px;
       content: '';
-      position: absolute;
+      position: fixed;
       z-index: -1;
       -webkit-filter: blur($glass-blur);
       -moz-filter: blur($glass-blur);
@@ -134,7 +133,7 @@ a:hover {
   .link {
     &:hover {
       text-decoration: none;
-      img{
+      img {
         transform: scale(1.1);
       }
     }
@@ -143,8 +142,4 @@ a:hover {
       width: 64px;
     }
   }
-}
-
-.bg{
-  display:none
 }
