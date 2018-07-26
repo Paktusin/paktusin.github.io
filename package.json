@@ -1,11 +1,13 @@
 {
-  "name": "aboutMe",
+  "name": "about_me",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.7.2",
-    "angular-ui-router": "^1.0.19"
+    "angular-ui-router": "^1.0.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

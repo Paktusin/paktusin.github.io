@@ -16,7 +16,7 @@ $container-max-widths: (
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 @mixin background {
-  background: no-repeat top center fixed;
+  background: no-repeat top fixed;
   background-size: cover;
 }
 
@@ -30,17 +30,19 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #EEE;
-  .bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    @include background;
-    -webkit-filter: grayscale(30%);
-    -moz-filter: grayscale(30%);
-    filter: grayscale(30%);
-    z-index: -2;
+  .back {
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include background;
+      -webkit-filter: grayscale(30%);
+      -moz-filter: grayscale(30%);
+      filter: grayscale(30%);
+      z-index: -2;
+    }
   }
 }
 
@@ -60,9 +62,11 @@ body {
     box-shadow: $shadow;
     .bg {
       @include background;
+      width: 100%;
+      height: 100%;
       $glass-blur: 7px;
       content: '';
-      position: fixed;
+      position: absolute;
       z-index: -1;
       -webkit-filter: blur($glass-blur);
       -moz-filter: blur($glass-blur);
@@ -111,21 +115,6 @@ body {
 a:hover {
   .image {
     transform: rotate(2deg);
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .bg {
-    display: none !important;
-  }
-  body {
-    $first: rgb(172, 159, 255);
-    $second: rgb(125, 185, 232);
-    background: $first;
-    background: -moz-linear-gradient(top, $first 0%, $second 100%);
-    background: -webkit-linear-gradient(top, $first 0%, $second 100%);
-    background: linear-gradient(to bottom, $first 0%, $second 100%);
-    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc99ff', endColorstr='#7db9e8',GradientType=0 );
   }
 }
 
