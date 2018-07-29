@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'UA-104908497-2');
-    </script>
     <meta charset="utf-8"/>
     <title>Mikahil Davlichin - Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +22,11 @@
     </div>
     <main-nav></main-nav>
     <div id="content">
+        <noscript>
+            <div class="alert alert-danger text-center">
+                This page use JavaScript. Please Enable it!
+            </div>
+        </noscript>
         <b-g resize="content"></b-g>
         <div class="p-3 body">
             <ui-view></ui-view>
@@ -40,5 +34,18 @@
     </div>
 </div>
 <b-g class="back"></b-g>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-104908497-2');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
 </body>
 </html>

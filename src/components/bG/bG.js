@@ -1,4 +1,4 @@
-import template from './bG.html'
+import templateUrl from './bG.html'
 import bgs from "../../bgs";
 
 class controller {
@@ -17,7 +17,7 @@ class controller {
 const bG = angular.module('bG', [])
     .component('bG', {
         controller,
-        template
+        templateUrl
     });
 
 

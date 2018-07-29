@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'UA-104908497-2');
-    </script>
     <meta charset="utf-8"/>
     <title>Mikahil Davlichin - Web Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +14,7 @@
     <meta property="og:image" content="https://imgur.com/v5TADtI.jpg">
     <meta property="og:description" content="Info page">
     <meta name="google-site-verification" content="AtXZD9s2nwuAQW_1drepNHnwZcDkz0Zc0JXZ1M4Nhzs"/>
-<link href="dist/app.2967e210c6cdedfeddb5.css" rel="stylesheet"><script type="text/javascript" src="dist/app.b9da0b18c07732bc4b73.js"></script></head>
+<link href="dist/app.b14b2b37f51b6d420d81.css" rel="stylesheet"></head>
 <body ng-app="app">
 <div class="container page" ng-controller="mainCtrl">
     <div ng-hide="true">
@@ -33,6 +22,11 @@
     </div>
     <main-nav></main-nav>
     <div id="content">
+        <noscript>
+            <div class="alert alert-danger text-center">
+                This page use JavaScript. Please Enable it!
+            </div>
+        </noscript>
         <b-g resize="content"></b-g>
         <div class="p-3 body">
             <ui-view></ui-view>
@@ -40,5 +34,18 @@
     </div>
 </div>
 <b-g class="back"></b-g>
-</body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-104908497-2');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="dist/app.d8a4a2d1cebb967a5027.js"></script></body>
 </html>

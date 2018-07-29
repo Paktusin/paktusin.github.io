@@ -1,16 +1,9 @@
-import template from './mainNav.html'
-
-class controller {
-    constructor() {
-
-    }
-}
+import templateUrl from './mainNav.html'
 
 const mainNav = angular
     .module('mainNav', [])
     .component('mainNav', {
-        controller,
-        template
+        templateUrl
     })
 ;
 
