@@ -10,7 +10,6 @@ class controller {
     }
 
     bgChange(tran, state) {
-        console.log(tran, state);
         if (state && state.name) {
             this.style = {backgroundImage: `url(${bgs[state.name]})`};
         }
