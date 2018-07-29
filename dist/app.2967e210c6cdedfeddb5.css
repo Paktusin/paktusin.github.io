@@ -6389,6 +6389,15 @@ body {
 a:hover .image {
   transform: rotate(2deg); }
 
+@media (max-width: 767.98px) {
+  .bg {
+    display: none !important; }
+  body {
+    background: #ac9fff;
+    background: -moz-linear-gradient(top, #ac9fff 0%, #7db9e8 100%);
+    background: -webkit-linear-gradient(top, #ac9fff 0%, #7db9e8 100%);
+    background: linear-gradient(to bottom, #ac9fff 0%, #7db9e8 100%); } }
+
 .social .link:hover {
   text-decoration: none; }
   .social .link:hover img {
