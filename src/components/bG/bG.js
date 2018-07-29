@@ -4,13 +4,16 @@ import bgs from "../../bgs";
 class controller {
     'ngInject';
 
-    constructor($transitions) {
-        $transitions.onEnter('', this.bgChange.bind(this));
-        this.style = {};
+    constructor($transitions,$location) {
+        $transitions.onEnter({}, this.bgChange.bind(this));
+        this.style = {backgroundImage: `url(${bgs[$location.path().replace('/','')]})`};
     }
 
     bgChange(tran, state) {
-        this.style = {...this.style, backgroundImage: `url(${bgs[state.name]})`};
+        console.log(tran, state);
+        if (state && state.name) {
+            this.style = {backgroundImage: `url(${bgs[state.name]})`};
+        }
     }
 }
 

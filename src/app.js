@@ -8,8 +8,6 @@ import bgs from "./bgs";
 import bG from "./components/bG/bG";
 import moment from 'moment';
 
-console.log('hello!');
-
 angular.module('app', ['ui.router', mainNav.name, bG.name])
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider

@@ -25,6 +25,10 @@ $container-max-widths: (
   src: url('../../old/src/fonts/SFUIDisplay-Light.woff') format('woff');
 }
 
+*:focus{
+  outline: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
