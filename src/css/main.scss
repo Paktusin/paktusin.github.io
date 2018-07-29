@@ -1,11 +1,11 @@
-$primary: rgb(0, 122, 255);
-$secondary: rgb(88, 86, 214);
+$primary: #0053AD;
+$secondary: #80d010;
 $font-family-base: 'SF';
 $navbar-light-color:black;
 $navbar-light-active-color: $primary;
 $navbar-light-hover-color: $primary;
 $glass-color: rgb(218, 245, 255);
-$border-color: rgba($glass-color, 0.3);
+$border-color: rgba($glass-color, 0.5);
 
 $container-max-widths: (
         sm: 540px,
