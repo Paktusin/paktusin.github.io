@@ -10,6 +10,7 @@ import moment from 'moment/min/moment.min';
 
 angular.module('app', ['ui.router', mainNav.name, bG.name])
     .config(($stateProvider, $urlRouterProvider) => {
+
         $stateProvider
             .state('about', {
                 url: '/about',
