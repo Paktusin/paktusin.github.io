@@ -1,6 +1,7 @@
 $primary: rgb(0, 122, 255);
 $secondary: rgb(88, 86, 214);
 $font-family-base: 'SF';
+$navbar-light-color:black;
 $navbar-light-active-color: $primary;
 $navbar-light-hover-color: $primary;
 $glass-color: rgb(218, 245, 255);
@@ -91,9 +92,6 @@ body {
   -moz-box-shadow: $shadow;
   box-shadow: $shadow;
   transition: all ease-out .5s;
-}
-
-#mainNav {
 }
 
 ::-webkit-scrollbar {

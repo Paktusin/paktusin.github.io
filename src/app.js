@@ -6,7 +6,7 @@ import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import bgs from "./bgs";
 import bG from "./components/bG/bG";
-import moment from 'moment';
+import moment from 'moment/min/moment.min';
 
 angular.module('app', ['ui.router', mainNav.name, bG.name])
     .config(($stateProvider, $urlRouterProvider) => {
