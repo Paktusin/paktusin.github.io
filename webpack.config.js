@@ -9,7 +9,7 @@ module.exports = (app, env) => {
     console.log(env.mode);
     const prod = env.mode === 'production';
     const config = {
-        optimization:{
+        optimization: {
             minimizer: [
                 new UglifyJsPlugin({
                     cache: true,
@@ -44,8 +44,19 @@ module.exports = (app, env) => {
                 //     use: 'raw-loader'
                 // },
                 {
-                    test: /\.(png|jpg|gif|woff|html)$/,
-                    exclude: path.resolve(__dirname,'src/index.html'),
+                    test: /\.(html)$/,
+                    exclude: path.resolve(__dirname, 'src/index.html'),
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                publicPath: prod ? 'dist' : ''
+                            }
+                        }
+                    ]
+                },
+                {
+                    test: /\.(png|jpg|gif|woff)$/,
                     use: [
                         {
                             loader: 'file-loader',
