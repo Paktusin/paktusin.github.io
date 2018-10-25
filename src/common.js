@@ -18,7 +18,6 @@ function updateGlitch() {
 }
 
 $(() => {
-    if (window.location.hostname !== 'localhost') document.getElementById('music').play();
     setInterval(updateGlitch, 50);
     setInterval(updateTime, 1000);
     const table = $('<table></table>');

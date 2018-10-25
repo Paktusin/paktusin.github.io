@@ -80,24 +80,6 @@ body {
   $light: rgba($violet, .3);
   font-size: 5rem;
   color: #fff;
-  &:after {
-    border: none;
-    height: 100%;
-    width: 100%;
-    background: none;
-    content: 'DEVELOPER';
-    left: 0;
-    position: absolute;
-    text-shadow: 1px 1px 0 #ccc,
-    2px 2px 0 #eee,
-    3px 3px 0 #ddd,
-    4px 4px 0 #ccc,
-    5px 5px 0 #bbb,
-    6px 6px 0 #aaa,
-    7px 7px 0 #999,
-    8px 8px 0 #888;
-    z-index: -1;
-  }
 }
 
 .icon {

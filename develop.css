@@ -1,7 +1,25 @@
-.develop {
+.developer {
     background: -moz-linear-gradient(top, rgb(10, 10, 51) 0%, rgb(31, 102, 196) 22%, rgb(255, 255, 255) 43%, rgb(33, 0, 0) 47%, rgb(22, 0, 0) 68%, rgb(132, 0, 0) 79%, rgb(132, 0, 0) 80%, rgb(255, 137, 137) 100%);
     background: -webkit-linear-gradient(top, rgb(10, 10, 51) 0%, rgb(31, 102, 196) 22%, rgb(255, 255, 255) 43%, rgb(33, 0, 0) 47%, rgb(22, 0, 0) 68%, rgb(132, 0, 0) 79%, rgb(132, 0, 0) 80%, rgb(255, 137, 137) 100%);
     background: linear-gradient(to bottom, rgb(10, 10, 51) 0%, rgb(31, 102, 196) 22%, rgb(255, 255, 255) 43%, rgb(33, 0, 0) 47%, rgb(22, 0, 0) 68%, rgb(132, 0, 0) 79%, rgb(132, 0, 0) 80%, rgb(255, 137, 137) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.developer:after {
+    border: none;
+    height: 100%;
+    width: 100%;
+    background: none;
+    content: 'DEVELOPER';
+    left: 0;
+    position: absolute;
+    text-shadow: 1px 1px 0 #ccc,
+    2px 2px 0 #eee,
+    3px 3px 0 #ddd,
+    4px 4px 0 #ccc,
+    5px 5px 0 #bbb,
+    6px 6px 0 #aaa,
+    7px 7px 0 #999,
+    8px 8px 0 #888;
+    z-index: -1;
 }
