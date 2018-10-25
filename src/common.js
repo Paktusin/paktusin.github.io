@@ -17,11 +17,9 @@ function updateGlitch() {
     $('.glitch').css("background-position", '0% -' + (Math.round(i) * 1080) + 'px');
 }
 
-$(() => {
-    setInterval(updateGlitch, 50);
-    setInterval(updateTime, 1000);
+function createFloor() {
     const table = $('<table></table>');
-    const n = 30;
+    const n = Math.round($(window).innerWidth() / 63);
     for (let i = 0; i < n; i++) {
         const tr = $('<tr></tr>');
         for (let j = 0; j < n * 2; j++) {
@@ -29,7 +27,15 @@ $(() => {
         }
         table.append(tr);
     }
-    $('#floor').append($('<div></div>').append(table));
+    $('#floor').html($('<div></div>').append(table));
+}
+
+window.addEventListener('resize', createFloor);
+
+$(() => {
+    setInterval(updateGlitch, 50);
+    setInterval(updateTime, 1000);
+    createFloor();
     setTimeout(() => {
         neonOn();
         setInterval(() => {

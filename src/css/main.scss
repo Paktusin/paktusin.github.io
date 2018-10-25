@@ -24,13 +24,33 @@
 body {
   font-family: 'vhs', serif;
   color: wheat;
-  filter: blur(1px);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.blur{
+  filter: blur(1px);
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background: -moz-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.me {
+  width: 150px;
+  height: 150px;
+  @include media-breakpoint-up(sm) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 .social {
@@ -43,7 +63,6 @@ body {
     }
     img.icon {
       transition: all ease .2s;
-      width: 64px;
     }
   }
 }
@@ -62,7 +81,10 @@ body {
 .neon {
   line-height: .5;
   font-family: 'Neon', serif;
-  font-size: 5rem;
+  font-size: 3rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 5rem;
+  }
 }
 
 .vhs {
@@ -78,25 +100,36 @@ body {
   position: relative;
   $neon: $violet;
   $light: rgba($violet, .3);
-  font-size: 5rem;
+  font-size: 3rem;
   color: #fff;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 5rem;
+  }
 }
 
 .icon {
-  height: 64px;
+  height: 48px;
+  width: 48px;
   margin: .5rem;
-  max-width: 100%;
+  @include media-breakpoint-up(sm) {
+    height: 64px;
+    width: 64px;
+  }
 }
 
 .city {
-  background-position: top center;
-  background-size: contain;
-  background-image: url(../img/city.svg);
-  position: fixed;
-  top: 19vh;
-  height: 300px;
   width: 100%;
-  color: #7E0788;
+  position: fixed;
+  top: 30vh;
+  >div{
+    color: #7E0788;
+    background-image: url(../img/city.svg);
+    background-position: top center;
+    background-size: contain;
+    width: 70%;
+    height: 15vh;
+  }
 }
 
 .glitch {
@@ -117,7 +150,7 @@ body {
   }
 }
 
-.name{
+.name {
   font-family: 'Rock Salt', cursive;
   color: $red;
   text-shadow: 2px 2px 0 black;

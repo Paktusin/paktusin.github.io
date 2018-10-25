@@ -33,14 +33,17 @@
 </head>
 <body id="gained" ng-app="app">
 <audio autoplay loop id="music" src="/back.ogg" type="audio/ogg"></audio>
-<div id="floor"></div>
-<div class="city"></div>
-<div class="vhs">PLAY&#9658;</div>
-<div class="glitch"></div>
-<div class="container d-flex flex-column justify-content-center" id="main">
+<div class="bg blur"></div>
+<div id="floor" class="blur"></div>
+<!--<div class="city d-flex flex-row justify-content-center">-->
+    <!--<div></div>-->
+<!--</div>-->
+<div class="vhs blur">PLAY&#9658;</div>
+<div class="glitch blur"></div>
+<div class="container d-flex flex-column justify-content-center blur" id="main">
     <ui-view></ui-view>
 </div>
-<div id="time" class="vhs">0000-00-00 --:--:--</div>
+<div id="time" class="vhs blur">0000-00-00 --:--:--</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
