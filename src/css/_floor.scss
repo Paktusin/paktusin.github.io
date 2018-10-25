@@ -1,0 +1,18 @@
+@import "var";
+
+#floor {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: -50%;
+  right: -50%;
+  transform: perspective(300px) rotate3d(180, 0, 0, 45deg);
+  table {
+    width: 200%;
+    height: 100%;
+    border-collapse: collapse;
+    td {
+      border: 3px rgba($pink, 0.3) solid;
+    }
+  }
+}

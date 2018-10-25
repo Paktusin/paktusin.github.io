@@ -4,13 +4,10 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import bgs from "./bgs";
-import bG from "./components/bG/bG";
 import moment from 'moment/min/moment.min';
+import './grained.min.js';
 
-console.log('hello!');
-
-angular.module('app', ['ui.router', mainNav.name, bG.name])
+angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('about', {
@@ -31,9 +28,6 @@ angular.module('app', ['ui.router', mainNav.name, bG.name])
                 templateUrl: skillsTemplate
             });
         $urlRouterProvider.otherwise('about');
-    })
-    .controller('mainCtrl', ($rootScope, $scope) => {
-        $scope.getBgs = () => Object.keys(bgs).map(key => bgs[key]);
     })
     .controller('aboutCtrl', ($interval, $scope) => {
         const getCountDown = (date_string) => {

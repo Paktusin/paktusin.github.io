@@ -20,7 +20,8 @@ module.exports = (app, env) => {
             ]
         },
         entry: {
-            app: './src/app.js'
+            app: './src/app.js',
+            common: './src/common.js'
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -56,7 +57,7 @@ module.exports = (app, env) => {
                     ]
                 },
                 {
-                    test: /\.(png|jpg|gif|woff)$/,
+                    test: /\.(png|jpg|gif|ttf)$/,
                     use: [
                         {
                             loader: 'file-loader',
@@ -77,7 +78,7 @@ module.exports = (app, env) => {
             })
         ],
         devServer: {
-            contentBase: path.join(__dirname, 'dist'),
+            contentBase: path.join(__dirname, './'),
             compress: true,
             port: 3000
         }

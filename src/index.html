@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'UA-104908497-2');
     </script>
@@ -26,27 +29,14 @@
     <meta name="google-site-verification" content="AtXZD9s2nwuAQW_1drepNHnwZcDkz0Zc0JXZ1M4Nhzs"/>
     <meta name="Description" content="Author: M.A. Davlichin, Category: CV">
 </head>
-<body ng-app="app">
-<div class="container page" ng-controller="mainCtrl">
-    <div ng-hide="true">
-        <img ng-repeat="bg in getBgs()" ng-src="{{bg}}">
-    </div>
-    <main-nav></main-nav>
-    <div id="content">
-        <noscript>
-            <div class="alert alert-danger text-center">
-                This page use JavaScript. Please Enable it!
-            </div>
-        </noscript>
-        <b-g resize="content"></b-g>
-        <div class="p-3 body">
-            <ui-view></ui-view>
-        </div>
-    </div>
+<body id="gained" ng-app="app">
+<div id="floor"></div>
+<span class="vhs" style="left: 2rem; top:1rem;">PLAY&#9658;</span><br/>
+<div class="container" id="main">
+    <ui-view></ui-view>
 </div>
-<b-g class="back"></b-g>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
-<span></span>
 </body>
 </html>
