@@ -22,7 +22,8 @@
 }
 
 body {
-  overflow: hidden;
+  font-family: 'vhs', serif;
+  color: wheat;
   filter: blur(1px);
   min-height: 100vh;
   display: flex;
@@ -30,6 +31,21 @@ body {
   background: -moz-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(19, 23, 140, 1) 1%, rgba(242, 0, 255, 1) 35%, rgba(242, 0, 255, 1) 41%, rgba(57, 0, 68, 1) 44%, rgba(57, 0, 68, 1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.social {
+  .link {
+    &:hover {
+      text-decoration: none;
+      img {
+        transform: scale(1.1);
+      }
+    }
+    img.icon {
+      transition: all ease .2s;
+      width: 64px;
+    }
+  }
 }
 
 #main {
@@ -44,7 +60,7 @@ body {
 }
 
 .neon {
-  line-height: 1;
+  line-height: .5;
   font-family: 'Neon', serif;
   font-size: 5rem;
 }
@@ -100,4 +116,33 @@ body {
   height: 64px;
   margin: .5rem;
   max-width: 100%;
+}
+
+.city {
+  background-position: top center;
+  background-size: contain;
+  background-image: url(../img/city.svg);
+  position: fixed;
+  top: 19vh;
+  height: 300px;
+  width: 100%;
+  color: #7E0788;
+}
+
+.glitch {
+  opacity: .3;
+  background-size: 100% 19440px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  background-image: url(../img/vcr.jpg);
+}
+
+.social {
+  .c-white {
+    background-color: white;
+    border-radius: 50%;
+  }
 }
