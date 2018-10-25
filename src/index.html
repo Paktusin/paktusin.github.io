@@ -28,16 +28,18 @@
     <meta property="og:description" content="Info page">
     <meta name="google-site-verification" content="AtXZD9s2nwuAQW_1drepNHnwZcDkz0Zc0JXZ1M4Nhzs"/>
     <meta name="Description" content="Author: M.A. Davlichin, Category: CV">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 </head>
 <body id="gained" ng-app="app">
 <audio loop id="music" src="/back.ogg" type="audio/ogg"></audio>
-<div class="glitch"></div>
 <div id="floor"></div>
 <div class="city"></div>
-<span class="vhs" style="left: 2rem; top:1rem;">PLAY&#9658;</span>
+<div class="vhs">PLAY&#9658;</div>
+<div class="glitch"></div>
 <div class="container d-flex flex-column justify-content-center" id="main">
     <ui-view></ui-view>
 </div>
+<div id="time" class="vhs">0000-00-00 --:--:--</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>

@@ -5,7 +5,6 @@ import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import moment from 'moment/min/moment.min';
-import './grained.min.js';
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {

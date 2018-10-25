@@ -1,9 +1,15 @@
+import moment from 'moment';
+
 function neonOn() {
     $('.neon').addClass('on');
 }
 
 function brokeNeon() {
     $('.neon').toggleClass('broke');
+}
+
+function updateTime() {
+    $('#time').text(moment().format('YYYY-MM-DD HH:mm:ss'));
 }
 
 function updateGlitch() {
@@ -14,6 +20,7 @@ function updateGlitch() {
 $(() => {
     if (window.location.hostname !== 'localhost') document.getElementById('music').play();
     setInterval(updateGlitch, 50);
+    setInterval(updateTime, 1000);
     const table = $('<table></table>');
     const n = 30;
     for (let i = 0; i < n; i++) {
@@ -23,16 +30,7 @@ $(() => {
         }
         table.append(tr);
     }
-    $('#floor').append(table);
-    // grained('#gained', {
-    //     animate: true,
-    //     patternWidth: 100,
-    //     patternHeight: 100,
-    //     grainOpacity: 0.05,
-    //     grainDensity: 1,
-    //     grainWidth: 2,
-    //     grainHeight: 2
-    // });
+    $('#floor').append($('<div></div>').append(table));
     setTimeout(() => {
         neonOn();
         setInterval(() => {
