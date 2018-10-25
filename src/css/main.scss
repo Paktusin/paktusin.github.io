@@ -1,7 +1,16 @@
+@import "var";
+
+$navbar-light-color: $red;
+$navbar-light-active-color: lighten($red, 15%);
+$navbar-light-hover-color: lighten($red, 30%);
+
+$link-color: $red;
+$link-hover-color: white;
+$link-hover-decoration: none;
+
 @import "~bootstrap/scss/bootstrap";
 @import "neon";
 @import "floor";
-@import "var";
 
 @font-face {
   font-family: 'Neon';
@@ -128,6 +137,12 @@ body {
   }
 }
 
+.skills {
+  .icon {
+    width: auto;
+  }
+}
+
 .city {
   width: 100%;
   position: fixed;
@@ -157,4 +172,29 @@ body {
   font-family: 'Rock Salt', cursive;
   color: $red;
   text-shadow: 2px 2px 0 black;
+}
+
+#mainNav {
+  padding: 1rem .2rem;
+  margin-left: -15px;
+  margin-right: -15px;
+  @extend .name;
+  font-size: .7rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
+}
+
+.image {
+  border: .2rem solid white;
+  transition: all ease-out .3s;
+}
+
+a:hover {
+  .image {
+    $shadow: 0 0 20px 0 red;
+    box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+  }
 }
