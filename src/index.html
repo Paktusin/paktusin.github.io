@@ -38,12 +38,12 @@
 <!--<div class="city d-flex flex-row justify-content-center">-->
     <!--<div></div>-->
 <!--</div>-->
-<div class="vhs blur">PLAY&#9658;</div>
-<div class="glitch blur"></div>
-<div class="container d-flex flex-column justify-content-center blur" id="main">
+<div class="glitch blur d-none d-md-block"></div>
+<div class="container d-flex flex-column justify-content-center blur py-5" id="main">
     <ui-view></ui-view>
 </div>
-<div id="time" class="vhs blur">0000-00-00 --:--:--</div>
+<div class="vhs blur" style="left: 0; top:0">PLAY&#9658;</div>
+<div id="time" class="vhs blur" style="right: 0; bottom:0">0000-00-00 --:--:--</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>

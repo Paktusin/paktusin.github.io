@@ -35,7 +35,6 @@
   },
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --mode=development",
-    "build": "./node_modules/.bin/webpack --mode=production --progress",
-    "deploy": "gh-pages -d dist"
+    "build": "./node_modules/.bin/webpack --mode=production --progress"
   }
 }
