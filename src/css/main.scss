@@ -78,18 +78,6 @@ body {
   position: relative;
   $neon: $violet;
   $light: rgba($violet, .3);
-  $c1: rgb(10, 10, 51);
-  $c2: rgb(31, 102, 196);
-  $c3: rgb(255, 255, 255);
-  $c4: rgb(33, 0, 0);
-  $c5: rgb(22, 0, 0);
-  $c6: rgb(132, 0, 0);
-  $c7: rgb(255, 137, 137);
-  background: -moz-linear-gradient(top, $c1 0%, $c2 22%, $c3 43%, $c4 47%, $c5 68%, $c6 79%, $c6 80%, $c7 100%);
-  background: -webkit-linear-gradient(top, $c1 0%, $c2 22%, $c3 43%, $c4 47%, $c5 68%, $c6 79%, $c6 80%, $c7 100%);
-  background: linear-gradient(to bottom, $c1 0%, $c2 22%, $c3 43%, $c4 47%, $c5 68%, $c6 79%, $c6 80%, $c7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-size: 5rem;
   color: #fff;
   &:after {
