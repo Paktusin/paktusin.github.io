@@ -1,0 +1,22 @@
+.sun {
+  position: fixed;
+  overflow: hidden;
+  top:0;
+  left:0;
+  right:0;
+  bottom:56vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  &:after{
+    filter: blur(3px);
+    content: '';
+    margin-top: 20vh;
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    background: -moz-linear-gradient(top, #fff600 0%, #ff0000 50%, #a600c4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fff600 0%, #ff0000 50%, #a600c4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fff600 0%, #ff0000 50%, #a600c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+}

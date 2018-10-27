@@ -1,0 +1,5 @@
+.rainbow {
+  background: -moz-linear-gradient(top, #2b23ff 0%, #2b23ff 14%, #9c23ff 14%, #9c23ff 28%, #ff2323 28%, #ff2323 40%, #ff9c23 40%, #ff9c23 52%, #fff423 52%, #fff423 52%, #ecff23 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #2b23ff 0%, #2b23ff 14%, #9c23ff 14%, #9c23ff 28%, #ff2323 28%, #ff2323 40%, #ff9c23 40%, #ff9c23 52%, #fff423 52%, #fff423 52%, #ecff23 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #2b23ff 0%, #2b23ff 14%, #9c23ff 14%, #9c23ff 28%, #ff2323 28%, #ff2323 40%, #ff9c23 40%, #ff9c23 52%, #fff423 52%, #fff423 52%, #ecff23 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
