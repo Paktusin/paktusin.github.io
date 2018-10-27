@@ -19,10 +19,10 @@ function updateGlitch() {
 
 function createFloor() {
     const table = $('<table></table>');
-    const n = Math.round($(window).innerWidth() / 63);
+    const n = Math.round($(window).innerWidth() / 75);
     for (let i = 0; i < n; i++) {
         const tr = $('<tr></tr>');
-        for (let j = 0; j < n * 2; j++) {
+        for (let j = 0; j < n; j++) {
             tr.append('<td></td>')
         }
         table.append(tr);
