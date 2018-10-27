@@ -1,0 +1,22 @@
+.palm {
+  position: fixed;
+  left: 0;
+  right: 70vw;
+  @include media-breakpoint-up(sm) {
+    right: 80vw;
+  }
+  top: 0;
+  bottom: 0;
+  background-image: url(../img/palmera.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+  &.right {
+    left: 70vw;
+    right: 0;
+    transform:scaleX(-1);
+    @include media-breakpoint-up(sm) {
+      left: 80vw;
+    }
+  }
+}

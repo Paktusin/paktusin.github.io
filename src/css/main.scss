@@ -12,6 +12,7 @@ $link-hover-decoration: none;
 @import "neon";
 @import "floor";
 @import "sun";
+@import "palm";
 
 @font-face {
   font-family: 'Neon';
@@ -38,6 +39,7 @@ $link-hover-decoration: none;
 }
 
 body {
+  overflow-y: scroll;
   font-family: 'vhs', serif;
   color: wheat;
   min-height: 100vh;
@@ -56,11 +58,11 @@ body {
   right: 0;
   left: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#13178c+1,610096+39,f200ff+43,ffffff+45,f200ff+46,f200ff+46,390044+49,390044+98 */
-  background: rgb(19,23,140); /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(19,23,140,1) 1%, rgba(97,0,150,1) 39%, rgba(242,0,255,1) 43%, rgba(255,255,255,1) 45%, rgba(242,0,255,1) 46%, rgba(242,0,255,1) 46%, rgba(57,0,68,1) 49%, rgba(57,0,68,1) 98%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(19,23,140,1) 1%,rgba(97,0,150,1) 39%,rgba(242,0,255,1) 43%,rgba(255,255,255,1) 45%,rgba(242,0,255,1) 46%,rgba(242,0,255,1) 46%,rgba(57,0,68,1) 49%,rgba(57,0,68,1) 98%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(19,23,140,1) 1%,rgba(97,0,150,1) 39%,rgba(242,0,255,1) 43%,rgba(255,255,255,1) 45%,rgba(242,0,255,1) 46%,rgba(242,0,255,1) 46%,rgba(57,0,68,1) 49%,rgba(57,0,68,1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13178c', endColorstr='#390044',GradientType=0 ); /* IE6-9 */
+  background: rgb(19, 23, 140); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(97, 0, 150, 1) 39%, rgba(242, 0, 255, 1) 43%, rgba(255, 255, 255, 1) 45%, rgba(242, 0, 255, 1) 46%, rgba(242, 0, 255, 1) 46%, rgba(57, 0, 68, 1) 49%, rgba(57, 0, 68, 1) 98%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(19, 23, 140, 1) 1%, rgba(97, 0, 150, 1) 39%, rgba(242, 0, 255, 1) 43%, rgba(255, 255, 255, 1) 45%, rgba(242, 0, 255, 1) 46%, rgba(242, 0, 255, 1) 46%, rgba(57, 0, 68, 1) 49%, rgba(57, 0, 68, 1) 98%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(19, 23, 140, 1) 1%, rgba(97, 0, 150, 1) 39%, rgba(242, 0, 255, 1) 43%, rgba(255, 255, 255, 1) 45%, rgba(242, 0, 255, 1) 46%, rgba(242, 0, 255, 1) 46%, rgba(57, 0, 68, 1) 49%, rgba(57, 0, 68, 1) 98%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13178c', endColorstr='#390044', GradientType=0); /* IE6-9 */
 }
 
 .me {
@@ -103,9 +105,11 @@ body {
 
 .neon {
   font-family: 'Neon', serif;
+  line-height: .5;
+  padding-top: 1rem;
   font-size: 3rem;
   @include media-breakpoint-up(sm) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -123,7 +127,7 @@ body {
 }
 
 .developer {
-  font-family:'metal', sans-serif;
+  font-family: 'metal', sans-serif;
   position: relative;
   $neon: $violet;
   $light: rgba($violet, .3);
@@ -179,7 +183,7 @@ body {
 
 .name {
   font-family: 'Lazer', cursive;
-  color: $red;
+  color: red;
   text-shadow: 2px 2px 5px black;
 }
 
@@ -231,4 +235,15 @@ a:hover {
   transform: rotate(-45deg);
   box-shadow: 0px 0px 2px #555;
   opacity: .7;
+}
+
+.sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 55.3vh;
+  background-image: url(../img/sky.jpg);
+  background-size: cover;
+  opacity: .5;
 }

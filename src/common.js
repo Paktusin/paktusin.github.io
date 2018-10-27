@@ -25,7 +25,7 @@ function createFloor() {
 window.addEventListener('resize', createFloor);
 
 $(() => {
-    setInterval(updateGlitch, 50);
+    if ($(window).innerWidth() > 756) setInterval(updateGlitch, 50);
     setInterval(updateTime, 1000);
     createFloor();
 });
