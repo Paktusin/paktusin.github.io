@@ -4,6 +4,7 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
+import reviewTemplate from './view/review.html'
 import moment from 'moment/min/moment.min';
 
 angular.module('app', ['ui.router', mainNav.name])
@@ -25,7 +26,12 @@ angular.module('app', ['ui.router', mainNav.name])
             .state('skills', {
                 url: '/skills',
                 templateUrl: skillsTemplate
-            });
+            })
+            .state('reviews', {
+                url: '/reviews',
+                templateUrl: reviewTemplate
+            })
+        ;
         $urlRouterProvider.otherwise('about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
