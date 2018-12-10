@@ -27,10 +27,10 @@ angular.module('app', ['ui.router', mainNav.name])
                 url: '/skills',
                 templateUrl: skillsTemplate
             })
-            .state('reviews', {
-                url: '/reviews',
-                templateUrl: reviewTemplate
-            })
+            // .state('reviews', {
+            //     url: '/reviews',
+            //     templateUrl: reviewTemplate
+            // })
         ;
         $urlRouterProvider.otherwise('about');
     })
