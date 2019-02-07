@@ -6,6 +6,7 @@ import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import reviewTemplate from './view/review.html'
 import moment from 'moment/min/moment.min';
+import './cat';
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -27,10 +28,10 @@ angular.module('app', ['ui.router', mainNav.name])
                 url: '/skills',
                 templateUrl: skillsTemplate
             })
-            // .state('reviews', {
-            //     url: '/reviews',
-            //     templateUrl: reviewTemplate
-            // })
+        // .state('reviews', {
+        //     url: '/reviews',
+        //     templateUrl: reviewTemplate
+        // })
         ;
         $urlRouterProvider.otherwise('about');
     })
@@ -60,6 +61,7 @@ angular.module('app', ['ui.router', mainNav.name])
         function brokeNeon() {
             $('.neon').toggleClass('broke');
         }
+
         setTimeout(() => {
             neonOn();
             setInterval(() => {
