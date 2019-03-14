@@ -4,9 +4,9 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import reviewTemplate from './view/review.html'
 import moment from 'moment/min/moment.min';
 import './cat';
+import img from './img/mike.jpg'
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -28,14 +28,12 @@ angular.module('app', ['ui.router', mainNav.name])
                 url: '/skills',
                 templateUrl: skillsTemplate
             })
-        // .state('reviews', {
-        //     url: '/reviews',
-        //     templateUrl: reviewTemplate
-        // })
         ;
         $urlRouterProvider.otherwise('about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
+        $scope.img = img;
+
         const getCountDown = (date_string) => {
             let res = [];
             const now = moment();
@@ -52,24 +50,6 @@ angular.module('app', ['ui.router', mainNav.name])
         $interval(() => {
             $scope.dev_time = getCountDown('2015-09-01');
             $scope.it_time = getCountDown('2012-01-01');
-        }, 1000);
-
-        function neonOn() {
-            $('.neon').addClass('on');
-        }
-
-        function brokeNeon() {
-            $('.neon').toggleClass('broke');
-        }
-
-        setTimeout(() => {
-            neonOn();
-            setInterval(() => {
-                brokeNeon();
-                setTimeout(() => {
-                    brokeNeon();
-                }, 2000);
-            }, 10000);
         }, 1000);
     })
 ;

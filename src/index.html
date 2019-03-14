@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://vk.com/js/api/openapi.js?160" type="text/javascript"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104908497-2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -32,31 +31,18 @@
     <link href="developer.css?v=1" rel="stylesheet">
 </head>
 <body id="gained" ng-app="app">
-<script type="text/javascript">
-    VK.init({
-        apiId: 6767856,
-        onlyWidgets: true
-    });
-</script>
-<audio autoplay loop id="music">
-    <source src="/back.ogg" type="audio/ogg">
-</audio>
-<div class="bg"></div>
-<div class="sky blur"></div>
-<div id="floor" class="blur"></div>
-<!--<div class="city d-flex flex-row justify-content-center">-->
-    <!--<div></div>-->
-<!--</div>-->
-<div class="palm blur"></div>
-<div class="palm blur right"></div>
-<div class="glitch blur"></div>
-<div class="sun blur"></div>
-<div class="container" id="main">
-    <main-nav></main-nav>
-    <ui-view></ui-view>
+<main-nav></main-nav>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-1 d-none d-sm-block">
+            side menu
+        </div>
+        <div class="col-12 col-sm-10">
+            <ui-view></ui-view>
+        </div>
+    </div>
 </div>
-<div class="vhs blur" style="left: 0; top:0">PLAY&#9658;</div>
-<div id="time" class="vhs blur" style="right: 0; bottom:0">0000-00-00 --:--:--</div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
