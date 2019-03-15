@@ -57,7 +57,7 @@ module.exports = (app, env) => {
                     ]
                 },
                 {
-                    test: /\.(png|jpg|gif|ttf|svg)$/,
+                    test: /\.(png|jpg|gif|ttf|svg|gif)$/,
                     use: [
                         {
                             loader: 'file-loader',

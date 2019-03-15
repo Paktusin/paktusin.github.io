@@ -1,42 +1,12 @@
-<div class="skills">
-    <h3 class="text-center">Skills</h3>
-    <h4 class="border-bottom">Back end</h4>
-    <p>
-        <img alt="PHP logo" class="icon" title="PHP" src="https://cdn.worldvectorlogo.com/logos/php-1.svg">
-        <img alt="Symfony logo" class="icon" title="Symfony" src="https://cdn.worldvectorlogo.com/logos/symfony.svg">
-        <img alt="Node JS logo" class="icon" title="Node JS" src="https://cdn.worldvectorlogo.com/logos/nodejs.svg">
-        <img alt="Express JS logo" class="icon" title="Express JS"
-             src="https://cdn.worldvectorlogo.com/logos/express-109.svg">
-    </p>
-    <h4 class="border-bottom">Front end</h4>
-    <p>
-        <img alt="Symfony logo" class="icon" title="JavaScript"
-             src="https://cdn.worldvectorlogo.com/logos/javascript.svg">
-        <img alt="AngularJS logo" class="icon" title="AngularJS"
-             src="https://cdn.worldvectorlogo.com/logos/angular.svg">
-        <img alt="JQuery logo" class="icon" title="JQuery" src="https://cdn.worldvectorlogo.com/logos/jquery-1.svg">
-        <img alt="Bootstrap logo" class="icon" title="Bootstrap"
-             src="https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg">
-        <img alt="React logo" class="icon" title="React" src="https://cdn.worldvectorlogo.com/logos/react-1.svg">
-    </p>
-    <h4 class="border-bottom">Database</h4>
-    <p>
-        <img alt="MySQL logo" class="icon" title="MySQL" src="https://cdn.worldvectorlogo.com/logos/mysql.svg">
-        <img alt="MS SQL logo" class="icon" title="MS SQL"
-             src="https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg">
-        <img alt="PostgreSQL logo" class="icon" title="PostgreSQL"
-             src="https://cdn.worldvectorlogo.com/logos/postgresql.svg">
-        <img alt="Doctrine logo" class="icon" title="Doctrine" src="https://cdn.worldvectorlogo.com/logos/doctrine.svg">
-    </p>
-    <h4 class="border-bottom">Server</h4>
-    <p>
-        <img alt="Ubuntu server logo" class="icon" title="Ubuntu server"
-             src="https://cdn.worldvectorlogo.com/logos/ubuntu-4.svg">
-        <img alt="Windows server logo" class="icon" title="Windows server"
-             src="https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg">
-    </p>
-    <h4 class="border-bottom">VCS</h4>
-    <p>
-        <img alt="Git logo" class="icon" title="Git" src="https://cdn.worldvectorlogo.com/logos/git.svg">
-    </p>
+<div class="card">
+    <div class="skills card-body">
+        <h4 class="text-center">Skills</h4>
+        <div ng-repeat="group in skills.groups()">
+            <h5 style="text-transform: capitalize" class="border-bottom">{{group}}</h5>
+            <p>
+                <img ng-repeat="skill in skills[group]" alt="{{skill.name}} logo" class="icon" title="{{skill.name}}"
+                     ng-src="{{skill.logo}}">
+            </p>
+        </div>
+    </div>
 </div>

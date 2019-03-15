@@ -6,7 +6,8 @@ import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import moment from 'moment/min/moment.min';
 // import './cat';
-import img from './img/mike.jpg'
+import skills, {certs} from "./skills";
+import kermit from "./img/ktpng.gif";
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -18,7 +19,10 @@ angular.module('app', ['ui.router', mainNav.name])
             })
             .state('education', {
                 url: '/education',
-                templateUrl: eduTemplate
+                templateUrl: eduTemplate,
+                controller: ($scope) => {
+                    $scope.certs = certs;
+                }
             })
             .state('projects', {
                 url: '/projects',
@@ -26,14 +30,17 @@ angular.module('app', ['ui.router', mainNav.name])
             })
             .state('skills', {
                 url: '/skills',
-                templateUrl: skillsTemplate
+                templateUrl: skillsTemplate,
+                controller: ($scope) => {
+                    $scope.skills = skills;
+                }
             })
         ;
         $urlRouterProvider.otherwise('about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
-        $scope.img = img;
-
+        $scope.skills = skills.all();
+        $scope.kermit = kermit;
         const getCountDown = (date_string) => {
             let res = [];
             const now = moment();

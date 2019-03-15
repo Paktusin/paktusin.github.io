@@ -1,4 +1,12 @@
 $primary: #4a76a8;
+$light: #e5ebf1;
+$btn-border-radius: 4px;
+
+$btn-box-shadow: 0;
+$btn-focus-box-shadow: 0;
+$btn-active-box-shadow: 0;
+$enable-shadows: 0;
+
 $container-max-widths: (
         sm: 960px,
         md: 960px,
@@ -8,7 +16,8 @@ $container-max-widths: (
 $font-family-base: -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 
 @import "~bootstrap/scss/bootstrap";
-body {
+
+body, html {
   -webkit-font-smoothing: antialiased;
   font-size: 12.5px;
   background-color: #edeef0;
@@ -18,10 +27,9 @@ body {
   font-weight: bold;
 
   &.navbar {
-    padding: 0.25rem 1rem;
+    padding: 0.45rem 1rem;
   }
 }
-
 
 .icon {
   height: 48px;
@@ -35,12 +43,9 @@ body {
 }
 
 .logo {
+  @extend .img;
   height: 19px;
   width: 34px;
-  background-image: url(../img/md.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .avatar {
@@ -106,18 +111,59 @@ body {
     background: white;
     color: #000;
   }
-  &::placeholder{
-    color: rgba(255,255,255,.8);
+
+  &::placeholder {
+    color: rgba(255, 255, 255, .8);
   }
 }
 
-*:focus{
+*:focus {
   outline: none;
 }
 
-.search-logo{
+.search-logo {
   position: absolute;
   top: 8px;
   left: 7px;
   color: #7895b5;
+}
+
+.btn-light {
+  color: #55677d;
+}
+
+.img {
+  background-image: url(../img/md.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.circle-badge {
+  text-align: center;
+
+  .img {
+    background-size: 70%;
+    margin: 0 auto;
+    background-color: $gray-100;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+label{
+  color: $gray-500;
+}
+
+.card-footer{
+  background-color: white;
+}
+
+.f13{
+  font-size: 13px;
 }
