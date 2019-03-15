@@ -4,7 +4,7 @@
         <div ng-repeat="group in skills.groups()">
             <h5 style="text-transform: capitalize" class="border-bottom">{{group}}</h5>
             <p>
-                <img ng-repeat="skill in skills[group]" alt="{{skill.name}} logo" class="icon" title="{{skill.name}}"
+                <img ng-repeat="skill in skills[group]" alt="{{skill.name}} logo" class="icon p-1" title="{{skill.name}}"
                      ng-src="{{skill.logo}}">
             </p>
         </div>
