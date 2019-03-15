@@ -7,7 +7,6 @@ import skillsTemplate from './view/skills.html'
 import moment from 'moment/min/moment.min';
 // import './cat';
 import skills, {certs} from "./skills";
-import kermit from "./img/ktpng.gif";
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -40,7 +39,6 @@ angular.module('app', ['ui.router', mainNav.name])
     })
     .controller('aboutCtrl', ($interval, $scope) => {
         $scope.skills = skills.all();
-        $scope.kermit = kermit;
         const getCountDown = (date_string) => {
             let res = [];
             const now = moment();
