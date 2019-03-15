@@ -1,4 +1,5 @@
 import templateUrl from './mainNav.html'
+import searchComponent from "../search/searchComponent";
 
 class controller {
     constructor() {
@@ -7,10 +8,13 @@ class controller {
 }
 
 const mainNav = angular
-    .module('mainNav', [])
+    .module('mainNav', [searchComponent.name])
     .component('mainNav', {
         controller,
-        templateUrl
+        templateUrl,
+        bindings: {
+            side: '<'
+        }
     })
 ;
 

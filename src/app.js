@@ -5,7 +5,7 @@ import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import moment from 'moment/min/moment.min';
-import './cat';
+// import './cat';
 import img from './img/mike.jpg'
 
 angular.module('app', ['ui.router', mainNav.name])
