@@ -5,12 +5,26 @@ import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import moment from 'moment';
-import './cat';
+// import './cat';
 import skills, {certs} from "./skills";
+import commentsCmp from "./components/comments";
+import formatDate from "./formatDate()";
+
+const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
 
 moment.locale('ru');
 
-angular.module('app', ['ui.router', mainNav.name])
+angular.module('app', ['ui.router', mainNav.name, commentsCmp.name])
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('about', {
@@ -40,9 +54,21 @@ angular.module('app', ['ui.router', mainNav.name])
         $urlRouterProvider.otherwise('about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
-        $scope.postTime = moment().format('DD MMM YYYY в HH:mm').replace('.', '');
+        $scope.like = localStorage.getItem('like') === 'true';
+        $scope.toggleLike = () => {
+            $scope.like = !$scope.like;
+            localStorage.setItem('like', $scope.like);
+        };
+        $scope.postTime = formatDate('2015-09-01 15:30');
         $scope.randomGif = `gifs/${Math.floor(Math.random() * 8) + 1}.gif`;
         $scope.skills = skills.all();
+        $scope.comment = () => {
+            document.getElementById('comment').focus();
+        };
+        $scope.copyLink = () => {
+            copyToClipboard(location.href);
+            alert('url was copied to clipboard')
+        };
         const getCountDown = (date_string) => {
             let res = [];
             const now = moment();

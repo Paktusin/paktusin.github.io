@@ -6,6 +6,8 @@ $btn-box-shadow: 0;
 $btn-focus-box-shadow: 0;
 $btn-active-box-shadow: 0;
 $enable-shadows: 0;
+$input-focus-box-shadow: 0;
+$input-active-box-shadow: 0;
 
 $container-max-widths: (
         sm: 960px,
@@ -172,11 +174,67 @@ label {
 .skill {
   //border: $border-width solid $border-color;
   transition: all .5s ease;
-  &:hover{
+
+  &:hover {
     flex: 50%;
   }
+
   .img {
     min-height: 50px;
     background-position: center center;
+  }
+}
+
+.send-btn {
+  width: 60px;
+  opacity: .7;
+
+  &:disabled {
+    opacity: .3;
+  }
+}
+
+.comments > div:last-child {
+  hr {
+    display: none;
+  }
+}
+
+.fa-2x {
+  font-size: 24px;
+}
+
+.like-btn {
+  color: $gray-500;
+  margin-right: 1.5rem;
+  display: inline;
+  .btn {
+    color: $gray-500;
+    padding-right: 0;
+  }
+  span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.like{
+  animation: page_post_like_animation 0.2s ease-out;
+}
+
+@keyframes page_post_like_animation {
+  0% {
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+
+  50% {
+    -o-transform: scale(1.15);
+    transform: scale(1.15)
+  }
+
+  to {
+    -o-transform: scale(1);
+    transform: scale(1)
   }
 }

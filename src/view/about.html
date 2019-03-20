@@ -13,13 +13,12 @@
                     <span>Skills </span><span class="text-black-50">{{skills.length}}</span>
                 </div>
                 <div class="row m-0">
-                    <div class="col-4 p-0 circle-badge" ng-repeat="skill in skills">
-                        <!--<div class="img" ng-style="{backgroundImage: 'url('+skill.logo+')'}"></div>-->
+                    <div class="col-4 p-0 circle-badge mb-2" ng-repeat="skill in skills">
                         <div class="img"
                              ng-style="{backgroundColor: skill.color, backgroundImage:'url('+skill.logo+')'}">
                         </div>
                         <div>
-                            <a target="_blank" ng-if="skill.cert" href="{{skill.cert.url}}">{{skill.name}}</a>
+                            <a target="_blank" ng-if="skill.cert" se href="{{skill.cert.url}}">{{skill.name}}</a>
                             <span ng-if="!skill.cert">{{skill.name}}</span>
                         </div>
                     </div>
@@ -80,9 +79,30 @@
                 <p id="devExp">{{dev_time}}</p>
                 <h5 class="border-bottom">All IT experience:</h5>
                 <p id="allExp">{{it_time}}</p>
-            </div>
-            <div class="card-footer">
 
+                <div class="">
+                    <div class="like-btn">
+                        <button ng-click="toggleLike()" class="btn btn-link pr-1"
+                                ng-class="like==1?'text-danger':''">
+                            <i class="fa fa-2x" ng-class="like==1?'like fa-heart':' fa-heart-o'"></i>
+                        </button>
+                        <span ng-if="like">1</span>
+                    </div>
+                    <div class="like-btn">
+                        <button class="btn btn-link" ng-click="comment()">
+                            <i class="fa fa-2x fa-comment-o "></i>
+                        </button>
+                    </div>
+                    <div class="like-btn">
+                        <button class="btn btn-link position-relative" ng-click="copyLink()">
+                            <i class="fa fa-2x fa-share" title="copy to clipboard"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-footer pr-0">
+                <comments-cmp></comments-cmp>
             </div>
         </div>
     </div>
