@@ -4,9 +4,11 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import moment from 'moment/min/moment.min';
-// import './cat';
+import moment from 'moment';
+import './cat';
 import skills, {certs} from "./skills";
+
+moment.locale('ru');
 
 angular.module('app', ['ui.router', mainNav.name])
     .config(($stateProvider, $urlRouterProvider) => {
@@ -38,6 +40,8 @@ angular.module('app', ['ui.router', mainNav.name])
         $urlRouterProvider.otherwise('about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
+        $scope.postTime = moment().format('DD MMM YYYY в HH:mm').replace('.', '');
+        $scope.randomGif = `gifs/${Math.floor(Math.random() * 8) + 1}.gif`;
         $scope.skills = skills.all();
         const getCountDown = (date_string) => {
             let res = [];
