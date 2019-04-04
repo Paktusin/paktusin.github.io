@@ -1,5 +1,5 @@
 import moment from "moment";
-import {formatDate} from "../formatDate()";
+import {formatDate} from "../formatDate";
 
 moment.locale('ru');
 

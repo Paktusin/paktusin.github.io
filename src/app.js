@@ -1,3 +1,5 @@
+console.log(process.env);
+
 import './css/main.scss'
 import mainNav from "./components/mainNav/mainNav";
 import aboutTemplate from './view/about.html'
@@ -8,7 +10,11 @@ import moment from 'moment';
 // import './cat';
 import skills, {certs} from "./skills";
 import commentsCmp from "./components/comments";
-import formatDate from "./formatDate()";
+import formatDate from "./formatDate";
+import loginFormComponent from "./components/loginForm/loginForm";
+import appTemplate from './app.html';
+
+moment.locale('ru');
 
 const copyToClipboard = str => {
     const el = document.createElement('textarea');
@@ -22,36 +28,38 @@ const copyToClipboard = str => {
     document.body.removeChild(el);
 };
 
-moment.locale('ru');
 
-angular.module('app', ['ui.router', mainNav.name, commentsCmp.name])
+angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormComponent.name])
     .config(($stateProvider, $urlRouterProvider) => {
         $stateProvider
-            .state('about', {
-                url: '/about',
+            .state('app', {
+                url: '/',
+                templateUrl: appTemplate,
+            })
+            .state('app.about', {
+                url: 'about',
                 templateUrl: aboutTemplate,
                 controller: 'aboutCtrl'
             })
-            .state('education', {
-                url: '/education',
+            .state('app.education', {
+                url: 'education',
                 templateUrl: eduTemplate,
                 controller: ($scope) => {
                     $scope.certs = certs;
                 }
             })
-            .state('projects', {
-                url: '/projects',
+            .state('app.projects', {
+                url: 'projects',
                 templateUrl: projectsTemplate
             })
-            .state('skills', {
-                url: '/skills',
+            .state('app.skills', {
+                url: 'skills',
                 templateUrl: skillsTemplate,
                 controller: ($scope) => {
                     $scope.skills = skills;
                 }
-            })
-        ;
-        $urlRouterProvider.otherwise('about');
+            });
+        $urlRouterProvider.otherwise('/');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
         $scope.like = localStorage.getItem('like') === 'true';
