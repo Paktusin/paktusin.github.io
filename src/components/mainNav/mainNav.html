@@ -19,6 +19,9 @@
                 <li class="nav-item">
                     <a class="nav-link" ui-sref="app.skills" ui-sref-active="active">Skills</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" ng-click="$ctrl.openModal()">SignIn</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -37,4 +40,13 @@
     <a class="btn btn-sm btn-link" ui-sref="app.skills">
         <i class="fa fa-lg fa-hand-spock-o" aria-hidden="true"></i>
         Skills</a>
+</div>
+
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="overflow: hidden;">
+            <iframe style="height: 500px; width: 100%; border:0;" src="/#!/login/google"></iframe>
+        </div>
+    </div>
 </div>

@@ -1,29 +1,90 @@
-<div class="card">
-    <div class="card-body">
-        <svg xmlns="https://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 48 48" aria-hidden="true"
-             class="LXVVDe">
-            <path fill="#4285F4"
-                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path>
-            <path fill="#34A853"
-                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path>
-            <path fill="#FBBC05"
-                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"></path>
-            <path fill="#EA4335"
-                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
-            <path fill="none" d="M2 2h44v44H2z"></path>
-        </svg>
-        <span>Войдите в аккаунт Google</span>
-        <h2>Вход</h2>
-        <h3>Переход в приложение "<a href="http://paktusin.github.io">paktusin.github.io</a>"</h3>
-        <input ng-model="username" type="text" placeholder="Телефон или адрес эл. почты"/>
-        <a href="https://accounts.google.com/signin/v2/usernamerecovery">Забыли адрес эл. почты?</a>
-        <span>
-    Продолжая, вы разрешаете предоставить приложению "paktusin.github.io" доступ к вашему имени, адресу электронной почты и паролю.
-</span>
-        <button>Далее</button>
+<style>
+    body, html {
+        background-color: white;
+    }
+</style>
+<div class="google container-fluid d-flex flex-column" style="min-height: 100vh">
+    <div class="row flex-grow-1">
+        <div class="col d-flex flex-column justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    <div style="height: 36px" class="d-flex align-items-center">
+                        <svg xmlns="https://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 48 48"
+                             aria-hidden="true"
+                             class="LXVVDe">
+                            <path fill="#4285F4"
+                                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"></path>
+                            <path fill="#34A853"
+                                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"></path>
+                            <path fill="#FBBC05"
+                                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"></path>
+                            <path fill="#EA4335"
+                                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
+                            <path fill="none" d="M2 2h44v44H2z"></path>
+                        </svg>
+                        <div style="margin-top: -2px;height:14px">{{ru()?'Войдите в аккаунт Google':'Sign in with
+                            Google'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{ru()?'Вход' : 'Sign in'}}</h1>
+                    <h5 style="font-size: 16px" class="text-center mb-5">
+                        {{ru()?'Переход в приложение' : 'to continue to'}} <a href="" ng-click="openModal()">paktusin.github.io</a>
+                    </h5>
+                    <div class="form-group">
+                        <input type="email" id="username" class="form-control" ng-model="username"
+                               autocomplete="username"/>
+                        <span class="placeholder">{{ru()?'Телефон или адрес эл. почты' : 'Email or phone'}}</span>
+                    </div>
+                    <div class="py-3">
+                        <a href="https://accounts.google.com/signin/v2/usernamerecovery">
+                            {{ru()?'Забыли адрес эл. почты?' : 'Forgot email?'}}
+                        </a>
+                    </div>
+                    <div style="margin-top: 32px">
+                        <p style="color:#5f6368">
+                            {{ru()?'Продолжая, вы разрешаете Google предоставить приложению "paktusin.github.io" доступ
+                            к вашему имени, адресу электронной почты и фото профиля':'To continue, Google will share
+                            your name, email address, password with paktusin.github.io'}}.
+                        </p>
+                    </div>
+                    <div class="pt-3 pb-5 mb-5 d-flex flex-row justify-content-end">
+                        <button class="btn btn-primary">{{ru()?'Далее':'Next'}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-inline text-right pt-2 pb-4 footer">
+                <a target="_blank" href="https://support.google.com/accounts?hl=ru"
+                   class="btn btn-light btn-gray btn-sm">{{ru()?'Справка':'Help'}}</a>
+                <a target="_blank" href="https://accounts.google.com/TOS?loc=RU&hl=ru&privacy=true"
+                   class="btn btn-light btn-gray btn-sm">{{ru()?'Конфиденциальность':'Privacy'}}</a>
+                <a target="_blank" href="https://accounts.google.com/TOS?loc=RU&hl=ru"
+                   class="btn btn-light btn-gray btn-sm">{{ru()?'Условия':'Terms'}}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3 class="sans">{{ru()?'Информация о разработчике':'Developer info'}}</h3>
+                    <p>
+                        {{ru()?'Эл. почта':'Email'}}:<br/>
+                        <a href="mailto:paktusin@gmail.com">paktusin@gmail.com</a>
+                    </p>
+                    <p class="m-0">
+                        {{ru()?'Если вы выполните вход, то вернетесь в ':'Signing in will redirect you to:
+                        '}}http://paktusin.github.io
+                    </p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button class="btn btn-light" data-dismiss="modal">{{ru()?'Продолжить':'Got it'}}</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<span>Русский</span>
-<span>Справка</span>
-<span>Конфиденциальность</span>
-<span>Условия</span>
+
+

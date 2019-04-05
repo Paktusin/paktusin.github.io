@@ -3,7 +3,11 @@ import searchComponent from "../search/searchComponent";
 
 class controller {
     constructor() {
+        this.openModal();
+    }
 
+    openModal() {
+        $('#modal').modal('show');
     }
 }
 
