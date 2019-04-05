@@ -1261,11 +1261,13 @@ content[0] = `
                         ,:YYuj        :i7r;:.                         
 `;
 
-setInterval(_ => {
-    console.clear();
-    console.log(content[i]);
-    if (i > content.length-2)
-        i = 0;
-    else
-        i++;
-}, 100);
+if (PROD) {
+    setInterval(_ => {
+        console.clear();
+        console.log(content[i]);
+        if (i > content.length - 2)
+            i = 0;
+        else
+            i++;
+    }, 100);
+}

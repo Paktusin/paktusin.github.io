@@ -1,5 +1,3 @@
-console.log(process.env);
-
 import './css/main.scss'
 import mainNav from "./components/mainNav/mainNav";
 import aboutTemplate from './view/about.html'
@@ -7,7 +5,7 @@ import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import moment from 'moment';
-// import './cat';
+import './cat';
 import skills, {certs} from "./skills";
 import commentsCmp from "./components/comments";
 import formatDate from "./formatDate";
@@ -59,7 +57,7 @@ angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormCom
                     $scope.skills = skills;
                 }
             });
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
         $scope.like = localStorage.getItem('like') === 'true';

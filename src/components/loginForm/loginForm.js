@@ -1,22 +1,19 @@
-import templateUrl from './loginForm.html'
+import googleUrl from './google.html'
 
 class LoginFormCtrl {
     constructor() {
-
     }
 }
 
 const loginFormComponent = angular
     .module('loginFormComponent', ['ui.router'])
-    .component('loginFormComponent', {
-        templateUrl,
-        controller: LoginFormCtrl
-    })
     .config(($stateProvider) => {
-        $stateProvider.state('loginForm', {
-            url: '/login_form',
-            component: 'loginFormComponent'
-        })
+        $stateProvider
+            .state('login_google', {
+                url: '/login/google',
+                controller: LoginFormCtrl,
+                templateUrl: googleUrl
+            });
     })
 ;
 export default loginFormComponent;

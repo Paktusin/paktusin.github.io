@@ -4,9 +4,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = (app, env) => {
-    console.log(env.mode);
     const prod = env.mode === 'production';
     const config = {
         optimization: {
@@ -75,7 +75,8 @@ module.exports = (app, env) => {
             new CleanWebpackPlugin(['dist']),
             new MiniCssExtractPlugin({
                 filename: "[name].[hash].css",
-            })
+            }),
+            new webpack.DefinePlugin({PROD: prod})
         ],
         devServer: {
             contentBase: path.join(__dirname, './'),
