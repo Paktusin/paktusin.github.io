@@ -6,8 +6,8 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(express.json({limit: '2kb'}));
-app.use(express.urlencoded({limit: '2kb', extended: false}));
+app.use(express.json({limit: '100kb'}));
+app.use(express.urlencoded({limit: '100kb', extended: false}));
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "https://paktusin.github.io");
