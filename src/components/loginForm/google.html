@@ -22,45 +22,42 @@
                                   d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"></path>
                             <path fill="none" d="M2 2h44v44H2z"></path>
                         </svg>
-                        <div style="margin-top: -2px;height:14px">{{ru()?'Войдите в аккаунт Google':'Sign in with
-                            Google'}}
+                        <div style="margin-top: -2px;height:14px">{{'Sign in with Google' | translate}}
                         </div>
                     </div>
                 </div>
                 <div class="card-body">
-                    <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{ru()?'Вход' : 'Sign in'}}</h1>
+                    <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{'Sign in' |translate}}</h1>
                     <h5 style="font-size: 16px" class="text-center mb-5">
-                        {{ru()?'Переход в приложение' : 'to continue to'}} <a href="" ng-click="openModal()">paktusin.github.io</a>
+                        {{'to continue to' | translate}} <a href="" ng-click="openModal()">paktusin.github.io</a>
                     </h5>
                     <div class="form-group">
                         <input type="email" id="username" class="form-control" ng-model="username"
                                autocomplete="username"/>
-                        <span class="placeholder">{{ru()?'Телефон или адрес эл. почты' : 'Email or phone'}}</span>
+                        <span class="placeholder">{{'Email or phone' | translate}}</span>
                     </div>
                     <div class="py-3">
                         <a href="https://accounts.google.com/signin/v2/usernamerecovery">
-                            {{ru()?'Забыли адрес эл. почты?' : 'Forgot email?'}}
+                            {{'Forgot email'|translate}}?
                         </a>
                     </div>
                     <div style="margin-top: 32px">
                         <p style="color:#5f6368">
-                            {{ru()?'Продолжая, вы разрешаете Google предоставить приложению "paktusin.github.io" доступ
-                            к вашему имени, адресу электронной почты и фото профиля':'To continue, Google will share
-                            your name, email address, password with paktusin.github.io'}}.
+                            {{'google_access'|translate}}.
                         </p>
                     </div>
                     <div class="pt-3 pb-5 mb-5 d-flex flex-row justify-content-end">
-                        <button class="btn btn-primary">{{ru()?'Далее':'Next'}}</button>
+                        <button class="btn btn-primary">{{'Next'|translate}}</button>
                     </div>
                 </div>
             </div>
             <div class="d-inline text-right pt-2 pb-4 footer">
                 <a target="_blank" href="https://support.google.com/accounts?hl=ru"
-                   class="btn btn-light btn-gray btn-sm">{{ru()?'Справка':'Help'}}</a>
+                   class="btn btn-light btn-gray btn-sm">{{'Help'|translate}}</a>
                 <a target="_blank" href="https://accounts.google.com/TOS?loc=RU&hl=ru&privacy=true"
-                   class="btn btn-light btn-gray btn-sm">{{ru()?'Конфиденциальность':'Privacy'}}</a>
+                   class="btn btn-light btn-gray btn-sm">{{'Privacy'|translate}}</a>
                 <a target="_blank" href="https://accounts.google.com/TOS?loc=RU&hl=ru"
-                   class="btn btn-light btn-gray btn-sm">{{ru()?'Условия':'Terms'}}</a>
+                   class="btn btn-light btn-gray btn-sm">{{'Terms'|translate}}</a>
             </div>
         </div>
     </div>
@@ -69,18 +66,17 @@
         <div class="modal-dialog modal-sm modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h3 class="sans">{{ru()?'Информация о разработчике':'Developer info'}}</h3>
+                    <h3 class="sans">{{'Developer info'|translate}}</h3>
                     <p>
-                        {{ru()?'Эл. почта':'Email'}}:<br/>
+                        {{'Email'|translate}}:<br/>
                         <a href="mailto:paktusin@gmail.com">paktusin@gmail.com</a>
                     </p>
                     <p class="m-0">
-                        {{ru()?'Если вы выполните вход, то вернетесь в ':'Signing in will redirect you to:
-                        '}}http://paktusin.github.io
+                        {{'Signing in will redirect you to:' | translate}}http://paktusin.github.io
                     </p>
                 </div>
                 <div class="modal-footer border-0">
-                    <button class="btn btn-light" data-dismiss="modal">{{ru()?'Продолжить':'Got it'}}</button>
+                    <button class="btn btn-light" data-dismiss="modal">{{'Got it'|translate}}</button>
                 </div>
             </div>
         </div>

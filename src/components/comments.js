@@ -1,7 +1,4 @@
-import moment from "moment";
 import {formatDate} from "../formatDate";
-
-moment.locale('ru');
 
 const commentsCmp = angular.module('commentsCmp', [])
     .component('commentsCmp', {
@@ -10,17 +7,17 @@ const commentsCmp = angular.module('commentsCmp', [])
     <img src="https://vk.com/images/deactivated_100.png?ava=1"
 class="img-fluid rounded-circle mr-3" width="34" height="34"/>
     <div class="media-body">
-    <div class="font-weight-bold text-primary">You</div>
+    <div class="font-weight-bold text-primary">{{'You'|translate}}</div>
 <div>{{comment.text}}</div>
 <span class="text-black-50">{{date(comment)}}</span>
 <hr ng-if="coef > 0" />
 </div>
 </div>
 </div>
-<button ng-click="more()" ng-if="getComments().length < comments.length" class="btn btn-link font-weight-bold">Показать следующие комментарии</button>
+<button ng-click="more()" ng-if="getComments().length < comments.length" class="btn btn-link font-weight-bold">{{'Show more comments'|translate}}</button>
 <div class="form-inline">
     <div class="form-group flex-grow-1 m-0">
-    <input id="comment" ng-keypress="keyPress($event)" class="form-control w-100" placeholder="Write comment..." ng-model="comment"/>
+    <input id="comment" ng-keypress="keyPress($event)" class="form-control w-100" placeholder="{{'Write comment'|translate}}..." ng-model="comment"/>
     </div>
     <button class="btn btn-link send-btn" ng-disabled="comment.length==0" ng-click="sendComment()">
     <i class="fa fa-lg fa-paper-plane"></i>

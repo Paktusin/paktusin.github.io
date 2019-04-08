@@ -1,24 +1,11 @@
 <div class="card">
     <div class="card-body">
-        <h4 class="text-center">Education</h4>
+        <h4 class="text-center">{{'Education'|translate}}</h4>
         <div class="col-12 col-sm-6 col-md-4 mb-3 float-left">
             <img alt="Institute photo" class="img-fluid image " src="https://i.imgur.com/Hje3bfj.jpg">
         </div>
-        <p>Graduate from <a href="https://goo.gl/maps/5kQcUt6qFL82" rel="noopener" target="_blank">Birobidjan State
-            Pedagogical
-            Institute</a>, faculty of Mathematics and
-            Informatics, specialty Information Systems and Technologies , engineer's degree</p>
-        <p>At the institute, I studied the creation of information systems. Development of web applications and desktop
-            applications. Basically the development was on Delphi. The graduation project was developed in Java. It was
-            a
-            cross-platform Java application for a computer store to account for computer sales.</p>
-        <p>I started my career as a sysadmin. Then I got a web developer. And I began to study the methods of developing
-            web
-            applications in more detail. Most of all like to develop the front end of web sites.</p>
-        <p>
-            In my spare time I study technology front-end development such as React, Angular.
-        </p>
-        <h5 class="border-bottom mb-3">Certificates</h5>
+        <div ng-include="ru()?'ru.html':'en.html'"></div>
+        <h5 class="border-bottom mb-3">{{'Certificates'| translate}}</h5>
         <div class="row">
             <div ng-repeat="cert in certs" class="col-12 col-sm-6 col-md-4 mb-3 text-center">
                 <a title="{{cert.title}}" href="{{cert.url}}" rel="noopener" class="border d-block h-100"
@@ -29,3 +16,35 @@
         </div>
     </div>
 </div>
+
+<script type="text/ng-template" id="en.html">
+    <p>Graduate from <a href="https://goo.gl/maps/5kQcUt6qFL82" rel="noopener" target="_blank">Birobidjan State
+        Pedagogical
+        Institute</a>, faculty of Mathematics and
+        Informatics, specialty Information Systems and Technologies , engineer's degree</p>
+    <p>At the institute, I studied the creation of information systems. Development of web applications and desktop
+        applications. Basically the development was on Delphi. The graduation project was developed in Java. It was
+        a
+        cross-platform Java application for a computer store to account for computer sales.</p>
+    <p>I started my career as a sysadmin. Then I got a web developer. And I began to study the methods of developing
+        web
+        applications in more detail. Most of all like to develop the front end of web sites.</p>
+    <p>
+        In my spare time I study technology front-end development such as React, Angular.
+    </p>
+</script>
+
+<script type="text/ng-template" id="ru.html">
+    <p>Выпускник <a href="https://goo.gl/maps/5kQcUt6qFL82" rel="noopener" target="_blank">Приамурского государственного
+        университета им. Шолом-Алейхема </a>, факультета математики и информатики, специальность информационные системы
+        и технологии</p>
+    <p>В университете, Я изучал содание автоматизированных информационных систем. Разработку приложений и веб-сайтов.
+        В основном разработка была на Delphi. Дипломный проект был написан на Java. Это было кросс-платформенное
+        приложение для учета продаж компьютеров и оргтехники.</p>
+    <p>Я начал свою карьеру как системный администратор. Затем я устроился работать веб-программистом. И тогда я начал
+        изучать раработку веб-приложений более детально. Больше всего мне нравиться заниматься Frontend частью
+        разработки.</p>
+    <p>
+        В свободное время я изучаю технологии Frontend разработок такие как Angular, React.
+    </p>
+</script>

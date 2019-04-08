@@ -1,10 +1,8 @@
-import moment from 'moment';
-
-moment.locale('ru');
-
+import {ru} from "./common";
 
 export function formatDate(some) {
-    return moment(some).format('DD MMM YYYY в HH:mm').replace('.', '');
+    const format = ru() ? `DD MMM YYYY в HH:mm` : `MM/DD/YYYY hh:mm a`;
+    return moment(some).format(format).replace('.', '');
 }
 
 export default formatDate;

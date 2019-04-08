@@ -6,10 +6,6 @@ class LoginFormCtrl {
         this.$scope = $scope;
     }
 
-    ru(){
-        return navigator.language === 'ru-RU';
-    }
-
     $onInit() {
         $('.placeholder').click((e) => {
             console.log(e);
@@ -21,7 +17,7 @@ class LoginFormCtrl {
         }, 1000);
 
         this.$scope.openModal = this.openModal;
-        this.$scope.ru = this.ru;
+        this.$scope.common = this.ru;
     }
 
     openModal() {

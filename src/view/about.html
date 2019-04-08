@@ -4,13 +4,13 @@
             <div class="card-body">
                 <div class="avatar mb-3">
                 </div>
-                <button class="btn btn-light w-100">Web Developer</button>
+                <button class="btn btn-light w-100">{{'Web developer' | translate}}</button>
             </div>
         </div>
         <div class="card pointer">
             <div class="card-body">
                 <div class="mb-2">
-                    <span>Skills </span><span class="text-black-50">{{skills.length}}</span>
+                    <span>{{'Skills' | translate}} </span><span class="text-black-50">{{skills.length}}</span>
                 </div>
                 <div class="row m-0">
                     <div class="col-4 p-0 circle-badge mb-2" ng-repeat="skill in skills">
@@ -18,7 +18,7 @@
                              ng-style="{backgroundColor: skill.color, backgroundImage:'url('+skill.logo+')'}">
                         </div>
                         <div>
-                            <a target="_blank" ng-if="skill.cert" se href="{{skill.cert.url}}">{{skill.name}}</a>
+                            <a target="_blank" ng-if="skill.cert" href="{{skill.cert.url}}">{{skill.name}}</a>
                             <span ng-if="!skill.cert">{{skill.name}}</span>
                         </div>
                     </div>
@@ -29,21 +29,22 @@
     <div class="col-12 col-sm-8">
         <div class="card f13">
             <div class="card-body">
-                <h4>Mikhail Davlichin</h4>
-                <label>let's coding!</label>
+                <h4>{{'Mikhail Davlichin' | translate}}</h4>
+                <label>{{'lets coding!' | translate}}</label>
                 <hr/>
                 <div class="row">
-                    <div class="col-5"><label>City:</label></div>
-                    <div class="col-7 text-left"><a target="_blank" href="https://goo.gl/maps/Zpry3oAkM9T2">Sochi</a>
+                    <div class="col-5"><label>{{'City' | translate}}:</label></div>
+                    <div class="col-7 text-left"><a target="_blank" href="https://goo.gl/maps/Zpry3oAkM9T2">{{'Sochi' |
+                        translate}}</a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-5"><label>Specialization:</label></div>
-                    <div class="col-7 text-left">Web Development, Frontend</div>
+                    <div class="col-5"><label>{{'Specialization' | translate}}:</label></div>
+                    <div class="col-7 text-left">{{'Web developer' | translate}}, Frontend</div>
                 </div>
                 <div class="row">
-                    <div class="col-5"><label>Education:</label></div>
-                    <div class="col-7 text-left">Bachelor's degree / Information Systems and Technologies</div>
+                    <div class="col-5"><label>{{'Education' | translate}}:</label></div>
+                    <div class="col-7 text-left">{{'Bachelor\'s degree' | translate}} / {{'Information Systems and Technologies' | translate}}</div>
                 </div>
             </div>
             <div class="card-footer">
@@ -53,10 +54,10 @@
                            target="_blank">GitHub</a>
                     </div>
                     <div class="col text-center">
-                        <a class="link" title="email" href="mailto:paktusin@gmail.com">Mail</a>
+                        <a class="link" title="email" href="mailto:paktusin@gmail.com">{{'Email' | translate}}</a>
                     </div>
                     <div class="col text-center">
-                        <a class="link" title="telegram" target="_blank" href="https://t.me/paktusin">Telegram</a>
+                        <a class="link" title="telegram" target="_blank" href="https://t.me/paktusin">{{'Telegram' | translate}}</a>
                     </div>
                 </div>
             </div>
@@ -68,16 +69,16 @@
                         <img src="apple-touch-icon.png" class="img-fluid rounded-circle mr-3" width="50" height="50"/>
                     </div>
                     <div class="d-flex flex-column justify-content-center">
-                        <span class="text-primary font-weight-bold">Mikhail Davlichin</span>
+                        <span class="text-primary font-weight-bold">{{'Mikhail Davlichin' | translate}}</span>
                         <span class="text-black-50">{{postTime}}</span>
                     </div>
                 </div>
                 <div class="p-3 text-center">
                     <img class="img-fluid" ng-src="{{randomGif}}">
                 </div>
-                <h5 class="border-bottom">Development experience:</h5>
+                <h5 class="border-bottom">{{'Development experience' | translate}}:</h5>
                 <p id="devExp">{{dev_time}}</p>
-                <h5 class="border-bottom">All IT experience:</h5>
+                <h5 class="border-bottom">{{'All IT experience' | translate}}:</h5>
                 <p id="allExp">{{it_time}}</p>
 
                 <div class="">

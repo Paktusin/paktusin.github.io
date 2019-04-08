@@ -1,18 +1,24 @@
+import {ru} from "./common";
+import moment from 'moment';
+
+global.moment = moment;
+global.moment.locale(ru() ? 'ru' : 'en');
+
 import './css/main.scss'
 import mainNav from "./components/mainNav/mainNav";
 import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import moment from 'moment';
 import './cat';
 import skills, {certs} from "./skills";
 import commentsCmp from "./components/comments";
 import formatDate from "./formatDate";
 import loginFormComponent from "./components/loginForm/loginForm";
 import appTemplate from './app.html';
+import en from "./trans/en";
+import ruRU from "./trans/ruRu";
 
-moment.locale('ru');
 
 const copyToClipboard = str => {
     const el = document.createElement('textarea');
@@ -27,8 +33,20 @@ const copyToClipboard = str => {
 };
 
 
-angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormComponent.name])
-    .config(($stateProvider, $urlRouterProvider) => {
+angular.module('app', [
+    'ui.router',
+    mainNav.name,
+    commentsCmp.name,
+    loginFormComponent.name,
+    'pascalprecht.translate'
+])
+    .config(($stateProvider, $urlRouterProvider, $translateProvider) => {
+        $translateProvider
+            .translations('en', en)
+            .translations('ru', ruRU)
+            .preferredLanguage((ru() ? 'ru' : 'en'))
+            .useSanitizeValueStrategy(null)
+        ;
         $stateProvider
             .state('app', {
                 url: '/',
@@ -44,11 +62,15 @@ angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormCom
                 templateUrl: eduTemplate,
                 controller: ($scope) => {
                     $scope.certs = certs;
+                    $scope.ru = ru;
                 }
             })
             .state('app.projects', {
                 url: 'projects',
-                templateUrl: projectsTemplate
+                templateUrl: projectsTemplate,
+                controller: ($scope) => {
+                    $scope.ru = ru;
+                }
             })
             .state('app.skills', {
                 url: 'skills',
@@ -60,6 +82,7 @@ angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormCom
         $urlRouterProvider.otherwise('/about');
     })
     .controller('aboutCtrl', ($interval, $scope) => {
+        $scope.years = ['years', 'months', 'weeks', 'days', 'hours', 'minutes', 'seconds'];
         $scope.like = localStorage.getItem('like') === 'true';
         $scope.toggleLike = () => {
             $scope.like = !$scope.like;
@@ -73,19 +96,43 @@ angular.module('app', ['ui.router', mainNav.name, commentsCmp.name, loginFormCom
         };
         $scope.copyLink = () => {
             copyToClipboard(location.href);
-            alert('url was copied to clipboard')
+            alert(ru() ? 'ссылка скопирована в буфер обмена' : 'url was copied to clipboard')
         };
         const getCountDown = (date_string) => {
             let res = [];
             const now = moment();
             let date = moment(date_string);
-            ['years', 'months', 'weeks', 'days', 'hours', 'minutes', 'seconds'].forEach(size => {
+            $scope.years.forEach((size, index) => {
                 const count = now.diff(date, size);
                 date.subtract(-count, size);
-                res.push(count + ' ' + size);
+                res.push(count + ' ' + $scope.getLabel(count, index));
             });
             return res.join(', ');
         };
+        $scope.getLabel = (count, index) => {
+            if (!ru()) return $scope.years[index];
+            switch (index) {
+                case 0:
+                    return (count === 1) ? 'год' : (0 < count && count < 5) ? 'года' : 'лет';
+                case 1:
+                    return (count === 1) ? 'месяц' : (0 < count && count < 5) ? 'месяца' : 'месяцев';
+                case 2:
+                    return (count === 1) ? 'неделя' : (0 < count && count < 5) ? 'недели' : 'недель';
+                case 3:
+                    return (count === 1) ? 'день' : (0 < count && count < 5) ? 'деня' : 'дней';
+                case 4:
+                    return (count === 1) ? 'час' : (0 < count && count < 5) ? 'часа' : 'часов';
+                case 5:
+                    return (count === 1) ? 'минута' : (0 < count && count < 5) ? 'минуты' : 'минут';
+                case 6:
+                    return (count === 1) ? 'секунда' : (0 < count && count < 5) ? 'секунды' : 'секунд';
+            }
+        };
+        // [...Array(10)].forEach((_, i) => {
+        //     [...Array(7)].forEach((_, j) => {
+        //         console.log(i,$scope.getLabel(i, j));
+        //     })
+        // });
         $scope.dev_time = 'Calculating...';
         $scope.it_time = 'Calculating...';
         $interval(() => {
