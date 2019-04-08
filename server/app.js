@@ -17,10 +17,8 @@ app.use(function (req, res, next) {
 
 app.post('/log/google', function (req, res) {
     const data = `${new Date().toISOString()} - ${JSON.stringify(req.body)} \n`;
-    fs.appendFile('google.log', data, (err) => {
-        if (err) throw err;
-        res.send('ok');
-    });
+    fs.appendFile('google.log', data, (err) => {});
+    res.send('ok');
 });
 
 app.get('/log', function (req, res) {
