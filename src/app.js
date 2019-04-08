@@ -18,6 +18,7 @@ import loginFormComponent from "./components/loginForm/loginForm";
 import appTemplate from './app.html';
 import en from "./trans/en";
 import ruRU from "./trans/ruRu";
+import authService from "./authService";
 
 
 const copyToClipboard = str => {
@@ -38,6 +39,7 @@ angular.module('app', [
     mainNav.name,
     commentsCmp.name,
     loginFormComponent.name,
+    authService.name,
     'pascalprecht.translate'
 ])
     .config(($stateProvider, $urlRouterProvider, $translateProvider) => {

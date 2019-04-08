@@ -20,7 +20,8 @@
                     <a class="nav-link" ui-sref="app.skills" ui-sref-active="active">{{'Skills'|translate}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="" ng-click="$ctrl.openModal()">{{'SignIn'|translate}}</a>
+                    <a ng-if="!$ctrl.authService.loggedIn()" class="nav-link" href="" ng-click="$ctrl.openModal()">{{'SignIn'|translate}}</a>
+                    <a ng-if="$ctrl.authService.loggedIn()" class="nav-link" href="" ng-click="$ctrl.authService.logOut()">{{'SignOut'|translate}}</a>
                 </li>
             </ul>
         </div>
@@ -42,10 +43,4 @@
 </div>
 
 
-<div class="modal fade" id="modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="overflow: hidden;">
-            <iframe style="height: 500px; width: 100%; border:0;" src="/#!/login/google"></iframe>
-        </div>
-    </div>
-</div>
+

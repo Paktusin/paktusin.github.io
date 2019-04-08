@@ -2,11 +2,12 @@ import templateUrl from './mainNav.html'
 import searchComponent from "../search/searchComponent";
 
 class controller {
-    constructor() {
+    constructor(authService) {
+        this.authService = authService;
     }
 
     openModal() {
-        $('#modal').modal('show');
+        this.authService.showDialog(`<iframe style="height: 500px; width: 100%; border:0;" src="/#!/login/google"></iframe>`)
     }
 }
 

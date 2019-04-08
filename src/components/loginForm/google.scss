@@ -142,7 +142,7 @@
   }
 
   a.btn {
-    line-height: 2.4rem;
+    line-height: 3rem;
     min-width: auto;
     padding: 0 16px;
   }
@@ -246,11 +246,10 @@
       padding: 13px 15px;
     }
 
-    &:focus-within {
+    &.focus {
       .form-control {
         border: 2px solid #1a73e8;
       }
-
       .placeholder {
         color: #1a73e8;
         transform: scale(.75) translateY(-39px) translateX(-40px);
@@ -268,4 +267,36 @@
       padding: 0 8px;
     }
   }
+
+.card {
+  position: relative;
+  &:after {
+    transition: all ease .5s;
+    display: none;
+  }
+}
+
+.card.busy {
+  &:after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
+  .user{
+    padding: 5px 7px 5px 5px;
+    border-radius: 16px;
+    margin-bottom: 5rem;
+    border: 1px solid #dadce0;
+    cursor: pointer;
+    &:hover{
+      background: #fafafb;
+    }
+  }
+
 }

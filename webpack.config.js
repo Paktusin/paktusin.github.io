@@ -81,7 +81,10 @@ module.exports = (app, env) => {
         devServer: {
             contentBase: path.join(__dirname, './'),
             compress: true,
-            port: 3000
+            port: 3000,
+            proxy: {
+                '/log': 'http://localhost:8000',
+            }
         }
     };
     return config;

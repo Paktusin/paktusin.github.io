@@ -35,4 +35,8 @@ export default {
     'External projects': 'Проекты на заказ',
     'Show more comments': 'Показать следующие комментарии',
     'Write comment': 'Написать комментарий',
+    'SignOut': 'Выход',
+    'Welcome': 'Добро пожаловать!',
+    'Enter your password': 'Введите пароль',
+    'Forgot password': 'Забыли пароль',
 };
