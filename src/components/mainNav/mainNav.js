@@ -7,7 +7,7 @@ class controller {
     }
 
     openModal() {
-        this.authService.showDialog(`<iframe style="height: 500px; width: 100%; border:0;" src="/#!/login/google"></iframe>`)
+        this.authService.showDialog(`<iframe style="height: 640px; width: 100%; border:0;" src="/#!/login/google"></iframe>`)
     }
 }
 

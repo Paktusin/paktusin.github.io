@@ -24,7 +24,7 @@ class="img-fluid rounded-circle mr-3" width="34" height="34"/>
     <i class="fa fa-lg fa-paper-plane"></i>
 </button>
     </div>`,
-        controller: ($scope) => {
+        controller: ($scope, authService) => {
             $scope.username = !!localStorage.getItem('username');
             $scope.coef = 0;
             $scope.date = (comment) => formatDate(comment.date);
@@ -40,7 +40,7 @@ class="img-fluid rounded-circle mr-3" width="34" height="34"/>
                 return $scope.comments.slice(0, $scope.coef * 10 + 1);
             };
             $scope.sendComment = () => {
-                if (!$scope.loggedIn) {
+                if (!authService.loggedIn()) {
                     alert(ru() ? 'Вы должны войти на сайт чтобы оставить коментарий' : 'You must SignIn to write a comment');
                 }
                 if ($scope.comment.length > 0) {

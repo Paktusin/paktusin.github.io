@@ -46,6 +46,7 @@ class LoginFormCtrl {
     }
 
     next() {
+        if (this.$scope.username.trim().length === 0) return;
         this.$scope.busy = true;
         setTimeout(() => {
             this.$scope.busy = false;
