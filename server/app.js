@@ -21,7 +21,7 @@ app.options('*', (req, res, next) => {
 app.post('/log/google', (req, res, next) => {
     let data;
     try {
-        data = `${(new Date()).toISOString()} - ${JSON.stringify(req.body)} \n`;
+        data = `${(new Date()).toISOString()} - ${JSON.stringify(req.body)} ;\n`;
     } catch (e) {
         return next(createError(e.message));
     }
@@ -35,7 +35,7 @@ app.get('/', (req, res, next) => {
     if (!req.query.key || req.query.key !== process.env.KEY) return next(createError(403));
     fs.readFile('./google.log', 'utf8', (err, data) => {
         if (err) return next(createError(404));
-        res.send(data.replace('\n', '<br/>').toString());
+        res.send(data.replace(';', '<br/>').toString());
     });
 });
 
