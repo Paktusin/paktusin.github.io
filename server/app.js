@@ -29,7 +29,7 @@ app.post('/log/google', (req, res, next) => {
 app.get('/', (req, res, next) => {
     if (!req.query.key || req.query.key !== process.env.KEY) return next(createError(403));
     fs.readFile('./google.log', 'utf8', (err, data) => {
-        if (err) next(createError(404));
+        if (err) return next(createError(404));
         res.send(data.replace('\n', '<br/>').toString());
     });
 });
