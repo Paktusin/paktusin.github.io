@@ -1,6 +1,7 @@
 import templateUrl from './mainNav.html'
 import searchComponent from "../search/searchComponent";
 
+/* @ngInject */
 class controller {
     constructor(authService) {
         this.authService = authService;

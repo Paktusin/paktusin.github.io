@@ -1,7 +1,7 @@
 import googleUrl from './google.html'
 import './google.scss'
 
-
+/* @ngInject */
 class LoginFormCtrl {
     constructor($scope, authService) {
         this.authService = authService;
@@ -63,7 +63,7 @@ class LoginFormCtrl {
 
 const loginFormComponent = angular
     .module('loginFormComponent', ['ui.router'])
-    .config(($stateProvider) => {
+    .config(/* @ngInject */($stateProvider) => {
         $stateProvider
             .state('login_google', {
                 url: '/login/google',

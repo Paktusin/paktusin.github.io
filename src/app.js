@@ -1,37 +1,17 @@
-import {ru} from "./common";
-import moment from 'moment';
-
-global.moment = moment;
-global.moment.locale(ru() ? 'ru' : 'en');
-
+import {copyToClipboard, formatDate, ru} from "./common";
 import './css/main.scss'
 import mainNav from "./components/mainNav/mainNav";
 import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import './cat';
 import skills, {certs} from "./skills";
 import commentsCmp from "./components/comments";
-import formatDate from "./formatDate";
 import loginFormComponent from "./components/loginForm/loginForm";
 import appTemplate from './app.html';
 import en from "./trans/en";
 import ruRU from "./trans/ruRu";
 import authService from "./authService";
-
-
-const copyToClipboard = str => {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-};
 
 
 angular.module('app', [
@@ -130,16 +110,12 @@ angular.module('app', [
                     return (count === 1) ? 'секунда' : (0 < count && count < 5) ? 'секунды' : 'секунд';
             }
         };
-        // [...Array(10)].forEach((_, i) => {
-        //     [...Array(7)].forEach((_, j) => {
-        //         console.log(i,$scope.getLabel(i, j));
-        //     })
-        // });
         $scope.dev_time = 'Calculating...';
         $scope.it_time = 'Calculating...';
         $interval(() => {
             $scope.dev_time = getCountDown('2015-09-01');
             $scope.it_time = getCountDown('2012-01-01');
         }, 1000);
-    })
-;
+    });
+
+angular.bootstrap(document, ['app']);

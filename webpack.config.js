@@ -21,7 +21,7 @@ module.exports = (app, env) => {
         },
         entry: {
             app: './src/app.js',
-            common: './src/common.js'
+            cat: './src/cat.js',
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -40,10 +40,6 @@ module.exports = (app, env) => {
                     test: /\.(s)css$/,
                     use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
                 },
-                // {
-                //     test: /\.html$/,
-                //     use: 'raw-loader'
-                // },
                 {
                     test: /\.(html)$/,
                     exclude: path.resolve(__dirname, 'src/index.html'),
@@ -76,7 +72,7 @@ module.exports = (app, env) => {
             new MiniCssExtractPlugin({
                 filename: "[name].[hash].css",
             }),
-            new webpack.DefinePlugin({PROD: prod})
+            new webpack.DefinePlugin({PROD: prod}),
         ],
         devServer: {
             contentBase: path.join(__dirname, './'),

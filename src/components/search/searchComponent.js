@@ -23,7 +23,7 @@ const searchComponent = angular.module('searchComponent', [])
 </div>
 </div>
 `,
-        controller: ($scope, $http) => {
+        controller: /* @ngInject */($scope, $http) => {
             document.addEventListener('click', (e) => {
                 if ($(e.target).parents('.search-results').length === 0) {
                     $scope.results = [];

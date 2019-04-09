@@ -1,5 +1,4 @@
-import {formatDate} from "../formatDate";
-import {ru} from "../common";
+import {ru,formatDate} from "../common";
 
 const commentsCmp = angular.module('commentsCmp', [])
     .component('commentsCmp', {
@@ -24,7 +23,7 @@ class="img-fluid rounded-circle mr-3" width="34" height="34"/>
     <i class="fa fa-lg fa-paper-plane"></i>
 </button>
     </div>`,
-        controller: ($scope, authService) => {
+        controller: /* @ngInject */($scope, authService) => {
             $scope.username = !!localStorage.getItem('username');
             $scope.coef = 0;
             $scope.date = (comment) => formatDate(comment.date);

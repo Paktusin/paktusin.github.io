@@ -1,3 +1,4 @@
+/* @ngInject */
 class AuthService {
     constructor($http) {
         this.username = localStorage.getItem('username');
