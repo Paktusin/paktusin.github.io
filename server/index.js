@@ -1,6 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
+require('dotenv').config();
 const app = require('./app');
 
 let port = process.env.PORT || 8000;

@@ -1,36 +1,44 @@
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const fs = require('fs');
-require('dotenv').config();
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "https://paktusin.github.io");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
-app.post('/log/google', function (req, res) {
-    const data = `${new Date().toISOString()} - ${JSON.stringify(req.body)} \n`;
+app.post('/log/google', (req, res, next) => {
+    let data;
+    try {
+        data = `${(new Date()).toISOString()} - ${JSON.stringify(req.body)} \n`;
+    } catch (e) {
+        return next(createError(e.message));
+    }
     fs.appendFile('./google.log', data, (err) => {
+        if (err) return next(createError(err.message));
         res.send('ok');
     });
 });
 
-app.get('/log', function (req, res) {
-    res.send('log');
+app.get('/', (req, res, next) => {
+    if (!req.query.key || req.query.key !== process.env.KEY) return next(createError(403));
+    fs.readFile('./google.log', 'utf8', (err, data) => {
+        if (err) next(createError(404));
+        res.send(data.replace('\n', '<br/>').toString());
+    });
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     next(createError(404));
 });
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res) => {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
