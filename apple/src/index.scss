@@ -1,4 +1,24 @@
+@font-face {
+  font-family: 'SF Display';
+  font-weight: 100;
+  src: url(https://www.apple.com/wss/fonts/SF-Pro-Display/v2/sf-pro-display_light.woff2);
+}
+
+@font-face {
+  font-family: 'SF Display';
+  font-weight: 400;
+  src: url(https://www.apple.com/wss/fonts/SF-Pro-Display/v2/sf-pro-display_regular.woff2);
+}
+
+
+@font-face {
+  font-family: 'SF Display';
+  font-weight: 700;
+  src: url(https://www.apple.com/wss/fonts/SF-Pro-Text/v2/sf-pro-text_bold.woff2);
+}
+
 body, #root {
+  font-size: 16px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -6,4 +26,15 @@ body, #root {
   min-height: 100vh;
   flex: 1 auto;
   background-color: #121217;
+  color: #fff;
+}
+
+h1 {
+  font-family: "SF Display", serif;
+  font-weight: 700;
+}
+
+
+main {
+  margin: 0 auto;
 }

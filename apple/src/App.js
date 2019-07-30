@@ -1,12 +1,16 @@
 import React from 'react';
 import {AppBar} from "./components/AppBar";
+import {Section} from "./components/Section";
 
 function App() {
     return (
         <>
             <AppBar/>
-            <div style={{height: 3000}}>
-            </div>
+            <main>
+                <Section>
+                    <h1>SOME DEVELOPER</h1>
+                </Section>
+            </main>
         </>
     );
 }
