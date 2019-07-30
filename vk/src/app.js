@@ -13,6 +13,7 @@ import en from "./trans/en";
 import ruRU from "./trans/ruRu";
 import authService from "./authService";
 
+localStorage.setItem('path', '/vk');
 
 angular.module('app', [
     'ui.router',

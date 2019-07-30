@@ -75,7 +75,7 @@ module.exports = (app, env) => {
             new webpack.DefinePlugin({PROD: prod}),
         ],
         devServer: {
-            contentBase: path.join(__dirname, './'),
+            contentBase: path.join(__dirname, './vk'),
             compress: true,
             port: 3000,
             proxy: {
