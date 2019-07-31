@@ -1,28 +1,26 @@
 import React from 'react';
-import classes from './ScrollVisible.module.scss'
+import './ScrollVisible.module.scss'
 
-export function ScrollVisible({children, delay = 150}) {
+/**
+ * @return {null}
+ */
+export function ScrollVisible() {
 
-    function scrollHandler() {
-        const visible = window.scrollY + window.innerHeight - 200;
-        if (ref.current.offsetTop < visible) {
-            window.removeEventListener('scroll', scrollHandler);
-            showContent();
+    async function scrollHandler() {
+        const visible = window.scrollY + window.innerHeight;
+        for (let el of document.body.querySelectorAll('[data-scroll]')) {
+            if (window.scrollY < el.offsetTop + el.offsetHeight && el.offsetTop < visible && !el.style.opacity) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+                showContent(el);
+            }
         }
     }
 
-    function showContent() {
-
-        (async () => {
-            for (let el of ref.current.querySelectorAll('[data-scroll]')) {
-                await new Promise(resolve => setTimeout(() => resolve(), delay));
-                el.style.setProperty('opacity', 1);
-                el.style.setProperty('transform', 'translateY(0px)');
-            }
-        })();
+    function showContent(el) {
+        el.style.setProperty('opacity', 1);
+        el.style.setProperty('transform', 'translateY(0px)');
     }
 
-    const ref = React.useRef(null);
 
     React.useEffect(() => {
         scrollHandler();
@@ -30,5 +28,5 @@ export function ScrollVisible({children, delay = 150}) {
         return () => window.removeEventListener('scroll', scrollHandler);
     }, []);
 
-    return <section className={classes.ScrollVisible} ref={ref}>{children}</section>
+    return null;
 }
