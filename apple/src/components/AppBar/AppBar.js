@@ -1,22 +1,14 @@
 import React from 'react';
 import clsx from 'clsx'
-import injectStyles from 'react-jss'
+import classes from './AppBar.module.scss'
 
 const styles = theme => ({
-    appBar: {
-        position: 'sticky',
-        top: 0,
-        transition: 'all .5s ease',
-        color: theme.textColor,
-        zIndex: 5,
-        padding: '1rem'
-    },
     stick: {
         backgroundColor: `rgba(${theme.bgColor}, .9)`
     }
 });
 
-function AppBar({classes}) {
+function AppBar() {
 
     function scrollHandler(event) {
         setStick(window.scrollY > ref.current.offsetHeight / 2);
@@ -40,4 +32,4 @@ function AppBar({classes}) {
     );
 }
 
-export default injectStyles(styles)(AppBar);
+export default AppBar;

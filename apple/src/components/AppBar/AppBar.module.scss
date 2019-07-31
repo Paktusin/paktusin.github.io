@@ -1,0 +1,12 @@
+.appBar {
+  position: sticky;
+  top: 0;
+  transition: all .5s ease;
+  color: var(--text-color);
+  z-index: 5;
+  padding: 1rem;
+
+  &.stick{
+    background-color: rgba(var(--bg-color),.9);
+  }
+}
