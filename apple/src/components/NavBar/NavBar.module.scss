@@ -1,0 +1,21 @@
+@import "../Container/Container.module";
+
+.NavBar {
+  background-color: rgba(45, 45, 45, 0.98);
+  text-align: center;
+
+  .container {
+    font-size: 14px;
+    color: #fff;
+    @extend .Container;
+    align-content: center;
+    padding: .75rem;
+    margin: 0 auto;
+    display: inline-flex;
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    .active {
+      opacity: 0.65
+    }
+  }
+}
