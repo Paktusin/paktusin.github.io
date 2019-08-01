@@ -1,0 +1,23 @@
+.ThemeButton {
+  cursor: pointer;
+  line-height: 1.33341;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  border-radius: 12px;
+  padding: 3px 11px;
+  background: #0070c9 linear-gradient(#42a1ec, #0070c9);
+  border-color: #07c;
+  border-width: 1px;
+  border-style: solid;
+  color: #fff;
+
+  &:hover {
+    background: linear-gradient(#51a9ee, #147bcd);
+    border-color: #1482d0;
+  }
+
+  &:active {
+    background: linear-gradient(#3d94d9, #0067b9);
+    border-color: #006dbc;
+  }
+}

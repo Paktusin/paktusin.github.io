@@ -1,12 +1,41 @@
+@import "../Container/Container.module";
+
 .appBar {
   position: sticky;
   top: 0;
-  transition: all .5s ease;
-  color: var(--text-color);
+  transition: background-color .5s ease;
   z-index: 5;
-  padding: 1rem;
+  border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0);
 
-  &.stick{
-    background-color: rgba(var(--bg-color),.9);
+  :global(.dark) & {
+    background-color: rgba(34, 34, 34, 0);
+    border-bottom: 1px solid rgba(51, 51, 51, 0.9);
   }
+
+  .content {
+    display: inline-flex;
+    padding: 1rem;
+    margin: 0 auto;
+    @extend .Container;
+  }
+
+  h3 {
+    margin: 0;
+    flex: 1 auto;
+  }
+
+  &.stick {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom-color: rgba(51, 51, 51, 0.1);
+    width: 100%;
+
+    :global(.dark) & {
+      border-bottom-color: rgba(51, 51, 51, 0.75);
+      background-color: rgba(34, 34, 34, 0.9);
+    }
+  }
+
+  @extend .Container;
 }

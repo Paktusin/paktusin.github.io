@@ -1,16 +1,11 @@
 import React from 'react';
 import clsx from 'clsx'
 import classes from './AppBar.module.scss'
-
-const styles = theme => ({
-    stick: {
-        backgroundColor: `rgba(${theme.bgColor}, .9)`
-    }
-});
+import {ThemeButton} from "../ThemeButton/ThemeButton";
 
 function AppBar() {
 
-    function scrollHandler(event) {
+    function scrollHandler() {
         setStick(window.scrollY > ref.current.offsetHeight / 2);
     }
 
@@ -27,7 +22,10 @@ function AppBar() {
 
     return (
         <div ref={ref} className={clsx(classes.appBar, stick && classes.stick)}>
-            <h3>Web Developer</h3>
+            <div className={classes.content}>
+                <h3>Web Developer</h3>
+                <ThemeButton/>
+            </div>
         </div>
     );
 }
