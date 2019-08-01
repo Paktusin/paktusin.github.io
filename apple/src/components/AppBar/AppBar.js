@@ -21,7 +21,7 @@ function AppBar() {
     const ref = React.useRef(null);
 
     return (
-        <div ref={ref} className={clsx(classes.appBar, stick && classes.stick)}>
+        <div data-height={true} ref={ref} className={clsx(classes.appBar, stick && classes.stick)}>
             <div className={classes.content}>
                 <h3>Web Developer</h3>
                 <ThemeButton/>

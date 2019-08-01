@@ -3,13 +3,13 @@ import classes from './NavBar.module.scss'
 
 export function NavBar() {
     return (
-        <div className={classes.NavBar}>
+        <nav className={classes.NavBar}>
             <div className={classes.container}>
                 <div>123</div>
                 <div>123</div>
                 <div>123</div>
                 <div>123</div>
             </div>
-        </div>
+        </nav>
     );
 };
