@@ -1,8 +1,11 @@
 @import "font";
 @import "typo";
 
-body {
+html{
   scroll-behavior: smooth;
+}
+
+body {
   font-family: "SF Display", serif;
   font-weight: 400;
   font-size: 16px;

@@ -24,34 +24,15 @@ function App() {
                         </h2>
                         <p data-scroll={true}>Starting at 2014</p>
                     </Hero>
-                    <Hero>
-                        <div id={'me'}>
-                            <h1 data-scroll={true}>React Developer</h1>
-                            <h2 data-scroll={true} className={'headline'}>
-                                More hooks.<br/>
-                                More components.<br/>
-                                More bugs.
-                            </h2>
-                            <p data-scroll={true}>Starting at 2014</p>
-                        </div>
+                    <Hero id={'me'}>
                     </Hero>
-                    <Hero>
-                        <h1 data-scroll={true}>React Developer</h1>
-                        <h2 data-scroll={true} className={'headline'}>
-                            More hooks.<br/>
-                            More components.<br/>
-                            More bugs.
-                        </h2>
-                        <p data-scroll={true}>Starting at 2014</p>
+                    <Hero id={'skills'}>
                     </Hero>
-                    <Hero>
-                        <h1 data-scroll={true}>React Developer</h1>
-                        <h2 data-scroll={true} className={'headline'}>
-                            More hooks.<br/>
-                            More components.<br/>
-                            More bugs.
-                        </h2>
-                        <p data-scroll={true}>Starting at 2014</p>
+                    <Hero id={'certs'}>
+                    </Hero>
+                    <Hero id={'edu'}>
+                    </Hero>
+                    <Hero id={'proj'}>
                     </Hero>
                 </Section>
             </main>
