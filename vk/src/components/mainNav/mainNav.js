@@ -6,10 +6,6 @@ class controller {
     constructor(authService) {
         this.authService = authService;
     }
-
-    openModal() {
-        this.authService.showDialog(`<iframe style="height: 640px; width: 100%; border:0;" src="/#!/login/google"></iframe>`)
-    }
 }
 
 const mainNav = angular

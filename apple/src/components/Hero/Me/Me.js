@@ -11,7 +11,7 @@ export function Me() {
                 More components.<br/>
                 More bugs.
             </h2>
-            <p data-scroll={true}>Starting at 2014</p>
+            <p data-scroll={true}>Since 2012</p>
         </Hero>
     );
 }

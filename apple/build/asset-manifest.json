@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/apple/build/static/css/main.2cb245a1.chunk.css",
+    "main.js": "/apple/build/static/js/main.da832c86.chunk.js",
+    "main.js.map": "/apple/build/static/js/main.da832c86.chunk.js.map",
+    "runtime~main.js": "/apple/build/static/js/runtime~main.e989b5d4.js",
+    "runtime~main.js.map": "/apple/build/static/js/runtime~main.e989b5d4.js.map",
+    "static/js/2.4dd8298d.chunk.js": "/apple/build/static/js/2.4dd8298d.chunk.js",
+    "static/js/2.4dd8298d.chunk.js.map": "/apple/build/static/js/2.4dd8298d.chunk.js.map",
+    "index.html": "/apple/build/index.html",
+    "precache-manifest.707aba7453b10053c166fc34b7523fc9.js": "/apple/build/precache-manifest.707aba7453b10053c166fc34b7523fc9.js",
+    "service-worker.js": "/apple/build/service-worker.js",
+    "static/css/main.2cb245a1.chunk.css.map": "/apple/build/static/css/main.2cb245a1.chunk.css.map",
+    "static/media/index.scss": "/apple/build/static/media/sf-pro-display_semibold.550fdb58.woff"
+  }
+}

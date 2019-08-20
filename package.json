@@ -6,6 +6,6 @@
   },
   "scripts": {
     "serve": "http-server",
-    "apple": "yarn --cwd ./apple start"
+    "build": "yarn --cwd ./apple build && yarn --cwd ./vk build"
   }
 }

@@ -38,32 +38,34 @@ export const certs = [
 ];
 
 const skills = {
+    frontend: [
+        {name: 'React', logo: 'https://cdn.worldvectorlogo.com/logos/react-1.svg', cert: certs[3], color:'#222222'},
+        {name: 'JavaScript', logo: 'https://cdn.worldvectorlogo.com/logos/javascript.svg', cert: certs[3], color:'#f7df1e'},
+        {name: 'TypeScript', logo: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',  color:'#007acc'},
+        {name: 'Webpack', logo: 'https://cdn.worldvectorlogo.com/logos/webpack-icon.svg', color:'#2b3a42'},
+        {name: 'Angular', logo: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg', cert: certs[4], color:'#2a7bd0'},
+        {name: 'JQuery', logo: 'https://jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png', color:'#0769ad'},
+        {name: 'Bootstrap', logo: 'https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg', cert: certs[5], color:'#563d7c'},
+        {name: 'Material-UI', logo: 'https://material-ui.com/static/images/material-ui-logo.svg', color:'#fff'},
+    ],
     backend: [
-        {name: 'PHP', logo: 'http://php.net/images/logos/php-logo.svg', color:'#8892bf'},
-        {name: 'Symfony', logo: 'https://cdn.worldvectorlogo.com/logos/symfony.svg', color:'#1a171b'},
+        // {name: 'PHP', logo: 'http://php.net/images/logos/php-logo.svg', color:'#8892bf'},
+        // {name: 'Symfony', logo: 'https://cdn.worldvectorlogo.com/logos/symfony.svg', color:'#1a171b'},
         {name: 'Node JS', logo: 'https://nodejs.org/static/images/logo.svg', color:'#333333'},
         {name: 'Express JS', logo: 'https://cdn.worldvectorlogo.com/logos/express-109.svg', color:'#eeeeee'},
     ],
-    frontend: [
-        {name: 'JavaScript', logo: 'https://cdn.worldvectorlogo.com/logos/javascript.svg', cert: certs[3], color:'#f7df1e'},
-        {name: 'Angular', logo: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg', cert: certs[4], color:'#2a7bd0'},
-        {name: 'React', logo: 'https://cdn.worldvectorlogo.com/logos/react-1.svg', cert: certs[3], color:'#222222'},
-        {name: 'JQuery', logo: 'https://jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png', color:'#0769ad'},
-        {name: 'Bootstrap', logo: 'https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg', cert: certs[5], color:'#563d7c'},
-        {name: 'Webpack', logo: 'https://cdn.worldvectorlogo.com/logos/webpack-icon.svg', color:'#2b3a42'},
-    ],
     database: [
         {name: 'MySQL', logo: 'https://cdn.worldvectorlogo.com/logos/mysql.svg', color:'#fff'},
-        {name: 'PSQL', logo: 'https://cdn.worldvectorlogo.com/logos/postgresql.svg', color:'#336791'},
+        {name: 'PostgreSQL', logo: 'https://cdn.worldvectorlogo.com/logos/postgresql.svg', color:'#336791'},
         {name: 'MSSQL', logo: 'https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg'},
-        {name: 'Doctrine', logo: 'https://cdn.worldvectorlogo.com/logos/doctrine.svg', color:'#24314b'},
+        // {name: 'Doctrine', logo: 'https://cdn.worldvectorlogo.com/logos/doctrine.svg', color:'#24314b'},
     ],
     server: [
         {name: 'Ubuntu server', logo: 'https://cdn.worldvectorlogo.com/logos/ubuntu-4.svg'},
         {name: 'Windows server', logo: 'https://cdn.worldvectorlogo.com/logos/microsoft-windows-22.svg', color:'#222222'},
     ],
     vcs: [
-        {name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git.svg',color:'#f1f1e9'}
+        {name: 'Git', logo: 'https://cdn.worldvectorlogo.com/logos/git.svg',color:'#f1f1e9'},
     ],
 };
 

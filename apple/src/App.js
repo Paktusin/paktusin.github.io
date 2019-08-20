@@ -16,12 +16,16 @@ function App() {
             <main>
                 <Me/>
                 <Hero id={'skills'}>
+                    There will be skill
                 </Hero>
                 <Hero id={'certs'}>
+                    There will be certs
                 </Hero>
                 <Hero id={'edu'}>
+                    There will be edu
                 </Hero>
                 <Hero id={'proj'}>
+                    There will be projects
                 </Hero>
             </main>
         </>
