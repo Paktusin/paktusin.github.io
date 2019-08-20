@@ -1,15 +1,15 @@
 export function ru() {
-    return navigator.language === 'ru-RU';
+    return navigator.language === 'ru';
 }
 
 
 export function formatDate(some) {
-    const format = ru() ? `DD MMM YYYY в HH:mm` : `MM/DD/YYYY hh:mm a`;
-    return moment(some).format(format).replace('.', '');
+    moment.locale(navigator.language);
+    return moment(some).format(`DD MMM YYYY в HH:mm`);
 }
 
 
-export function  copyToClipboard (str) {
+export function copyToClipboard(str) {
     const el = document.createElement('textarea');
     el.value = str;
     el.setAttribute('readonly', '');

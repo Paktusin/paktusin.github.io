@@ -39,9 +39,6 @@ class="img-fluid rounded-circle mr-3" width="34" height="34"/>
                 return $scope.comments.slice(0, $scope.coef * 10 + 1);
             };
             $scope.sendComment = () => {
-                if (!authService.loggedIn()) {
-                    alert(ru() ? 'Вы должны войти на сайт чтобы оставить коментарий' : 'You must SignIn to write a comment');
-                }
                 if ($scope.comment.length > 0) {
                     $scope.comments = [...$scope.comments.map(c => {
                         delete c['$$hashKey'];
