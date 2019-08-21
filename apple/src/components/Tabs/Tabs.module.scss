@@ -1,0 +1,18 @@
+.Tabs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .Tab {
+    display: inline-block;
+    list-style: none;
+
+    img {
+      margin: 0 auto;
+      display: block;
+      width: 48px;
+      height: 77px;
+    }
+  }
+}
+

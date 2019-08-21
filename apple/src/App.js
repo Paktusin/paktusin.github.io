@@ -6,6 +6,7 @@ import {ScrollVisible} from "./components/ScrollVisible/ScrollVisible";
 import {NavBar} from "./components/NavBar/NavBar";
 import {Me} from "./components/Hero/Me/Me";
 import {Footer} from "./components/Footer/Footer";
+import {Skills} from "./components/Hero/Skills/Skills";
 
 function App() {
 
@@ -17,9 +18,7 @@ function App() {
             <AppBar/>
             <main>
                 <Me/>
-                <Hero id={'skills'}>
-                    There will be skill
-                </Hero>
+                <Skills/>
                 <Hero id={'certs'}>
                     There will be certs
                 </Hero>

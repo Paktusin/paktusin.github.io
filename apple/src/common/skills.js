@@ -44,7 +44,7 @@ const skills = {
         {name: 'TypeScript', logo: 'https://cdn.worldvectorlogo.com/logos/typescript.svg',  color:'#007acc'},
         {name: 'Webpack', logo: 'https://cdn.worldvectorlogo.com/logos/webpack-icon.svg', color:'#2b3a42'},
         {name: 'Angular', logo: 'https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg', cert: certs[4], color:'#2a7bd0'},
-        {name: 'JQuery', logo: 'https://jquery.com/jquery-wp-content/themes/jquery/images/logo-jquery.png', color:'#0769ad'},
+        {name: 'JQuery', logo: 'https://cdn.worldvectorlogo.com/logos/jquery-1.svg', color:'#0769ad'},
         {name: 'Bootstrap', logo: 'https://cdn.worldvectorlogo.com/logos/bootstrap-4.svg', cert: certs[5], color:'#563d7c'},
         {name: 'Material-UI', logo: 'https://material-ui.com/static/images/material-ui-logo.svg', color:'#fff'},
     ],

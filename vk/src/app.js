@@ -5,7 +5,7 @@ import aboutTemplate from './view/about.html'
 import eduTemplate from './view/education.html'
 import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
-import skills, {certs} from "./skills";
+import skills, {certs} from "../../apple/src/common/skills";
 import commentsCmp from "./components/comments";
 import loginFormComponent from "./components/loginForm/loginForm";
 import appTemplate from './app.html';
