@@ -5,11 +5,13 @@ import './css/index.scss'
 import {ScrollVisible} from "./components/ScrollVisible/ScrollVisible";
 import {NavBar} from "./components/NavBar/NavBar";
 import {Me} from "./components/Hero/Me/Me";
+import {Footer} from "./components/Footer/Footer";
 
 function App() {
 
     return (
         <>
+            <span id={'me'}/>
             <ScrollVisible/>
             <NavBar/>
             <AppBar/>
@@ -28,6 +30,7 @@ function App() {
                     There will be projects
                 </Hero>
             </main>
+            <Footer/>
         </>
     );
 }

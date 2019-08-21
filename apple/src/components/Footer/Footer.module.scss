@@ -1,0 +1,17 @@
+.Footer {
+  background-color: #f2f2f2;
+  min-height: 550px;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    color: #888;
+    font-size: 12px;
+  }
+
+  :global(.dark) & {
+    background-color: transparent;
+  }
+}

@@ -1,14 +1,14 @@
 @import "font";
 @import "typo";
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "SF Display", serif;
+  font-family: "SF ProText", serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 17px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -28,10 +28,20 @@ body {
   &:focus {
     outline: none;
   }
+
   box-sizing: border-box;
 }
 
 main {
   margin: 0 auto;
   padding-bottom: 50px;
+}
+
+a {
+  color: #0070c9;
+  text-decoration: none;
+
+  & :hover {
+    text-decoration: underline;
+  }
 }

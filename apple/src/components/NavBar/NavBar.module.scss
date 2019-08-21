@@ -3,9 +3,13 @@
 .NavBar {
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .container {
-    font-size: 14px;
+    font-size: 13px;
     color: #fff;
     @extend .Container;
     align-content: center;

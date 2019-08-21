@@ -1,5 +1,5 @@
 import React from 'react';
-import {getTheme, setTheme} from "../common/Theme";
+import {getTheme, setTheme} from "../../common/Theme";
 import classes from './ThemeButton.module.scss'
 
 export function ThemeButton() {
