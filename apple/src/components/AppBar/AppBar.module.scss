@@ -1,5 +1,3 @@
-@import "../Container/Container.module";
-
 .appBar {
   position: sticky;
   top: 0;
@@ -19,8 +17,6 @@
   .content {
     display: inline-flex;
     padding: 1rem 0;
-    margin: 0 auto;
-    @extend .Container;
   }
 
   h3 {
@@ -55,6 +51,4 @@
       background-color: rgba(34, 34, 34, 0.7);
     }
   }
-
-  @extend .Container;
 }

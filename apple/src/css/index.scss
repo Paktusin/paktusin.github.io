@@ -1,5 +1,17 @@
 @import "font";
-@import "typo";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/variables";
+
+$container-max-widths: (
+        sm: 720px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px
+);
+
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities";
 
 html {
   scroll-behavior: smooth;

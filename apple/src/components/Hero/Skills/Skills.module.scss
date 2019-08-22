@@ -1,0 +1,18 @@
+.SkillContainer {
+  flex: 1 0 auto;
+  height: auto;
+  display: flex;
+
+  &:before {
+    content: '';
+    float: left;
+    padding-top: 100%;
+  }
+
+  .Skill {
+    flex: 1 0 auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 40%;
+  }
+}

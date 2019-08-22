@@ -23,7 +23,7 @@ function AppBar() {
 
     return (
         <div data-height={true} ref={ref} className={clsx(classes.appBar, stick && classes.stick)}>
-            <div className={classes.content}>
+            <div className={clsx('container', classes.content)}>
                 <h3>Web Developer</h3>
                 <div className={clsx(classes.links, stick && classes.show)}>
                     <Link href={'#me'}>About Me</Link>
