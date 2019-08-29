@@ -7,7 +7,6 @@ export function NavBar() {
     return (
         <nav className={classes.NavBar}>
             <div className={clsx('container', classes.container)}>
-                <Link href={'/'}>Logo</Link>
                 <Link href={'#me'}>About Me</Link>
                 <Link href={'#skills'}>Skills</Link>
                 <Link href={'#certs'}>Certificates</Link>
