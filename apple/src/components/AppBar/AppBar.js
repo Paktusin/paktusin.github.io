@@ -31,6 +31,7 @@ function AppBar() {
                     <Link href={'#certs'}>Certificates</Link>
                     <Link href={'#edu'}>Education</Link>
                     <Link href={'#proj'}>Projects</Link>
+                    <Link href={'/vk'}>VK theme</Link>
                 </div>
                 <ThemeButton/>
             </div>

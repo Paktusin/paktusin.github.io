@@ -12,7 +12,7 @@ export function NavBar() {
                 <Link href={'#certs'}>Certificates</Link>
                 <Link href={'#edu'}>Education</Link>
                 <Link href={'#proj'}>Projects</Link>
-                <Link href={'/vk'}>VK style</Link>
+                <Link href={'/vk'}>VK theme</Link>
             </div>
         </nav>
     );
