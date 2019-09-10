@@ -5,7 +5,7 @@ export default {
     'City': 'Город',
     'Specialization': 'Специальность',
     'Education': 'Образование',
-    'Sochi': 'Сочи',
+    'Moscow': 'Москва',
     'Bachelor\'s degree': 'Специалист',
     'Information Systems and Technologies': 'Информационные системы и технологии',
     'Development experience': 'Опыт разрабоки',
