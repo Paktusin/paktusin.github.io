@@ -9,6 +9,8 @@ $container-max-widths: (
         lg: 960px,
         xl: 1140px
 );
+$backgroundColorLight: #f2f2f2;
+$backgroundColorDark: #121217;
 
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
@@ -27,11 +29,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   flex: 1 auto;
-  background-color: #fafafa;
+  background-color: $backgroundColorLight;
   color: #000;
 
   &.dark {
-    background-color: #121217;
+    background-color: $backgroundColorDark;
     color: #fff;
   }
 }
