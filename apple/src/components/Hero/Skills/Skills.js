@@ -20,7 +20,7 @@ export const Skills = () => {
                                     {skill.more && <a target="_blank" href={skill.more}>Learn more</a>}
                                 </div>
                                 <div className={image}>
-                                    <div style={{backgroundImage: `url(${skill.logo})`}}></div>
+                                    <div style={{backgroundImage: `url(${skill.logo})`}}/>
                                 </div>
                             </div>
                         </div>

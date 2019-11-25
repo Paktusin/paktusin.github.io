@@ -7,6 +7,7 @@ import {NavBar} from "./components/NavBar/NavBar";
 import {Me} from "./components/Hero/Me/Me";
 import {Footer} from "./components/Footer/Footer";
 import {Skills} from "./components/Hero/Skills/Skills";
+import {Edu} from "./components/Hero/Edu/Edu";
 
 function App() {
 
@@ -22,9 +23,7 @@ function App() {
                 <Hero id={'certs'}>
                     There will be certs
                 </Hero>
-                <Hero id={'edu'}>
-                    There will be edu
-                </Hero>
+                <Edu/>
                 <Hero id={'proj'}>
                     There will be projects
                 </Hero>

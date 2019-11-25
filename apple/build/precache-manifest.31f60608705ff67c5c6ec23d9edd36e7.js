@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4080c5b0b76036f3695e15372b2010e",
+    "revision": "880f900dece625f2902264d8d90feab3",
     "url": "/apple/build/index.html"
   },
   {
-    "revision": "8a4944eb5861152b94fc",
-    "url": "/apple/build/static/css/main.29265d7b.chunk.css"
+    "revision": "520ab16c13b52ec3d0e5",
+    "url": "/apple/build/static/css/main.ff887b06.chunk.css"
   },
   {
-    "revision": "21874848e55884ce82ae",
-    "url": "/apple/build/static/js/2.23db4581.chunk.js"
+    "revision": "ede323cb9e0b80a41014",
+    "url": "/apple/build/static/js/2.03a5049b.chunk.js"
   },
   {
-    "revision": "8a4944eb5861152b94fc",
-    "url": "/apple/build/static/js/main.295eb123.chunk.js"
+    "revision": "520ab16c13b52ec3d0e5",
+    "url": "/apple/build/static/js/main.4f237ee6.chunk.js"
   },
   {
     "revision": "088e6ca469c08c0622d9",
@@ -42,5 +42,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d1883d2801247347da20fde4dc14631f",
     "url": "/apple/build/static/media/sf-pro-text_semibold.d1883d28.woff2"
+  },
+  {
+    "revision": "883dd5c736845baa0ff2a9c923359c7c",
+    "url": "/apple/build/static/media/sunset.883dd5c7.jpg"
   }
 ]);
