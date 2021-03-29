@@ -22,9 +22,9 @@ function AppBar() {
     const ref = React.useRef(null);
 
     return (
-        <div data-height={true} ref={ref} className={clsx(classes.AppBar, stick && classes.stick, 'd-none d-md-flex')}>
+        <div data-height={true} ref={ref} className={clsx(classes.AppBar, stick && classes.stick)}>
             <div className={clsx('container', classes.content)}>
-                <h3>Web Developer</h3>
+                <h3 className={'d-none d-md-flex'}>Web Developer</h3>
                 <div className={clsx(classes.links, stick && classes.show)}>
                     <Link href={'#me'}>About Me</Link>
                     <Link href={'#skills'}>Skills</Link>

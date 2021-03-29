@@ -1,15 +1,13 @@
 import templateUrl from './mainNav.html'
-import searchComponent from "../search/searchComponent";
 
 /* @ngInject */
 class controller {
-    constructor(authService) {
-        this.authService = authService;
+    constructor() {
     }
 }
 
 const mainNav = angular
-    .module('mainNav', [searchComponent.name])
+    .module('mainNav', [])
     .component('mainNav', {
         controller,
         templateUrl,

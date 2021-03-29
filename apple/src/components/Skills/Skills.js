@@ -1,13 +1,14 @@
 import React from 'react';
-import Hero from "../Hero";
-import skills from "../../../common/skills";
-import {Container} from "../../Container/Container";
+import Hero from "../Hero/Hero";
+import skills from "../../common/skills";
+import {Container} from "../Container/Container";
 import classes, {image} from "./Skills.module.scss"
 import clsx from "clsx";
 
 export const Skills = () => {
     return (
         <Hero id={'skills'} className={classes.Skills}>
+            <h2 className={'headline'}>Skills</h2>
             <Container>
                 <div className={"row"}>
                     {skills.frontend.map((skill, index) => (

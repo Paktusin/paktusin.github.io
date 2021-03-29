@@ -1,6 +1,7 @@
 import React from 'react';
 import {getTheme, setTheme} from "../../common/Theme";
 import classes from './ThemeButton.module.scss'
+import clsx from 'clsx';
 
 export function ThemeButton() {
 
@@ -13,6 +14,7 @@ export function ThemeButton() {
     }
 
     return (
-        <button title={'Switch theme'} onClick={clickHandler} className={classes.ThemeButton}>{selTheme}</button>
+        <button title={'Switch theme'} onClick={clickHandler}
+                className={clsx(classes.ThemeButton, 'd-none d-md-flex')}>{selTheme}</button>
     );
 }

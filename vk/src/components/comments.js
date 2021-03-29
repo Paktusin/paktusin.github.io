@@ -23,7 +23,7 @@ class="img-fluid rounded-circle mr-3" width="34" height="34"/>
     <i class="fa fa-lg fa-paper-plane"></i>
 </button>
     </div>`,
-        controller: /* @ngInject */($scope, authService) => {
+        controller: /* @ngInject */($scope) => {
             $scope.username = !!localStorage.getItem('username');
             $scope.coef = 0;
             $scope.date = (comment) => formatDate(comment.date);

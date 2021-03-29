@@ -34,6 +34,10 @@
     display: inline-flex;
     justify-content: space-evenly;
 
+    a {
+      padding: 0 4px;
+    }
+
     &.show {
       opacity: 1;
       transition: .5s ease opacity;

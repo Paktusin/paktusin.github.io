@@ -1,12 +1,9 @@
 import React from 'react';
-import Hero from "../Hero";
-import {Container} from "../../Container/Container";
+import Hero from "../Hero/Hero";
 import classes from "./Edu.module.scss"
-import clsx from "clsx";
-import sunset from "../../../img/sunset.jpg";
+import sunset from "../../img/sunset.jpg";
 
 export const Edu = () => {
-    console.log(sunset);
     return (
         <Hero id={'edu'}>
             <div className={classes.Edu} data-scroll={true}>

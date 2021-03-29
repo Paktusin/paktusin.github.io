@@ -7,11 +7,10 @@ import projectsTemplate from './view/projects.html'
 import skillsTemplate from './view/skills.html'
 import skills, {certs} from "../../apple/src/common/skills";
 import commentsCmp from "./components/comments";
-import loginFormComponent from "./components/loginForm/loginForm";
 import appTemplate from './app.html';
 import en from "./trans/en";
 import ruRU from "./trans/ruRu";
-import authService from "./authService";
+import projects from '../../apple/src/common/projects';
 
 localStorage.setItem('path', '/vk');
 
@@ -19,8 +18,6 @@ angular.module('app', [
     'ui.router',
     mainNav.name,
     commentsCmp.name,
-    loginFormComponent.name,
-    authService.name,
     'pascalprecht.translate'
 ])
     .config(($stateProvider, $urlRouterProvider, $translateProvider) => {
@@ -52,7 +49,7 @@ angular.module('app', [
                 url: 'projects',
                 templateUrl: projectsTemplate,
                 controller: ($scope) => {
-                    $scope.ru = ru;
+                    $scope.projects = projects;
                 }
             })
             .state('app.skills', {

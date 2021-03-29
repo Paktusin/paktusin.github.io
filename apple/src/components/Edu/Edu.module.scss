@@ -53,13 +53,13 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    filter: grayscale(1);
+    filter: grayscale(1) blur(1px);
     transform: scale(1.02);
     transition: all ease .5s;
   }
 
   &:hover .bg {
-    filter: grayscale(0);
+    filter: grayscale(0) blur(1px);
     transform: scale(1);
   }
 }

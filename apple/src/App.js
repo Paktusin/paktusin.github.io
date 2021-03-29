@@ -4,10 +4,11 @@ import Hero from "./components/Hero/Hero";
 import './css/index.scss'
 import {ScrollVisible} from "./components/ScrollVisible/ScrollVisible";
 import {NavBar} from "./components/NavBar/NavBar";
-import {Me} from "./components/Hero/Me/Me";
+import {Me} from "./components/Me/Me";
 import {Footer} from "./components/Footer/Footer";
-import {Skills} from "./components/Hero/Skills/Skills";
-import {Edu} from "./components/Hero/Edu/Edu";
+import {Skills} from "./components/Skills/Skills";
+import {Edu} from "./components/Edu/Edu";
+import {Projects} from './components/Projects/Projects';
 
 function App() {
 
@@ -20,13 +21,9 @@ function App() {
             <main>
                 <Me/>
                 <Skills/>
-                <Hero id={'certs'}>
-                    There will be certs
-                </Hero>
+                <Hero id={'certs'}>There will be certs</Hero>
                 <Edu/>
-                <Hero id={'proj'}>
-                    There will be projects
-                </Hero>
+                <Projects/>
             </main>
             <Footer/>
         </>
