@@ -1,0 +1,24 @@
+{
+  "modules": [
+    {
+      "name": "About me",
+      "url": "me"
+    },
+    {
+      "name": "Skills",
+      "url": "skills"
+    },
+    {
+      "name": "Certificates",
+      "url": "certs"
+    },
+    {
+      "name": "Education",
+      "url": "edu"
+    },
+    {
+      "name": "Projects",
+      "url": "projects"
+    }
+  ]
+}

@@ -7,7 +7,6 @@ function App() {
     const location = useLocation();
 
     useEffect(() => {
-        console.log(location);
         const path = localStorage.getItem('paktusin_path') || 'vk';
         if (location.pathname === '/') {
             navigate(`/${path}`);

@@ -12,14 +12,19 @@ import {Footer} from "./components/Footer/Footer";
 import {Skills} from "./components/Skills/Skills";
 import {Edu} from "./components/Edu/Edu";
 import {Projects} from './components/Projects/Projects';
+import {useParams} from 'react-router-dom';
 
 const THEME = 'apple_theme';
 
 export const ThemeContext = createContext(null);
 
 function Apple() {
+    const {module} = useParams();
     const [theme, setTheme] = useState(localStorage.getItem(THEME) || 'light');
     useEffect(() => localStorage.setItem(THEME, theme), [theme]);
+    useEffect(() => {
+        document.querySelector(`#${module || 'me'}`)?.scrollIntoView();
+    }, [module])
 
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>

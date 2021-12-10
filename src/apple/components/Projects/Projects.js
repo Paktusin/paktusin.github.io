@@ -21,7 +21,7 @@ export const Projects = () => {
     }, []);
 
     return (
-        <Hero id={'proj'}>
+        <Hero id={'projects'}>
             <h2 className={'headline'}>Projects</h2>
             <Container>
                 {projects.map((project, index) => (
