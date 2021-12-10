@@ -41,7 +41,7 @@ const skills = {
     frontend: [
         {
             name: 'React',
-            logo: 'https://cdn.worldvectorlogo.com/logos/react-1.svg',
+            logo: 'https://cdn.worldvectorlogo.com/logos/logo-javascript.svg',
             cert: certs[3],
             color: '#222222',
             text: 'Thinking in react',
