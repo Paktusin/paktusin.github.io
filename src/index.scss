@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/functions";
+
+$container-max-widths: (
+        sm: 960px,
+        md: 960px,
+        lg: 960px,
+        xl: 1140px
+);
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
