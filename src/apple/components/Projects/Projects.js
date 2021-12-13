@@ -1,11 +1,12 @@
 import React from 'react';
 import Hero from '../Hero/Hero';
 import clsx from 'clsx';
-import projects from '../../common/projects';
 import {Container} from '../Container/Container';
 import classes from './Projects.module.scss';
+import {getData} from '../../../data';
 
 export const Projects = () => {
+    const projects = getData().projects.projects;
     const getContent = React.useCallback((project, index) => {
         const res = [
             (project.logo && <div className={'col-md-6 col-12 d-none d-md-flex position-relative'} style={{minHeight: '100%'}}>

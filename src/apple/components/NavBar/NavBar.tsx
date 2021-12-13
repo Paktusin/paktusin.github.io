@@ -1,12 +1,11 @@
 import React from 'react';
 import classes from './NavBar.module.scss'
 import clsx from "clsx";
-import siteData from "../../../siteData.json";
-import {SiteData} from '../../../SiteData';
+import {getMenu} from '../../../data';
 import {Link} from 'react-router-dom';
 
 export function NavBar() {
-    const modules = (siteData as SiteData).modules;
+    const modules = getMenu();
 
     return (
         <nav className={classes.NavBar}>

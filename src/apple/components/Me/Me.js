@@ -11,7 +11,7 @@ export function Me() {
                 Bring HTML to life<br/>
             </h2>
             <h1 data-scroll={true}>enjoy web surfing.</h1>
-            <p className={'mt-3'} data-scroll={true}>Since 2012 <a href={'#disclaimer'}>*</a></p>
+            <p className={'mt-3'} data-scroll={true}>Since 2012 <a href={'apple/disclaimer'}>*</a></p>
         </Hero>
     );
 }

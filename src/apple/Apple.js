@@ -29,14 +29,14 @@ function Apple() {
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>
             <div className={clsx('Apple', theme)}>
-                <span id={'me'}/>
+                <span id={'info'}/>
                 <ScrollVisible/>
                 <NavBar/>
                 <AppBar/>
                 <main>
                     <Me/>
                     <Skills/>
-                    <Hero id={'certs'}>There will be certs</Hero>
+                    <Hero id={'certificates'}>There will be certs</Hero>
                     <Edu/>
                     <Projects/>
                 </main>

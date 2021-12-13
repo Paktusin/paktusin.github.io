@@ -1,25 +1,16 @@
 import React from 'react';
-import siteData from '../../../siteData.json';
-import {SiteData} from '../../../SiteData';
+import {getMenu} from '../../../data';
 import {Link} from 'react-router-dom';
 
 export const MainNav: React.FunctionComponent<{ side?: boolean }> = ({side = false}) => {
-    const modules = (siteData as SiteData).modules;
+    const menu = getMenu();
 
     if (side) {
         return (
             <div className="btn-group-vertical side-menu">
-                <a className="btn btn-sm btn-link">
-                    <i className="fa fa-lg fa-home" aria-hidden="true"></i>
-                    {'About me'}</a>
-                <a className="btn btn-sm btn-link" ui-sref="app.education">
-                    <i className="fa fa-lg fa-graduation-cap" aria-hidden="true"></i>
-                    {'Education'}</a>
-                <a className="btn btn-sm btn-link" ui-sref="app.projects">
-                    <i className="fa fa-lg fa-archive" aria-hidden="true"></i>
-                    {'Projects'}</a>
-                <a className="btn btn-sm btn-link" ui-sref="app.skills">
-                    <i className="fa fa-lg fa-hand-spock-o" aria-hidden="true"></i>{'Skills'}</a>
+                {menu.map((menuItem,index)=>
+                    <a key={index} className="btn btn-sm btn-link">{menuItem.name}</a>
+                )}
             </div>
         )
     }
@@ -34,7 +25,7 @@ export const MainNav: React.FunctionComponent<{ side?: boolean }> = ({side = fal
                     </div>
                     <div className="col-sm-10 col-12 p-0 d-inline-flex">
                         <ul className="ml-auto navbar-nav">
-                            {modules.map((module, index) =>
+                            {menu.map((module, index) =>
                                 <li key={index} className="nav-item">
                                     <Link to={module.url}><a className="nav-link">{module.name}</a></Link>
                                 </li>

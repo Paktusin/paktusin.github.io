@@ -3,11 +3,10 @@ import clsx from 'clsx'
 import classes from './AppBar.module.scss'
 import {ThemeButton} from "../ThemeButton/ThemeButton";
 import {Link} from 'react-router-dom';
-import siteData from '../../../siteData.json';
-import {SiteData} from '../../../SiteData';
+import {getMenu} from '../../../data';
 
 function AppBar() {
-    const modules = (siteData as SiteData).modules;
+    const modules = getMenu();
 
     function scrollHandler() {
         if (ref.current) {
