@@ -18,10 +18,12 @@ export interface ProjectsModule extends Module {
 }
 
 export interface SkillsModule extends Module {
-    frontend: Skill[];
-    backend: Skill[];
-    server: Skill[];
-    vcs: Skill[];
+    skills: {
+        frontend: Skill[];
+        backend: Skill[];
+        server: Skill[];
+        vcs: Skill[];
+    }
 }
 
 export interface CertificatesModule extends Module {
