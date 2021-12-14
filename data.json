@@ -81,7 +81,7 @@
       "database": [
         {
           "name": "MySQL",
-          "logo": "https://cdn.worldvectorlogo.com/logos/mysql.svg",
+          "logo": "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
           "color": "#fff"
         },
         {
@@ -91,7 +91,7 @@
         },
         {
           "name": "MSSQL",
-          "logo": "https://cdn.worldvectorlogo.com/logos/microsoft-sql-server.svg"
+          "logo": "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg"
         }
       ],
       "server": [
