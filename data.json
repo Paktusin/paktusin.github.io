@@ -80,6 +80,11 @@
       ],
       "database": [
         {
+          "name": "MongoDB",
+          "logo": "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+          "color": "#fff"
+        },
+        {
           "name": "MySQL",
           "logo": "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
           "color": "#fff"
@@ -119,33 +124,21 @@
     "certs": [
       {
         "name": "JavaScript",
-        "title": "geekbrains",
-        "url": "https://geekbrains.ru/certificates/459861.en",
-        "img": "https://i.imgur.com/xLyri03.png"
+        "title": "hackerrank",
+        "url": "https://www.hackerrank.com/certificates/3e94b880a24e",
+        "img": "https://paktusin.github.io/cert7.jpg"
       },
       {
-        "name": "JavaScript",
-        "title": "tests4geeks",
-        "url": "https://tests4geeks.com/certificate?cr=pg8h1p8",
-        "img": "https://imgur.com/sikfg7g.jpg"
+        "name": "Angular",
+        "title": "hackerrank",
+        "url": "https://www.hackerrank.com/certificates/4bea74549ac1",
+        "img": "https://paktusin.github.io/cert8.jpg"
       },
       {
         "name": "React",
         "title": "skillvalue",
         "url": "https://skillvalue.com/en/certificate/pMO560o3r3IWl1f2gVbhRt9VZH5zGZfIXwfbNalgSjR82a2qP158v5Z3UuId",
         "img": "https://imgur.com/SLI5oat.jpg"
-      },
-      {
-        "name": "JavaScript",
-        "title": "skillvalue",
-        "url": "https://skillvalue.com/en/certificate/9WJud1Fgvu2sA2EDEWUwCVNzvarD6Yqtadm2JvqhmWilgpH8VJUNMhbkSxgU",
-        "img": "https://imgur.com/Ff8qoJM.jpg"
-      },
-      {
-        "name": "Angular",
-        "title": "skillvalue",
-        "url": "https://skillvalue.com/en/certificate/3cnKsBctcyw9nWdeqLMc65OwNTMwIXDKo4w7A1CaCnS387ZJnoAIiWUcwcqh",
-        "img": "https://imgur.com/DtHkBKT.jpg"
       },
       {
         "name": "Bootstrap",
