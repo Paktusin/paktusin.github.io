@@ -165,6 +165,12 @@
     "name": "Projects",
     "projects": [
       {
+        "url": "https://www.kaspersky.ru/small-to-medium-business-security/pro/unified-monitoring-and-analysis-platform",
+        "logo": "https://www.kaspersky.ru/content/ru-ru/images/smb/icons/unified-management-and-analysis-platform_black_icon.png",
+        "title": "Kaspersky Unified Monitoring and Analysis Platform",
+        "descr": "Developed the frontend part of Kaspersky Unified Monitoring and Analysis Platform."
+      },
+      {
         "url": "https://zapiskihomyaka.ru/",
         "title": "Hamster notes",
         "descr": "Web site for crosstich fans.",
@@ -186,12 +192,6 @@
         "url": "https://presidentgrants.ru",
         "title": "President grants",
         "descr": "Web Site for registration of children for grants of the president."
-      },
-      {
-        "url": "https://www.kaspersky.ru/small-to-medium-business-security/pro/unified-monitoring-and-analysis-platform",
-        "logo": "https://www.kaspersky.ru/content/ru-ru/images/smb/icons/unified-management-and-analysis-platform_black_icon.png",
-        "title": "Kaspersky Unified Monitoring and Analysis Platform",
-        "descr": "Developed the frontend part of Kaspersky Unified Monitoring and Analysis Platform."
       }
     ]
   }
