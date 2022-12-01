@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import "./css/Apple.scss";
 import clsx from "clsx";
 
@@ -23,15 +29,22 @@ export const ThemeContext = createContext<{
 export const DataContext = createContext<Data>({} as Data);
 
 export function Apple() {
+  const ref = useRef<HTMLDivElement>(null);
   const [theme, setTheme] = useState(localStorage.getItem(THEME_KEY) || "dark");
   const changeTheme = useCallback((theme: string) => {
     localStorage.setItem(THEME_KEY, theme);
     setTheme(theme);
+    if (ref.current?.classList.contains("dark") && theme === "light") {
+      ref.current?.classList.remove("dark");
+    } else {
+      ref.current?.classList.add("dark");
+    }
   }, []);
+  useEffect(() => changeTheme(theme), []);
   return (
     <DataContext.Provider value={data as Data}>
       <ThemeContext.Provider value={{ theme, changeTheme }}>
-        <div className={`Apple ${theme}`}>
+        <div ref={ref} className={clsx("Apple")}>
           <span id={"info"} />
           <ScrollVisible />
           <NavBar />
