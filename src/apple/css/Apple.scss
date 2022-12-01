@@ -1,0 +1,89 @@
+$backgroundColorLight: #fff;
+$backgroundColorDark: #000;
+@import "font";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+.Apple {
+  $container-max-widths: (
+    xs: 1390px,
+    sm: 1390px,
+    md: 1390px,
+    lg: 1390px,
+    xl: 1390px,
+  );
+  @import "bootstrap/scss/maps";
+  @import "bootstrap/scss/mixins";
+  @import "bootstrap/scss/root";
+  @import "bootstrap/scss/utilities";
+  @import "bootstrap/scss/images";
+  @import "bootstrap/scss/containers";
+  @import "bootstrap/scss/grid";
+  @import "node_modules/bootstrap/scss/helpers";
+  @import "node_modules/bootstrap/scss/utilities/api";
+
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  * {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  main {
+    padding-bottom: 50px;
+  }
+
+  a {
+    color: #0070c9;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.dark {
+    background-color: $backgroundColorDark;
+    color: #fff;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #fff;
+    }
+
+    p {
+      color: #fff;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: #111;
+  }
+
+  p {
+    color: #333;
+  }
+
+  font-family: "SF ProText", serif;
+  font-weight: 400;
+  font-size: 17px;
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $backgroundColorLight;
+}

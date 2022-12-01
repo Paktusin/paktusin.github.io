@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="skills card-body">
+        <h4 class="text-center">Skills</h4>
+        <div ng-repeat="group in groups">
+            <h5 style="text-transform: capitalize" class="border-bottom">{{group}}</h5>
+            <div class="container">
+                <div class="row mb-3">
+                    <div title="{{skill.name}}" ng-repeat="skill in skills[group]"
+                         class="col-6 col-sm-4 col-md-3 col-lg-2 py-2 skill" ng-style="{backgroundColor: skill.color}">
+                        <div class="img"
+                             ng-style="{backgroundColor: skill.color, backgroundImage:'url('+skill.logo+')'}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

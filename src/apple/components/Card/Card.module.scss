@@ -1,0 +1,14 @@
+.Card {
+  border-radius: 25px;
+  background-color: #f2f2f2;
+
+  :global(.Apple.dark) & {
+    background-color: #151516;
+  }
+
+  &.gradient {
+    * {
+      color: white;
+    }
+  }
+}

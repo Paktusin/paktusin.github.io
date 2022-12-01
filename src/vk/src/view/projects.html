@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="text-center">Projects</h4>
+        <div class="mb-5" ng-repeat="project in projects">
+            <h5 class="border-bottom mb-3">
+                <a ng-if="project.url" href="{{project.url}}" target="_blank">{{project.title}}</a>
+                <span ng-if="!project.url">{{project.title}}</span>
+            </h5>
+            <div class="d-flex">
+                <div ng-if="project.logo" class="projectImage col-3" style="background-image: url('{{project.logo}}')"></div>
+                <p>{{project.descr}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

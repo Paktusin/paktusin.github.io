@@ -1,0 +1,31 @@
+.Me {
+  justify-content: start;
+  background-color: #fff;
+
+  :global(.Apple.dark) & {
+    background-color: #000;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: #0070c9;
+    }
+  }
+}
+
+.Name {
+  :global(.Apple.dark) & {
+    background: radial-gradient(#eff1ff 0,#000 80%,#000 100%);;
+    background-size: 200% 200%;
+    background-position: 50% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.disclaimer {
+  color: #a1a1a6;
+}
