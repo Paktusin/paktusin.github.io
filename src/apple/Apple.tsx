@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import "./css/Apple.scss";
 import clsx from "clsx";
 
@@ -16,18 +16,22 @@ import data from "../common/data.json";
 
 const THEME_KEY = "apple_theme";
 
-export const ThemeContext = createContext<{ theme: string; setTheme: any }>(
-  {} as any
-);
+export const ThemeContext = createContext<{
+  theme: string;
+  changeTheme: (theme: string) => void;
+}>({} as any);
 export const DataContext = createContext<Data>({} as Data);
 
 export function Apple() {
-  const [theme, setTheme] = useState(localStorage.getItem(THEME_KEY) || "light");
-  useEffect(() => localStorage.setItem(THEME_KEY, theme), [theme]);
+  const [theme, setTheme] = useState(localStorage.getItem(THEME_KEY) || "dark");
+  const changeTheme = useCallback((theme: string) => {
+    localStorage.setItem(THEME_KEY, theme);
+    setTheme(theme);
+  }, []);
   return (
     <DataContext.Provider value={data as Data}>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <div className={clsx("Apple", theme)}>
+      <ThemeContext.Provider value={{ theme, changeTheme }}>
+        <div className={`Apple ${theme}`}>
           <span id={"info"} />
           <ScrollVisible />
           <NavBar />

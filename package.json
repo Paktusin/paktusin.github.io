@@ -27,7 +27,9 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build -r https://github.com/Paktusin/paktusin.github.io.git"
+    "deploy": "gh-pages -d build",
+    "preserve": "yarn build",
+    "serve": "serve -d build"
   },
   "eslintConfig": {
     "extends": [
