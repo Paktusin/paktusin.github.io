@@ -1,26 +1,35 @@
 $backgroundColorLight: #fff;
 $backgroundColorDark: #000;
+$container-max-widths: (
+  xs: 1390px,
+  sm: 1390px,
+  md: 1390px,
+  lg: 1390px,
+  xl: 1390px,
+);
+
 @import "font";
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";
 
 .Apple {
-  $container-max-widths: (
-    xs: 1390px,
-    sm: 1390px,
-    md: 1390px,
-    lg: 1390px,
-    xl: 1390px,
-  );
-  @import "bootstrap/scss/maps";
-  @import "bootstrap/scss/mixins";
-  @import "bootstrap/scss/root";
-  @import "bootstrap/scss/utilities";
-  @import "bootstrap/scss/images";
-  @import "bootstrap/scss/containers";
-  @import "bootstrap/scss/grid";
-  @import "node_modules/bootstrap/scss/helpers";
-  @import "node_modules/bootstrap/scss/utilities/api";
+  font-family: "SF ProText", serif;
+  font-weight: 400;
+  font-size: 17px;
+  flex: 1 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $backgroundColorLight;
 
   .container {
     padding-left: 24px;
@@ -77,13 +86,4 @@ $backgroundColorDark: #000;
   p {
     color: #333;
   }
-
-  font-family: "SF ProText", serif;
-  font-weight: 400;
-  font-size: 17px;
-  flex: 1 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: $backgroundColorLight;
 }

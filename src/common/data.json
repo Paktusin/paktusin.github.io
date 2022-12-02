@@ -8,13 +8,6 @@
     "skills": {
       "frontend": [
         {
-          "name": "React",
-          "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-          "color": "#222222",
-          "text": "Thinking in react",
-          "more": "https://reactjs.org/"
-        },
-        {
           "name": "JavaScript",
           "logo": "https://cdn.worldvectorlogo.com/logos/logo-javascript.svg",
           "color": "#f7df1e",
@@ -30,11 +23,18 @@
           "more": "https://www.typescriptlang.org/"
         },
         {
-          "name": "Webpack",
-          "logo": "https://cdn.worldvectorlogo.com/logos/webpack-icon.svg",
-          "color": "#2b3a42",
-          "text": "Bundle your whatever",
-          "more": "https://webpack.js.org/"
+          "name": "SCSS",
+          "logo": "https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg",
+          "color": "#fff",
+          "text": "CSS with superpowers",
+          "more": "https://sass-lang.com/"
+        },
+        {
+          "name": "React",
+          "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+          "color": "#222222",
+          "text": "Thinking in react",
+          "more": "https://reactjs.org/"
         },
         {
           "name": "Angular",
@@ -44,12 +44,11 @@
           "color": "#2a7bd0"
         },
         {
-          "name": "JQuery",
-          "logo": "https://cdn.worldvectorlogo.com/logos/jquery-1.svg",
-          "color": "#78cff5",
-          "textColor": "black",
-          "more": "https://jquery.com/",
-          "text": "Write less, do more"
+          "name": "Webpack",
+          "logo": "https://cdn.worldvectorlogo.com/logos/webpack-icon.svg",
+          "color": "#2b3a42",
+          "text": "Bundle your whatever",
+          "more": "https://webpack.js.org/"
         },
         {
           "name": "Bootstrap",
@@ -57,6 +56,13 @@
           "text": "Dev fast, same look",
           "color": "#563d7c",
           "more": "https://getbootstrap.com/"
+        },
+        {
+          "name": "Antd",
+          "logo": "https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg",
+          "text": "",
+          "color": "#fff",
+          "more": "https://ant.design/"
         },
         {
           "name": "Material-UI",

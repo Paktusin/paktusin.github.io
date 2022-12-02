@@ -36,7 +36,7 @@ export function Me() {
   return (
     <Hero className={classes.Me} data-scroll={true}>
       <h1 data-scroll={true}>Frontend Developer</h1>
-      <h2 ref={meRef} className={clsx(classes.Name, "my-3")}>
+      <h2 ref={meRef} className={clsx(classes.Name, "my-3 mx-4")}>
         Mikhail Davlichin.
       </h2>
       <h3 data-scroll={true} className={"headline mb-2"}>

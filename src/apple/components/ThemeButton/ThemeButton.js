@@ -12,6 +12,6 @@ export function ThemeButton() {
     }, [changeTheme, theme])
 
     return (
-        <button title={'Switch theme'} onClick={clickHandler} className={clsx(classes.ThemeButton, 'd-none d-md-flex')}>{theme}</button>
+        <button title={'Switch theme'} onClick={clickHandler} className={clsx(classes.ThemeButton)}>{theme}</button>
     );
 }
