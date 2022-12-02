@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0dd67a7e.css",
-    "main.js": "/static/js/main.549f770a.js",
+    "main.css": "/static/css/main.15a36ee4.css",
+    "main.js": "/static/js/main.7e384235.js",
     "static/media/sf-pro-display_semibold.woff": "/static/media/sf-pro-display_semibold.f5e3e8b1c5508208ef7c.woff",
     "static/media/sf-pro-text_semibold.woff2": "/static/media/sf-pro-text_semibold.b65ddbe4e49942d52d30.woff2",
     "static/media/sf-pro-text_bold.woff2": "/static/media/sf-pro-text_bold.47a8994bc07ea92ade58.woff2",
@@ -9,12 +9,14 @@
     "static/media/sf-pro-text_regular.woff2": "/static/media/sf-pro-text_regular.b611fb44fba6e5e6b77f.woff2",
     "static/media/sf-pro-display_regular.woff2": "/static/media/sf-pro-display_regular.33c40a3c2e7a947e0a84.woff2",
     "static/media/birobidjan.jpg": "/static/media/birobidjan.ce8c4f25a141889b335e.jpg",
+    "static/media/mike.jpg": "/static/media/mike.bb077373b7edba616480.jpg",
+    "static/media/md.svg": "/static/media/md.366c0f74c488ef2a802f.svg",
     "index.html": "/index.html",
-    "main.0dd67a7e.css.map": "/static/css/main.0dd67a7e.css.map",
-    "main.549f770a.js.map": "/static/js/main.549f770a.js.map"
+    "main.15a36ee4.css.map": "/static/css/main.15a36ee4.css.map",
+    "main.7e384235.js.map": "/static/js/main.7e384235.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dd67a7e.css",
-    "static/js/main.549f770a.js"
+    "static/css/main.15a36ee4.css",
+    "static/js/main.7e384235.js"
   ]
 }
