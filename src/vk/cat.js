@@ -41,8 +41,8 @@ content[0] = `
                         GM     BJ      qk     LF                      
                        YB:   :BU      UBr;7YL2u                       
                         i:YYuYi         ....,                         
-`
-;content[1] = `                                                                      
+`;
+content[1] = `                                                                      
                                                                       
                                       7                               
                                      5BB                              
@@ -83,8 +83,8 @@ content[0] = `
                         8O     Bk      LB     1B                      
                        vB: ..iBU      :B0YUF288                       
                         :ir;77i                                       
-`
-;content[2] = `                                                                      
+`;
+content[2] = `                                                                      
                                                                       
                                       i,                              
                                      SBBv                             
@@ -125,8 +125,8 @@ content[0] = `
                         OM     Bq      LB     FB                      
                        LBi ..iB1      rBEJ2k5MG                       
                         iirr77i                                       
-`
-;content[3] = `                                                                      
+`;
+content[3] = `                                                                      
                                                                       
                                         i                             
                                        SBM.                           
@@ -167,8 +167,8 @@ content[0] = `
                         OM     BP      LB     FB                      
                        vB: ..iBU      rB0YUF1OE                       
                         :irr77i                                       
-`
-;content[4] = `                                                                      
+`;
+content[4] = `                                                                      
                                                                       
                                           i:                          
                                          iBBi                         
@@ -209,8 +209,8 @@ content[0] = `
                         OO     0i      LB     1B.                     
                        vB: ..iBU      rB0J2F1ME                       
                         iirr77i                                       
-`
-;content[5] = `                                                                      
+`;
+content[5] = `                                                                      
                                                                       
                                             i                         
                                            SBB                        
@@ -251,8 +251,8 @@ content[0] = `
                         OO     0i      LB     1B.                     
                        vB: ..iBU      rB0J2F1ME                       
                         iirr77i                                       
-`
-;content[6] = `                                                                      
+`;
+content[6] = `                                                                      
                                                                       
                                             i                         
                                            SBB                        
@@ -293,8 +293,8 @@ content[0] = `
                         8O     Ni      LB     2B.                     
                        vB: ..iBU      rBNY2F1M8                       
                         iirr77i                                       
-`
-;content[7] = `                                                                      
+`;
+content[7] = `                                                                      
                                                                       
                                             i                         
                                            SBB                        
@@ -335,8 +335,8 @@ content[0] = `
                         8O     Ni      LB     1B.                     
                        vB: ..iBU      rBNY2F1ME                       
                         iirr77i                                       
-`
-;content[8] = `                                                                      
+`;
+content[8] = `                                                                      
                                                                       
                                         i                             
                                        XBM.                           
@@ -377,8 +377,8 @@ content[0] = `
                         OM     BN      YB     FB.                     
                        LBi ..iB2      7BEJ1S5MZ                       
                         iirr77i                                       
-`
-;content[9] = `                                                                      
+`;
+content[9] = `                                                                      
                                                                       
                                       i                               
                                      SBB                              
@@ -419,8 +419,8 @@ content[0] = `
                         OM     Bq      LB     5B.                     
                        LB: ..iBU      rB0J2F5ME                       
                         iirr77i                                       
-`
-;content[10] = `                                                                      
+`;
+content[10] = `                                                                      
                                                                       
                                                                       
                                      iBY                              
@@ -461,8 +461,8 @@ content[0] = `
                         B;     BE      kk     U0                      
                        YB.   :BU      UBrr7LL5F                       
                         iijJUYi         .....                         
-`
-;content[11] = `                                                                      
+`;
+content[11] = `                                                                      
                                                                       
                                                                       
                                 Yi                                    
@@ -503,8 +503,8 @@ content[0] = `
                         B     B.      ,B,    BU                       
                        vBi:i:PM       BB;vUFGO                        
                         ::::::          ..,                           
-`
-;content[12] = `                                                                      
+`;
+content[12] = `                                                                      
                                                                       
                                                                       
                      :                                                
@@ -545,8 +545,8 @@ content[0] = `
                         B     8J      jv    B                         
                         Bu.,..5E      Bj..:SB                         
                          i7r7;r       :rr;7r.                         
-`
-;content[13] = `                                                                      
+`;
+content[13] = `                                                                      
                                                                       
                                                                       
                                                                       
@@ -587,8 +587,8 @@ content[0] = `
                         B:   .B,     ;B    .B                         
                         rB,...5B.     BM7L7SP                         
                          r7r7i,:       .....                          
-`
-;content[14] = `                                                                      
+`;
+content[14] = `                                                                      
                                                                       
                                                                       
                                 .:                                    
@@ -629,8 +629,8 @@ content[0] = `
                       BJ     qi     .BY    2N                         
                        BBY77ikB.      B7  ,UM                         
                         ..... .       :UjLr:                          
-`
-;content[15] = `                                                                      
+`;
+content[15] = `                                                                      
                                                                       
                                                                       
                             7S                                        
@@ -671,8 +671,8 @@ content[0] = `
                     .B      X:      ZM     BY                         
                      ,kFLL7rLB:      MG:   UB.                        
                        .,....         iYuY7ir                         
-`
-;content[16] = `                                                                      
+`;
+content[16] = `                                                                      
                                                                       
                              ,i                                       
                             LBB:                                      
@@ -713,8 +713,8 @@ content[0] = `
                     iB     iB      .B2     B:                         
                      YBk1FUJBB       BG,.. XB                         
                                       ir7r;ii                         
-`
-;content[17] = `                                                                      
+`;
+content[17] = `                                                                      
                                                                       
                              ,,                                       
                             5BB                                       
@@ -755,8 +755,8 @@ content[0] = `
                     rB     iB      .B2     B:                         
                      YBk1FUjBB       BO,.. PB                         
                                       ir7rri:                         
-`
-;content[18] = `                                                                      
+`;
+content[18] = `                                                                      
                                                                       
                            ,:                                         
                           vBB.                                        
@@ -797,8 +797,8 @@ content[0] = `
                     rB     iB       B2     B:                         
                      YBk5SUjBB       BO,.. qB                         
                                       ir7rrii                         
-`
-;content[19] = `                                                                      
+`;
+content[19] = `                                                                      
                                                                       
                          J                                            
                         BBB                                           
@@ -839,8 +839,8 @@ content[0] = `
                     rB     iB      .B2     B:                         
                      YBX5SUjBB       BO,.. PB                         
                                       ir7rrii                         
-`
-;content[20] = `                                                                      
+`;
+content[20] = `                                                                      
                                                                       
                        .,                                             
                        BBi                                            
@@ -881,8 +881,8 @@ content[0] = `
                     ;B     iB      .BU     B:                         
                      YBS25uJBB       B8,.. XB                         
                                       ir7r;i:                         
-`
-;content[21] = `                                                                      
+`;
+content[21] = `                                                                      
                                                                       
                        .,                                             
                        BBi                                            
@@ -923,8 +923,8 @@ content[0] = `
                     rB     :B      .BU     B:                         
                      iBk25uJBB       B8,.. XB                         
                                       ir7r;i:                         
-`
-;content[22] = `                                                                      
+`;
+content[22] = `                                                                      
                                                                       
                        .,                                             
                        BBi                                            
@@ -965,8 +965,8 @@ content[0] = `
                     rB     :B      .BU     B:                         
                      iBk25uJBB       B8,.. XB                         
                                       ir7r;i:                         
-`
-;content[23] = `                                                                      
+`;
+content[23] = `                                                                      
                                                                       
                           BB                                          
                          kBSB                                         
@@ -1007,8 +1007,8 @@ content[0] = `
                     rB     iB       B2     B:                         
                      YBk5SUjBB       B8,.. PB                         
                                       i77rrii                         
-`
-;content[24] = `                                                                      
+`;
+content[24] = `                                                                      
                                                                       
                              ,i                                       
                             LBB:                                      
@@ -1049,8 +1049,8 @@ content[0] = `
                     ;B     :M       BU     B:                         
                      YBS25UJBB       BZ,.. kB                         
                                       ir7;;ii                         
-`
-;content[25] = `                                                                      
+`;
+content[25] = `                                                                      
                                                                       
                                                                       
                             .BN                                       
@@ -1091,8 +1091,8 @@ content[0] = `
                      B,     ur      MS     Mr                         
                      :B57L7r1B:      BG:   rB.                        
                        ......         iYuY7i7                         
-`
-;content[26] = `                                                                      
+`;
+content[26] = `                                                                      
                                                                       
                                                                       
                                   .UBr                                
@@ -1133,8 +1133,8 @@ content[0] = `
                       Nv    iL       :B    :M                         
                       ,BFuv7YBU       BY:i:LB                         
                           ...         ,::::,:                         
-`
-;content[27] = `                                                                      
+`;
+content[27] = `                                                                      
                                                                       
                                                                       
                                                 ,                     
@@ -1175,8 +1175,8 @@ content[0] = `
                        iB    Gi      M:    72                         
                        .BSi..kk      Bv....Bu                         
                          iv;r;:      ,rr7rr:                          
-`
-;content[28] = `                                                                      
+`;
+content[28] = `                                                                      
                                                                       
                                                                       
                                                                       
@@ -1217,8 +1217,8 @@ content[0] = `
                         B     B      Yq    YX                         
                         BY7LLBU     :B7...rB                          
                          .....       ,:;7r7                           
-`
-;content[29] = `                                                                      
+`;
+content[29] = `                                                                      
                                                                       
                                                                       
                                     ,.                                
@@ -1261,13 +1261,12 @@ content[0] = `
                         ,:YYuj        :i7r;:.                         
 `;
 
-if (PROD) {
-    setInterval(_ => {
-        console.clear();
-        console.log(content[i]);
-        if (i > content.length - 2)
-            i = 0;
-        else
-            i++;
-    }, 100);
+export function cat() {
+  let catInterval = setInterval((_) => {
+    console.clear();
+    console.log(content[i]);
+    if (i > content.length - 2) i = 0;
+    else i++;
+  }, 200);
+  return () => clearInterval(catInterval);
 }

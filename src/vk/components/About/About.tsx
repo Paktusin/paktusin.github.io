@@ -1,8 +1,10 @@
 import dayjs from "dayjs";
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { DataContext } from "../../../apple/Apple";
+import { copyToClipboard, getCountDown } from "../common";
 
 export function About() {
+  const [like, setLike] = useState(localStorage.getItem("like") === "true");
   const postDate = dayjs("2015-09-01 15:30").format("short");
   const [devTime, setDevTime] = useState("Calculating...");
   const [itTime, setItTime] = useState("Calculating...");
@@ -14,7 +16,24 @@ export function About() {
     () => `/gifs/${Math.floor(Math.random() * 8) + 1}.gif`,
     []
   );
+  const toggleLike = () => {
+    localStorage.setItem("like", !like + "");
+    setLike(!like);
+  };
+  useEffect(() => {
+    let count = setInterval(() => {
+      setDevTime(getCountDown("2015-09-01"));
+      setItTime(getCountDown("2012-01-01"));
+    }, 1000);
+    return () => {
+      clearInterval(count);
+    };
+  }, []);
   const skills = data.skills.skills.frontend;
+  const copyLink = () => {
+    copyToClipboard(window.location.href);
+    alert("url was copied to clipboard");
+  };
   return (
     <div className="row about flex-column-reverse flex-sm-row">
       <div className="col-12 col-sm-4 pr-sm-0">
@@ -31,8 +50,8 @@ export function About() {
               <span className="text-black-50">{skills.length}</span>
             </div>
             <div className="row m-0">
-              {skills.map((skill) => (
-                <div className="col-4 p-0 circle-badge mb-2">
+              {skills.map((skill, index) => (
+                <div key={index} className="col-4 p-0 circle-badge mb-2">
                   <div
                     className="img"
                     style={{
@@ -123,6 +142,7 @@ export function About() {
             <div className="d-flex flex-row">
               <div>
                 <img
+                  alt="me"
                   src="/avatar.png"
                   className="img-fluid rounded-circle mr-3"
                   width="50"
@@ -137,7 +157,7 @@ export function About() {
               </div>
             </div>
             <div className="p-3 text-center">
-              <img className="img-fluid" src={randomGif} />
+              <img className="img-fluid" src={randomGif} alt="random gif" />
             </div>
             <h5 className="border-bottom">Development experience:</h5>
             <p id="devExp">{devTime}</p>
@@ -147,29 +167,28 @@ export function About() {
             <div className="">
               <div className="like-btn">
                 <button
-                  ng-click="toggleLike()"
-                  className="btn btn-link pr-1"
-                  ng-className="like==1?'text-danger':''"
+                  onClick={toggleLike}
+                  className={`btn btn-link pr-1 ${like ? "text-danger" : ""}`}
                 >
                   <i
-                    className="fa fa-2x"
-                    ng-className="like==1?'like fa-heart':' fa-heart-o'"
+                    className={`fa fa-xl fa-heart fa-${
+                      like ? "solid" : "regular"
+                    }`}
                   ></i>
                 </button>
-                <span ng-if="like">1</span>
               </div>
               <div className="like-btn">
                 <button className="btn btn-link" ng-click="comment()">
-                  <i className="fa fa-2x fa-comment-o "></i>
+                  <i className="fa fa-xl fa-comment fa-regular"></i>
                 </button>
               </div>
               <div className="like-btn">
                 <button
                   className="btn btn-link position-relative"
-                  ng-click="copyLink()"
+                  onClick={copyLink}
                 >
                   <i
-                    className="fa fa-2x fa-share"
+                    className="fa fa-xl fa-share"
                     title="copy to clipboard"
                   ></i>
                 </button>

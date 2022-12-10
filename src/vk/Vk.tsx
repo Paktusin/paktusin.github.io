@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import { cat } from "./cat";
 import { MainNav, SideNav } from "./components/MainNav/MainNav";
 import "./vk.scss";
 
 export function Vk() {
+  useEffect(() => {
+    if (process.env.NODE_ENV !== "development") {
+      const kill = cat();
+      return () => kill();
+    }
+  }, []);
   return (
     <div className="vk">
       <MainNav />
