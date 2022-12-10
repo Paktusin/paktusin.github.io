@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import classes from "./Edu.module.scss";
-import sunset from "../../../common/birobidjan.jpg";
 import { DataContext } from "../../Apple";
 import { Card } from "../Card/Card";
 import Hero from "../Hero/Hero";
@@ -15,12 +14,13 @@ export const Edu = () => {
         <Card className={classes.Edu} data-scroll={true}>
           <div
             className={classes.bg}
-            style={{ backgroundImage: `url(${sunset})` }}
+            style={{ backgroundImage: `url(/birobidjan.jpg)` }}
           />
           <div className={classes.content}>
             <h3>{module.name}</h3>
             <h2>{module.title}</h2>
-            <p>{module.department}</p>
+            <p>{module.degree}</p>
+            <p>Specialty: {module.specialty}</p>
             <a href={module.url} target="_blank" rel="noreferrer">
               Learn more
             </a>

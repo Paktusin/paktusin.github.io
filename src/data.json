@@ -1,6 +1,8 @@
 {
   "info": {
-    "name": "About me"
+    "name": "About me",
+    "role": "Frontend developer",
+    "city": "Moscow"
   },
   "skills": {
     "name": "Skills",
@@ -135,22 +137,28 @@
         "img": "/cert7.jpg"
       },
       {
-        "name": "Angular",
-        "title": "hackerrank",
-        "url": "https://www.hackerrank.com/certificates/4bea74549ac1",
-        "img": "/cert8.jpg"
-      },
-      {
         "name": "React",
         "title": "skillvalue",
         "url": "https://skillvalue.com/en/certificate/pMO560o3r3IWl1f2gVbhRt9VZH5zGZfIXwfbNalgSjR82a2qP158v5Z3UuId",
         "img": "https://imgur.com/SLI5oat.jpg"
       },
       {
+        "name": "Angular",
+        "title": "hackerrank",
+        "url": "https://www.hackerrank.com/certificates/4bea74549ac1",
+        "img": "/cert8.jpg"
+      },
+      {
         "name": "Bootstrap",
         "title": "skillvalue",
         "url": "https://skillvalue.com/en/certificate/JGSGjnx6Co3gSrfax9DZBMuvCuf2t7IpLtj8UHnYj8ON9lq4u3Im5ShjYk3h",
         "img": "https://imgur.com/TOtpaRx.jpg"
+      },
+      {
+        "name": "C++",
+        "title": "Coursera",
+        "url": "https://www.coursera.org/account/accomplishments/specialization/certificate/DTTZ89YW35UL",
+        "img": "/ccert.jpg"
       }
     ]
   },
@@ -158,7 +166,8 @@
     "name": "Education",
     "url": "https://goo.gl/maps/5kQcUt6qFL82",
     "title": "Birobidjan State Pedagogical Institute",
-    "department": "Faculty of Mathematics and Informatics, specialty Information Systems and Technologies, engineer's degree"
+    "degree": "Masters's degree",
+    "specialty": "Information Systems and Technologies"
   },
   "projects": {
     "name": "Projects",

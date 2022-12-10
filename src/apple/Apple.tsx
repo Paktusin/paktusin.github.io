@@ -17,8 +17,7 @@ import { Skills } from "./components/Skills/Skills";
 import { Edu } from "./components/Edu/Edu";
 import { Projects } from "./components/Projects/Projects";
 import { Certs } from "./components/Certs/Certs";
-import { Data } from "../common/data";
-import data from "../common/data.json";
+import data from "../data.json";
 
 const THEME_KEY = "apple_theme";
 
@@ -26,7 +25,7 @@ export const ThemeContext = createContext<{
   theme: string;
   changeTheme: (theme: string) => void;
 }>({} as any);
-export const DataContext = createContext<Data>({} as Data);
+export const DataContext = createContext<typeof data>(data);
 
 export function Apple() {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,7 +41,7 @@ export function Apple() {
   }, []);
   useEffect(() => changeTheme(theme), []);
   return (
-    <DataContext.Provider value={data as Data}>
+    <DataContext.Provider value={data}>
       <ThemeContext.Provider value={{ theme, changeTheme }}>
         <div ref={ref} className={clsx("Apple")}>
           <span id={"info"} />

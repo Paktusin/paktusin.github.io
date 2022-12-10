@@ -1,20 +1,20 @@
 import dayjs from "dayjs";
-import React, { useMemo, useState } from "react";
-import { Certificate, Skill } from "../../../common/data";
-import data from "../../../common/data.json";
+import React, { useContext, useMemo, useState } from "react";
+import { DataContext } from "../../../apple/Apple";
 
 export function About() {
   const postDate = dayjs("2015-09-01 15:30").format("short");
   const [devTime, setDevTime] = useState("Calculating...");
   const [itTime, setItTime] = useState("Calculating...");
-  const certsMap = new Map<string, Certificate>(
+  const data = useContext(DataContext);
+  const certsMap = new Map<string, any>(
     data.certificates.certs.map((c) => [c.name, c])
   );
   const randomGif = useMemo(
     () => `/gifs/${Math.floor(Math.random() * 8) + 1}.gif`,
     []
   );
-  const skills: Skill[] = data.skills.skills.frontend;
+  const skills = data.skills.skills.frontend;
   return (
     <div className="row about flex-column-reverse flex-sm-row">
       <div className="col-12 col-sm-4 pr-sm-0">
@@ -62,31 +62,23 @@ export function About() {
             <label>lets coding!</label>
             <hr />
             <div className="row">
-              <div className="col-5">
+              <div className="col-4">
                 <label>City:</label>
               </div>
-              <div className="col-7 text-left">
-                <a
-                  target="_blank"
-                  href="https://www.google.com/maps/place/Moscow"
-                  rel="noreferrer"
-                >
-                  Moscow
-                </a>
-              </div>
+              <div className="col-8 text-left">{data.info.city}</div>
             </div>
             <div className="row">
-              <div className="col-5">
+              <div className="col-4">
                 <label>Specialization:</label>
               </div>
-              <div className="col-7 text-left">Web developer</div>
+              <div className="col-8 text-left">Web developer</div>
             </div>
             <div className="row">
-              <div className="col-5">
+              <div className="col-4">
                 <label>Education:</label>
               </div>
-              <div className="col-7 text-left">
-                Bachelor's degree / Information Systems and Technologies
+              <div className="col-8 text-left">
+                {data.education.degree} / {data.education.specialty}
               </div>
             </div>
           </div>

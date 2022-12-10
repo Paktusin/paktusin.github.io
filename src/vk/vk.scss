@@ -7,26 +7,48 @@ $btn-active-box-shadow: 0;
 $enable-shadows: 0;
 $input-focus-box-shadow: 0;
 $input-active-box-shadow: 0;
-$container-max-widths: (
-  sm: 960px,
-  md: 960px,
-  lg: 960px,
-  xl: 960px,
-  xxl: 960px,
-);
-@import "../../node_modules/bootstrap/scss/bootstrap";
+$gray-100: #f8f9fa;
+$gray-500: #adb5bd;
 
 .vk {
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 12.5px;
+  font-size: 12px;
   background-color: #edeef0;
+
+  .link {
+    color: $primary;
+  }
+
+  .btn-link {
+    text-decoration: none;
+  }
+
+  h4 {
+    font-size: calc(1.275em + 0.3vw);
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
+
+  .container {
+    max-width: 960px !important;
+  }
+
+  .bg-primary {
+    background-color: $primary !important;
+  }
 
   #mainNav {
     font-weight: bold;
 
     &.navbar {
-      padding: 0.45rem 1rem;
+      padding: 0.45em 1em;
     }
   }
 
@@ -34,11 +56,6 @@ $container-max-widths: (
     height: 48px;
     width: 48px;
     margin: 0;
-    // @include media-breakpoint-up(sm) {
-    //   margin: 0.5rem;
-    //   height: 64px;
-    //   width: 64px;
-    // }
   }
 
   .logo {
@@ -63,7 +80,7 @@ $container-max-widths: (
 
   .card {
     border: none;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
   }
 
@@ -72,12 +89,12 @@ $container-max-widths: (
 
     i.fa {
       color: #99b0c6;
-      margin-right: 0.5rem;
+      margin-right: 0.5em;
     }
 
     a {
       color: #285473;
-      font-size: 100%;
+      font-size: 13px;
       text-align: left;
 
       &:hover,
@@ -153,7 +170,7 @@ $container-max-widths: (
   }
 
   .card-body {
-    padding: 1rem;
+    padding: 1em;
   }
 
   label {
@@ -200,7 +217,7 @@ $container-max-widths: (
 
   .like-btn {
     color: $gray-500;
-    margin-right: 1.5rem;
+    margin-right: 1.5em;
     display: inline;
     .btn {
       color: $gray-500;
@@ -214,23 +231,6 @@ $container-max-widths: (
 
   .like {
     animation: page_post_like_animation 0.2s ease-out;
-  }
-
-  @keyframes page_post_like_animation {
-    0% {
-      -o-transform: scale(1);
-      transform: scale(1);
-    }
-
-    50% {
-      -o-transform: scale(1.15);
-      transform: scale(1.15);
-    }
-
-    to {
-      -o-transform: scale(1);
-      transform: scale(1);
-    }
   }
 
   .projectImage {

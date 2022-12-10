@@ -57,18 +57,18 @@ export function MainNav() {
 export function SideNav() {
   return (
     <div className="btn-group-vertical side-menu">
-      <a className="btn btn-sm btn-link" ui-sref="app.about">
+      <a className="btn btn-sm btn-link">
         <i className="fa fa-lg fa-home" aria-hidden="true"></i>About me
       </a>
-      <a className="btn btn-sm btn-link" ui-sref="app.education">
+      <a className="btn btn-sm btn-link">
         <i className="fa fa-lg fa-graduation-cap" aria-hidden="true"></i>
         Education
       </a>
-      <a className="btn btn-sm btn-link" ui-sref="app.projects">
+      <a className="btn btn-sm btn-link">
         <i className="fa fa-lg fa-archive" aria-hidden="true"></i>Projects
       </a>
-      <a className="btn btn-sm btn-link" ui-sref="app.skills">
-        <i className="fa fa-lg fa-hand-spock-o" aria-hidden="true"></i>Skills
+      <a className="btn btn-sm btn-link">
+        <i className="fa fa-lg fa-hand-spock" aria-hidden="true"></i>Skills
       </a>
     </div>
   );

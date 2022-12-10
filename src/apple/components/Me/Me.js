@@ -1,9 +1,11 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useRef } from "react";
 import Hero from "../Hero/Hero";
 import classes from "./Me.module.scss";
 import clsx from "clsx";
+import { DataContext } from "../../Apple";
 
 export function Me() {
+  const data = useContext(DataContext);
   const meRef = useRef();
   const mouseMove = useCallback((event) => {
     if (meRef.current) {
@@ -35,7 +37,7 @@ export function Me() {
 
   return (
     <Hero className={classes.Me} data-scroll={true}>
-      <h1 data-scroll={true}>Frontend Developer</h1>
+      <h1 data-scroll={true}>{data.info.role}</h1>
       <h2 ref={meRef} className={clsx(classes.Name, "my-3 mx-4")}>
         Mikhail Davlichin.
       </h2>
