@@ -36,7 +36,7 @@ export function About() {
   };
   return (
     <div className="row about flex-column-reverse flex-sm-row">
-      <div className="col-12 col-sm-4 pr-sm-0">
+      <div className="col-12 col-sm-4 pe-sm-0">
         <div className="card d-none d-sm-block">
           <div className="card-body">
             <div className="avatar mb-3"></div>
@@ -144,7 +144,7 @@ export function About() {
                 <img
                   alt="me"
                   src="/avatar.png"
-                  className="img-fluid rounded-circle mr-3"
+                  className="img-fluid rounded-circle me-3"
                   width="50"
                   height="50"
                 />
@@ -168,7 +168,7 @@ export function About() {
               <div className="like-btn">
                 <button
                   onClick={toggleLike}
-                  className={`btn btn-link pr-1 ${like ? "text-danger" : ""}`}
+                  className={`btn btn-link pe-1 ${like ? "text-danger" : ""}`}
                 >
                   <i
                     className={`fa fa-xl fa-heart fa-${
@@ -195,7 +195,7 @@ export function About() {
               </div>
             </div>
           </div>
-          <div className="card-footer pr-0"></div>
+          <div className="card-footer pe-0"></div>
         </div>
       </div>
     </div>

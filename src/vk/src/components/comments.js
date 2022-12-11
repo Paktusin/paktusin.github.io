@@ -2,10 +2,10 @@ import {formatDate} from "../common";
 
 const commentsCmp = angular.module('commentsCmp', [])
     .component('commentsCmp', {
-        template: `<div class="comments pr-4" ng-if="comments.length >0" ng-class="coef>0 || comments.length==1?'mb-3':''">
+        template: `<div class="comments pe-4" ng-if="comments.length >0" ng-class="coef>0 || comments.length==1?'mb-3':''">
     <div class="media" ng-repeat="comment in getComments()" >
     <img src="https://vk.com/images/deactivated_100.png?ava=1"
-class="img-fluid rounded-circle mr-3" width="34" height="34"/>
+class="img-fluid rounded-circle me-3" width="34" height="34"/>
     <div class="media-body">
     <div class="font-weight-bold text-primary">You</div>
 <div>{{comment.text}}</div>

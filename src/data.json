@@ -21,8 +21,15 @@
           "name": "TypeScript",
           "logo": "https://cdn.worldvectorlogo.com/logos/typescript.svg",
           "color": "#007acc",
-          "text": "JavaScript that scales",
+          "text": "JavaScript with syntax for types",
           "more": "https://www.typescriptlang.org/"
+        },
+        {
+          "name": "React",
+          "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
+          "color": "#222222",
+          "text": "A JavaScript library for building user interfaces",
+          "more": "https://reactjs.org/"
         },
         {
           "name": "SCSS",
@@ -32,24 +39,24 @@
           "more": "https://sass-lang.com/"
         },
         {
-          "name": "React",
-          "logo": "https://cdn.worldvectorlogo.com/logos/react-2.svg",
-          "color": "#222222",
-          "text": "Thinking in react",
-          "more": "https://reactjs.org/"
-        },
-        {
           "name": "Angular",
-          "text": "Superheroic JavaScript MVW Framework",
+          "text": "The modern web developer's platform",
           "more": "https://angular.io/",
           "logo": "https://cdn.worldvectorlogo.com/logos/angular-icon-1.svg",
           "color": "#2a7bd0"
         },
         {
+          "name": "Storybook",
+          "logo": "https://static-00.iconduck.com/assets.00/storybook-icon-icon-412x512-341bo8r1.png",
+          "color": "#fff",
+          "text": "Build UIs without the grunt work",
+          "more": "https://webpack.js.org/"
+        },
+        {
           "name": "Webpack",
           "logo": "https://cdn.worldvectorlogo.com/logos/webpack-icon.svg",
           "color": "#2b3a42",
-          "text": "Bundle your whatever",
+          "text": "Bundle your frontend",
           "more": "https://webpack.js.org/"
         },
         {
@@ -88,13 +95,13 @@
       ],
       "database": [
         {
-          "name": "MongoDB",
-          "logo": "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+          "name": "FireBase",
+          "logo": "https://cdn.worldvectorlogo.com/logos/firebase-1.svg",
           "color": "#fff"
         },
         {
-          "name": "MySQL",
-          "logo": "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+          "name": "MongoDB",
+          "logo": "https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg",
           "color": "#fff"
         },
         {

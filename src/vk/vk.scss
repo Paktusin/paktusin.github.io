@@ -15,6 +15,7 @@ $gray-500: #adb5bd;
   -webkit-font-smoothing: antialiased;
   font-size: 12px;
   background-color: #edeef0;
+  min-height: 100vh;
 
   .link {
     color: $primary;
@@ -22,6 +23,11 @@ $gray-500: #adb5bd;
 
   .btn-link {
     text-decoration: none;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 
   h4 {
@@ -66,7 +72,6 @@ $gray-500: #adb5bd;
 
   .avatar {
     height: 200px;
-    width: 200px;
     background-image: url(./img/mike.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -186,10 +191,6 @@ $gray-500: #adb5bd;
   }
 
   .skill {
-    &:hover {
-      flex: 50%;
-    }
-
     .img {
       min-height: 50px;
       background-position: center center;

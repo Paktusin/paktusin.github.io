@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export function MainNav() {
   return (
@@ -10,43 +11,26 @@ export function MainNav() {
         <div className="col-2 p-0 d-none d-sm-flex">
           <div className="navbar-brand logo" title="Yes I can draw!"></div>
         </div>
-        <ul className="ml-auto navbar-nav">
+        <ul className="ms-auto navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" ui-sref="app.about" ui-sref-active="active">
+            <NavLink className="nav-link" to={"about"}>
               About me
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              ui-sref="app.education"
-              ui-sref-active="active"
-            >
+            <NavLink className="nav-link" to={"edu"}>
               Education
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              ui-sref="app.projects"
-              ui-sref-active="active"
-            >
+            <NavLink className="nav-link" to={"proj"}>
               Projects
-            </a>
+            </NavLink>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              ui-sref="app.skills"
-              ui-sref-active="active"
-            >
+            <NavLink className="nav-link" to={"skills"}>
               Skills
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/apple">
-              Apple theme
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -57,19 +41,19 @@ export function MainNav() {
 export function SideNav() {
   return (
     <div className="btn-group-vertical side-menu">
-      <a className="btn btn-sm btn-link">
+      <Link className="btn btn-sm btn-link" to={"about"}>
         <i className="fa fa-lg fa-home" aria-hidden="true"></i>About me
-      </a>
-      <a className="btn btn-sm btn-link">
+      </Link>
+      <Link className="btn btn-sm btn-link" to={"edu"}>
         <i className="fa fa-lg fa-graduation-cap" aria-hidden="true"></i>
         Education
-      </a>
-      <a className="btn btn-sm btn-link">
+      </Link>
+      <Link className="btn btn-sm btn-link" to={"proj"}>
         <i className="fa fa-lg fa-archive" aria-hidden="true"></i>Projects
-      </a>
-      <a className="btn btn-sm btn-link">
+      </Link>
+      <Link className="btn btn-sm btn-link" to={"skills"}>
         <i className="fa fa-lg fa-hand-spock" aria-hidden="true"></i>Skills
-      </a>
+      </Link>
     </div>
   );
 }
