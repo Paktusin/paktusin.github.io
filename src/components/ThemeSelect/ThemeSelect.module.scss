@@ -1,0 +1,42 @@
+.themeSelect {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  display: flex;
+  transform: translateX(-100%);
+  transition: ease 0.3s transform;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  border-radius: 0;
+  min-height: 150px;
+  margin: 0;
+  border: none;
+  min-width: unset;
+}
+
+.title {
+  opacity: .5;
+  height: 100%;
+  user-select: none;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  color: white;
+  padding: 30px 0;
+  background-color: gray;
+  cursor: pointer;
+  position: absolute;
+  text-orientation: sideways-right;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  right: 0;
+  transform: translateX(100%);
+}

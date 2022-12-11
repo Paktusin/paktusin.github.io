@@ -62,7 +62,11 @@ export function About() {
                   ></div>
                   <div>
                     {certsMap.has(skill.name) ? (
-                      <a target="_blank" href={certsMap.get(skill.name)!.url}>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={certsMap.get(skill.name)!.url}
+                      >
                         {skill.name}
                       </a>
                     ) : (
@@ -197,7 +201,7 @@ export function About() {
             </div>
           </div>
           <div className="card-footer pe-0">
-            <Comments/>
+            <Comments />
           </div>
         </div>
       </div>
