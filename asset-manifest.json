@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.15a36ee4.css",
-    "main.js": "/static/js/main.7e384235.js",
+    "main.css": "/static/css/main.a9e28c1d.css",
+    "main.js": "/static/js/main.e704e4ac.js",
     "static/media/sf-pro-display_semibold.woff": "/static/media/sf-pro-display_semibold.f5e3e8b1c5508208ef7c.woff",
     "static/media/sf-pro-text_semibold.woff2": "/static/media/sf-pro-text_semibold.b65ddbe4e49942d52d30.woff2",
     "static/media/sf-pro-text_bold.woff2": "/static/media/sf-pro-text_bold.47a8994bc07ea92ade58.woff2",
     "static/media/sf-pro-display_light.woff2": "/static/media/sf-pro-display_light.1a43293f3d24365e9d5d.woff2",
     "static/media/sf-pro-text_regular.woff2": "/static/media/sf-pro-text_regular.b611fb44fba6e5e6b77f.woff2",
     "static/media/sf-pro-display_regular.woff2": "/static/media/sf-pro-display_regular.33c40a3c2e7a947e0a84.woff2",
-    "static/media/birobidjan.jpg": "/static/media/birobidjan.ce8c4f25a141889b335e.jpg",
     "static/media/mike.jpg": "/static/media/mike.bb077373b7edba616480.jpg",
     "static/media/md.svg": "/static/media/md.366c0f74c488ef2a802f.svg",
     "index.html": "/index.html",
-    "main.15a36ee4.css.map": "/static/css/main.15a36ee4.css.map",
-    "main.7e384235.js.map": "/static/js/main.7e384235.js.map"
+    "main.a9e28c1d.css.map": "/static/css/main.a9e28c1d.css.map",
+    "main.e704e4ac.js.map": "/static/js/main.e704e4ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.15a36ee4.css",
-    "static/js/main.7e384235.js"
+    "static/css/main.a9e28c1d.css",
+    "static/js/main.e704e4ac.js"
   ]
 }
