@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { cat } from "./cat";
-import { About } from "./components/About/About";
+import { About } from "./components/About";
 import { Edu } from "./components/Edu";
-import { MainNav, SideNav } from "./components/MainNav/MainNav";
+import { MainNav, SideNav } from "./components/MainNav";
 import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 import "./vk.scss";

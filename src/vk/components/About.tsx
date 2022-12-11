@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
 import React, { useContext, useEffect, useMemo, useState } from "react";
-import { DataContext } from "../../../apple/Apple";
-import { copyToClipboard, getCountDown } from "../common";
+import { DataContext } from "../../apple/Apple";
+import Comments from "./Comments";
+import { copyToClipboard, getCountDown } from "./common";
 
 export function About() {
   const [like, setLike] = useState(localStorage.getItem("like") === "true");
@@ -102,7 +103,7 @@ export function About() {
             </div>
           </div>
           <div className="card-footer">
-            <div className="row p-3">
+            <div className="row p-2">
               <div className="col text-center">
                 <a
                   className="link"
@@ -195,7 +196,9 @@ export function About() {
               </div>
             </div>
           </div>
-          <div className="card-footer pe-0"></div>
+          <div className="card-footer pe-0">
+            <Comments/>
+          </div>
         </div>
       </div>
     </div>
