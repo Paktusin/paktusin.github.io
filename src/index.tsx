@@ -1,13 +1,12 @@
 import dayjs from "dayjs";
 import LocalizedFormat from "dayjs/esm/plugin/localizedFormat";
-import React from "react";
-import { createRoot, hydrateRoot } from "react-dom/client";
+import { hydrate, render } from "react-dom";
 import { App } from "./App";
 dayjs.extend(LocalizedFormat);
 
-const rootEl = document.getElementById("root");
-if (rootEl!.hasChildNodes()) {
-  hydrateRoot(rootEl!, <App />);
+const rootElement = document.getElementById("root")!;
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
 } else {
-  createRoot(rootEl!).render(<App />);
+  render(<App />, rootElement);
 }
