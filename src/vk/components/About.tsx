@@ -6,7 +6,7 @@ import { copyToClipboard, getCountDown } from "./common";
 
 export function About() {
   const [like, setLike] = useState(localStorage.getItem("like") === "true");
-  const postDate = dayjs("2015-09-01 15:30").format("short");
+  const postDate = dayjs("2015-09-01 15:30").format("LLL");
   const [devTime, setDevTime] = useState("Calculating...");
   const [itTime, setItTime] = useState("Calculating...");
   const data = useContext(DataContext);
