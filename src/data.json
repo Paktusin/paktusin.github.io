@@ -2,7 +2,8 @@
   "info": {
     "name": "About me",
     "role": "Frontend developer",
-    "city": "Moscow"
+    "city": "Moscow",
+    "linkedin": "https://www.linkedin.com/in/paktusin/"
   },
   "skills": {
     "name": "Skills",

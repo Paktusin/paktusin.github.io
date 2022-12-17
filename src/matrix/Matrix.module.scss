@@ -1,0 +1,159 @@
+.matrix {
+  word-break: normal;
+  background-color: black;
+  min-height: 100vh;
+  color: greenyellow;
+  width: 100%;
+  padding: 7%;
+  font-size: 4vh;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  white-space: pre-wrap;
+  overflow: hidden;
+
+  a {
+    color: greenyellow;
+  }
+}
+
+
+
+.text {
+  display: block;
+  animation: blur 30ms infinite, jerk 50ms infinite;
+}
+
+@keyframes jerk {
+  50% {
+    transform: translateX(1px);
+  }
+  51% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(1px);
+    opacity: 0.8;
+  }
+  50% {
+    filter: blur(1px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(1px);
+    opacity: 0.8;
+  }
+}
+
+$c1: rgba(0, 30, 255, 0.6);
+$c2: rgba(255, 0, 80, 0.4);
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4px 0 1px $c1, -0.4px 0 1px $c2, 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7px 0 1px $c1, -2.7px 0 1px $c2, 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02px 0 1px $c1, -0.02px 0 1px $c2, 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.4px 0 1px $c1, -0.4px 0 1px $c2, 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4px 0 1px $c1, -3.4px 0 1px $c2, 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6px 0 1px $c1, -1.6px 0 1px $c2, 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7px 0 1px $c1, -0.7px 0 1px $c2, 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.8px 0 1px $c1, -3.8px 0 1px $c2, 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.8px 0 1px $c1, -3.8px 0 1px $c2, 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.2px 0 1px $c1, -2.2px 0 1px $c2, 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08px 0 1px $c1, -0.08px 0 1px $c2, 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.37px 0 1px $c1, -2.37px 0 1px $c2, 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.2px 0 1px $c1, -2.2px 0 1px $c2, 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.86px 0 1px $c1, -2.86px 0 1px $c2, 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48px 0 1px $c1, -0.48px 0 1px $c2, 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.89px 0 1px $c1, -1.89px 0 1px $c2, 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.08px 0 1px $c1, -0.08px 0 1px $c2, 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09px 0 1px $c1, -0.09px 0 1px $c2, 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.44px 0 1px $c1, -3.44px 0 1px $c2, 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1px 0 1px $c1, -2.1px 0 1px $c2, 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6px 0 1px rgba(0, 30, 255, 0.5), -2.6px 0 1px $c2, 0 0 3px;
+  }
+}
+
+.crt {
+  animation: textShadow 1.6s infinite;
+
+  &:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+    z-index: 2;
+  }
+
+  &::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      ),
+      linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.06),
+        rgba(0, 255, 0, 0.02),
+        rgba(0, 0, 255, 0.06)
+      );
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+}

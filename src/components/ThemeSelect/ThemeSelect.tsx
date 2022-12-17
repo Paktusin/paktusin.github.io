@@ -36,6 +36,11 @@ const ThemeSelect: React.FunctionComponent<IThemeSelectProps> = (props) => {
             VK
           </NavLink>
         </li>
+        <li>
+          <NavLink className={"dropdown-item"} to={"/matrix"}>
+            Matrix
+          </NavLink>
+        </li>
         <div ref={ref} className={styles.title} onClick={() => setOpen(!open)}>
           theme select
         </div>
