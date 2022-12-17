@@ -6,32 +6,40 @@ import { AllHTMLAttributes } from "react";
 
 interface ElementProps {
   tag: string;
-  props: AllHTMLAttributes<any> & { textContent: string };
+  props: AllHTMLAttributes<any> & { text: string };
 }
 
 type DataRow = string | ElementProps;
 
-async function typeRow(str: DataRow, element: HTMLElement) {
-  if (typeof str === "string") {
-    for (let i = 0; i < str.length; i++) {
-      element.innerHTML += await new Promise<string>((resolve) =>
-        setTimeout(() => resolve(str[i]), 40)
-      );
-    }
+async function typeRow(text: string, element: HTMLElement) {
+  for (let i = 0; i < text.length; i++) {
+    element.innerText += await new Promise<string>((resolve) =>
+      setTimeout(() => resolve(text[i]), 40)
+    );
+  }
+}
+
+async function typeEl(dataRow: DataRow, parent: HTMLElement) {
+  let newEl: HTMLElement;
+  let text = "";
+  if (typeof dataRow === "string") {
+    newEl = document.createElement("span");
+    text = dataRow;
   } else {
-    const newEl = document.createElement(str.tag);
-    const { textContent, ...props } = str.props;
+    newEl = document.createElement(dataRow.tag);
+    const { text: dataText, ...props } = dataRow.props;
+    text = dataText;
     Object.keys(props).forEach((prop) => {
       newEl.setAttribute(prop, (props as any)[prop]);
     });
-    element.appendChild(newEl);
-    await typeRow(textContent, newEl);
   }
+  parent.appendChild(newEl!);
+  await typeRow(text, newEl!);
 }
 
 async function typeData(data: DataRow[], element: HTMLElement) {
   for (let row of data) {
-    await typeRow(row, element);
+    await typeEl(row, element);
     if (typeof row === "string" && row[row.length - 1] === "\n") {
       await new Promise((r) => setTimeout(() => r(true), 700));
     }
@@ -48,7 +56,7 @@ const greeting: DataRow[] = [
     props: {
       target: "_blank",
       href: data.info.linkedin,
-      textContent: "Linkedin profile",
+      text: "Linkedin profile",
     },
   },
   `\n`,
