@@ -42,7 +42,7 @@ const greeting: DataRow[] = [
   "Wake up human...\n",
   "My name is Mikhail Davlichin\n",
   `I am a ${data.info.role}\n`,
-  `Here is my `,
+  `More info in my `,
   {
     tag: "a",
     props: {
