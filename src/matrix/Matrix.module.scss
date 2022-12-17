@@ -1,8 +1,10 @@
+$color: #64d86b;
+
 .matrix {
   word-break: normal;
   background-color: black;
   min-height: 100vh;
-  color: greenyellow;
+  color: $color;
   width: 100%;
   padding: 7%;
   font-size: 4vh;
@@ -12,7 +14,7 @@
   overflow: hidden;
 
   a {
-    color: greenyellow;
+    color: $color;
   }
 }
 

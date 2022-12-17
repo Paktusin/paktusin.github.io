@@ -9,12 +9,6 @@ import { Skills } from "./components/Skills";
 import "./vk.scss";
 
 export function Vk() {
-  useEffect(() => {
-    if (process.env.NODE_ENV !== "development") {
-      const kill = cat();
-      return () => kill();
-    }
-  }, []);
   return (
     <div className="vk">
       <MainNav />
