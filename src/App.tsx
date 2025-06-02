@@ -1,17 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Apple } from "./apple/Apple";
 import ThemeSelect from "./components/ThemeSelect/ThemeSelect";
-import { Vk } from "./vk/Vk";
 import "./index.scss";
-import { Matrix } from "./matrix/Matrix";
+import { routes } from "./routes";
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="" element={<Apple />}></Route>
-        <Route path="/matrix" element={<Matrix />}></Route>
-        <Route path="/vk/*" element={<Vk />}></Route>
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            element={<route.component />}
+          />
+        ))}
       </Routes>
       <ThemeSelect />
     </BrowserRouter>

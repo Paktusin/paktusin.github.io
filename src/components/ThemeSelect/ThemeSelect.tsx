@@ -3,10 +3,9 @@ import * as React from "react";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./ThemeSelect.module.scss";
+import { routes } from "../../routes";
 
-interface IThemeSelectProps {}
-
-const ThemeSelect: React.FunctionComponent<IThemeSelectProps> = (props) => {
+const ThemeSelect: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const ref = React.useRef(null);
   const close = (event: MouseEvent) => {
@@ -26,21 +25,17 @@ const ThemeSelect: React.FunctionComponent<IThemeSelectProps> = (props) => {
   return (
     <div className={clsx(styles.themeSelect, { [styles.open]: open })}>
       <ul className={clsx(styles.links, "dropdown-menu")}>
-        <li>
-          <NavLink className={"dropdown-item"} to={""}>
-            Apple
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={"dropdown-item"} to={"/vk/about"}>
-            VK
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={"dropdown-item"} to={"/matrix"}>
-            Matrix
-          </NavLink>
-        </li>
+        {routes.map((route) => (
+          <li key={route.path}>
+            <NavLink
+              className={"dropdown-item"}
+              to={route.link || route.path}
+              onClick={() => setOpen(false)}
+            >
+              {route.name}
+            </NavLink>
+          </li>
+        ))}
         <div ref={ref} className={styles.title} onClick={() => setOpen(!open)}>
           theme select
         </div>

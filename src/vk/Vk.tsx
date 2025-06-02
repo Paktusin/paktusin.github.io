@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
-// import { cat } from "./cat";
 import { About } from "./components/About";
 import { Edu } from "./components/Edu";
 import { MainNav, SideNav } from "./components/MainNav";
@@ -19,11 +17,11 @@ export function Vk() {
           </div>
           <div className="col-12 col-md-10">
             <Routes>
-              <Route path="about" element={<About />}></Route>
-              <Route path="edu" element={<Edu />}></Route>
-              <Route path="proj" element={<Projects />}></Route>
-              <Route path="skills" element={<Skills />}></Route>
-              <Route path="" element={<Navigate to={'about'}/>}></Route>
+              <Route path="/about" element={<About />}></Route>
+              <Route path="/edu" element={<Edu />}></Route>
+              <Route path="/proj" element={<Projects />}></Route>
+              <Route path="/skills" element={<Skills />}></Route>
+              <Route path="*" element={<Navigate to={"/vk/about"} />}></Route>
             </Routes>
           </div>
         </div>
