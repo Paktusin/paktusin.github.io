@@ -5,8 +5,6 @@ const TILE_SIZE = 16;
 const MAP_WIDTH = 50;
 const MAP_HEIGHT = 30;
 
-// Each edge is represented as an array of 3 elements: [left, center, right] or [top, center, bottom]
-// 'g' = grass, 'r' = road/earth
 const TILES = {
   r: {
     x: 4,
@@ -38,6 +36,17 @@ const TILES = {
       left: ["r", "r", "r"],
     },
   },
+  r_bl: {
+    x: 2,
+    y: 7,
+    rotate: -90,
+    edges: {
+      top: ["r", "g", "g"],
+      right: ["g", "g", "r"],
+      bottom: ["r", "r", "r"],
+      left: ["r", "r", "r"],
+    },
+  },
   r_tr: {
     x: 3,
     y: 7,
@@ -48,22 +57,23 @@ const TILES = {
       left: ["r", "g", "g"],
     },
   },
+  r_br: {
+    x: 3,
+    y: 7,
+    rotate: 90,
+    edges: {
+      top: ["g", "g", "r"],
+      right: ["r", "r", "r"],
+      bottom: ["r", "r", "r"],
+      left: ["g", "g", "r"],
+    },
+  },
   r_r: {
     x: 4,
     y: 7,
     edges: {
       top: ["g", "g", "r"],
       right: ["r", "r", "r"],
-      bottom: ["g", "g", "r"],
-      left: ["g", "g", "g"],
-    },
-  },
-  r_brc: {
-    x: 4,
-    y: 6,
-    edges: {
-      top: ["g", "g", "g"],
-      right: ["g", "g", "r"],
       bottom: ["g", "g", "r"],
       left: ["g", "g", "g"],
     },
@@ -81,12 +91,22 @@ const TILES = {
   r_t: {
     x: 5,
     y: 6,
-    rotate: 90,
+    rotate: 180,
     edges: {
       top: ["r", "r", "r"],
       right: ["r", "g", "g"],
       bottom: ["g", "g", "g"],
       left: ["r", "g", "g"],
+    },
+  },
+  r_l: {
+    x: 6,
+    y: 7,
+    edges: {
+      top: ["r", "g", "g"],
+      right: ["g", "g", "g"],
+      bottom: ["r", "g", "g"],
+      left: ["r", "r", "r"],
     },
   },
   r_blc: {
@@ -99,14 +119,36 @@ const TILES = {
       left: ["g", "g", "r"],
     },
   },
-  r_l: {
+  r_tlc: {
     x: 6,
-    y: 7,
+    y: 6,
+    rotate: 90,
     edges: {
       top: ["r", "g", "g"],
       right: ["g", "g", "g"],
-      bottom: ["r", "g", "g"],
-      left: ["r", "r", "r"],
+      bottom: ["g", "g", "g"],
+      left: ["r", "g", "g"],
+    },
+  },
+  r_brc: {
+    x: 4,
+    y: 6,
+    edges: {
+      top: ["g", "g", "g"],
+      right: ["g", "g", "r"],
+      bottom: ["g", "g", "r"],
+      left: ["g", "g", "g"],
+    },
+  },
+  r_trc: {
+    x: 4,
+    y: 6,
+    rotate: -90,
+    edges: {
+      top: ["g", "g", "r"],
+      right: ["r", "g", "g"],
+      bottom: ["g", "g", "g"],
+      left: ["g", "g", "g"],
     },
   },
 };
@@ -164,17 +206,40 @@ export const Rpg = () => {
         for (let x = 0; x < MAP_WIDTH; x++) {
           const key = map[y][x];
           const tile = TILES[key];
-          ctx.drawImage(
-            image,
-            tile.x * TILE_SIZE,
-            tile.y * TILE_SIZE,
-            TILE_SIZE,
-            TILE_SIZE,
-            x * TILE_SIZE,
-            y * TILE_SIZE,
-            TILE_SIZE,
-            TILE_SIZE
-          );
+          const { rotate = 0 } = tile;
+
+          const dx = x * TILE_SIZE;
+          const dy = y * TILE_SIZE;
+
+          if (rotate === 0) {
+            ctx.drawImage(
+              image,
+              tile.x * TILE_SIZE,
+              tile.y * TILE_SIZE,
+              TILE_SIZE,
+              TILE_SIZE,
+              dx,
+              dy,
+              TILE_SIZE,
+              TILE_SIZE
+            );
+          } else {
+            ctx.save();
+            ctx.translate(dx + TILE_SIZE / 2, dy + TILE_SIZE / 2);
+            ctx.rotate((rotate * Math.PI) / 180);
+            ctx.drawImage(
+              image,
+              tile.x * TILE_SIZE,
+              tile.y * TILE_SIZE,
+              TILE_SIZE,
+              TILE_SIZE,
+              -TILE_SIZE / 2,
+              -TILE_SIZE / 2,
+              TILE_SIZE,
+              TILE_SIZE
+            );
+            ctx.restore();
+          }
         }
       }
     };
