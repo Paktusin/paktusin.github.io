@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import clsx from "clsx";
 import classes from "./AppBar.module.scss";
-import { ThemeButton } from "../ThemeButton/ThemeButton";
-import { Link } from "../Link/Link";
+import { ThemeButton } from "../ThemeButton/ThemeButton.jsx";
+import { Link } from "../Link/Link.jsx";
 import { DataContext } from "../../Apple";
 
 function AppBar() {

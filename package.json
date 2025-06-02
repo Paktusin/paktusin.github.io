@@ -1,57 +1,39 @@
 {
   "name": "bio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.3",
-    "@types/react": "^18.0.25",
-    "@types/react-dom": "^18.0.9",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
     "clsx": "^1.2.1",
     "dayjs": "^1.11.6",
-    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.3",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.3",
-    "web-vitals": "^2.1.4"
+    "react-router-dom": "^7.6.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "preserve": "yarn build",
-    "serve": "serve -d build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev": "vite",
+    "prebuild": "pnpm lint",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0",
-    "react-snap": "^1.23.0",
-    "serve": "^14.1.2"
+    "@eslint/js": "^9.27.0",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
+    "@vitejs/plugin-react": "^4.5.0",
+    "eslint": "^9.27.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.2.0",
+    "sass": "^1.89.1",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vite": "^6.3.5"
   }
 }

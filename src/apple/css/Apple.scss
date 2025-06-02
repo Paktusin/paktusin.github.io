@@ -1,7 +1,7 @@
 $backgroundColorLight: #fff;
 $backgroundColorDark: #000;
 
-@import "font";
+@use "font" as *;
 
 .Apple {
   font-family: "SF ProText", serif;
@@ -16,7 +16,7 @@ $backgroundColorDark: #000;
   .container {
     padding-left: 24px;
     padding-right: 24px;
-    max-width: 1390px!important;
+    max-width: 1390px !important;
   }
 
   * {
